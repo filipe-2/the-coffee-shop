@@ -20,5 +20,5 @@ To view the website, simply open the `index.html` file in your web browser.
 
 ## Preview
 
-![Preview 1](images/preview1.png)
-![Preview 2](images/preview2.png)
+![Preview 1](./images/preview1.png)
+![Preview 2](./images/preview2.png)
