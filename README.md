@@ -17,3 +17,8 @@ The Coffee Shop project consists of HTML and CSS files that create a static webs
 ## Usage
 
 To view the website, simply open the `index.html` file in your web browser.
+
+## Preview
+
+![Preview 1](images/preview1.png)
+![Preview 2](images/preview2.png)
