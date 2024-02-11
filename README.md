@@ -1,6 +1,6 @@
 # The Coffee Shop
 
-Welcome to The Coffee Shop project! This is a simple HTML/CSS project for a fictional coffee shop website.
+Welcome to The Coffee Shop project! This is a simple HTML/CSS project for a coffee shop website.
 
 ## Description
 
