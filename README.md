@@ -20,5 +20,8 @@ To view the website, simply open the `index.html` file in your web browser.
 
 ## Preview
 
+Header and showcase section
 ![Preview 1](Images/preview1.png)
+
+Showcase section and footer
 ![Preview 2](Images/preview2.png)
