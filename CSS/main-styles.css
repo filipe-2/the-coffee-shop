@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
+
+:root {
+    --primary-text: white;
+    --secondary-text: chocolate;
+
+    --primary-backgroud: #000;
+    --secondary-background: #252525;
+
+    --primary-font: 'Cormorant SC', serif;
+}
+
+
+/* Global */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--primary-text);
+    font-family: var(--primary-font);
+    background-color: var(--primary-backgroud);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.highlight {
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    color: var(--secondary-text);
+}
+
+
+/* Header */
+
+header {
+    position: relative;
+    box-shadow: 0px 0 50px var(--secondary-text);
+    z-index: 2;
+}
+
+.main-nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #0000007f;
+    border-bottom: 3px double var(--secondary-text);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100px;
+    background: url(../Images/coffee-beans.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: var(--primary-text);
+    border: 3px double var(--secondary-text);
+    border-left: none;
+    border-radius: 20px;
+    margin-left: -5px;
+}
+
+.title-img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 3px double var(--secondary-text);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.main-nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.main-nav-list li {
+    padding: 5px 10px;
+    border: 3px double var(--secondary-text);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.main-nav-list li:hover {
+    box-shadow: 0px 0px 15px var(--secondary-text);
+}
+
+
+/* Showcase */
+
+.showcase {
+    position: relative;
+}
+
+.showcase-title-container {
+    position: absolute;
+    z-index: 1;
+    inset: 0 0 auto 0;
+    background-color: #0000007f;
+}
+
+.showcase-content {
+    padding: 5px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.showcase-content::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: #0000007f;
+    width: 100%;
+    height: 100%;
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.showcase-title {
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* Footer */
+
+footer {
+    background: url(../Images/coffee-beans.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    min-height: 100px;
+    position: relative;
+    box-shadow: 0px 0 50px var(--secondary-text);
+    z-index: 1;
+}
+
+.footer-nav {
+    position: relative;
+    padding: 5px;
+}
+
+.footer-nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #0000007f;
+    z-index: 1;
+    border-top: 3px double var(--secondary-text);
+}
+
+.footer-nav-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 5px;
+    margin: 10px;
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 5px 25px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+}
+
+.footer-nav-list li,
+.social li {
+    padding: 5px;
+}
+
+.social a {
+    color: var(--secondary-text);
+    padding: 5px;
+    border-radius: 10px;
+    transition: text-shadow 0.3s;
+}
+
+.social a:hover {
+    text-shadow: 0px 0px 15px var(--secondary-text);
+}
+
+.copy-message {
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
