@@ -12,6 +12,7 @@ The Coffee Shop project consists of HTML and CSS files that create a static webs
 - Menu page
 - About page
 - Plans section in the navigation bar
+- Much more
 
 ## Usage
 
