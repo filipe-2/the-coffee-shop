@@ -4,6 +4,7 @@
 :root {
     --primary-text: white;
     --secondary-text: chocolate;
+    --highlighted-button: rgb(255, 106, 0);
 
     --primary-backgroud: #000;
     --secondary-background: #252525;
@@ -57,6 +58,9 @@ header {
     position: relative;
     box-shadow: 0px 0 50px var(--secondary-text);
     z-index: 2;
+    background: url(../Images/coffee-beans.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .main-nav::before {
@@ -71,10 +75,10 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 80%;
+    max-width: 1140px;
+    margin: auto;
     min-height: 100px;
-    background: url(../Images/coffee-beans.png);
-    background-size: cover;
-    background-position: center;
 }
 
 .branding {
@@ -123,6 +127,37 @@ header {
 
 .main-nav-list li:hover {
     box-shadow: 0px 0px 15px var(--secondary-text);
+    border: 3px solid var(--secondary-text);
+}
+
+.main-nav-list a {
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-nav-list li:hover a {
+    color: var(--secondary-text);
+}
+
+.main-nav-list .plans {
+    border: 5px double var(--highlighted-button);
+    box-shadow: 0px 0px 15px var(--highlighted-button);
+    transition: 0.3s;
+}
+
+.main-nav-list .plans:hover {
+    box-shadow: 0px 0px 15px var(--secondary-text);
+    box-shadow: 0px 0px 20px var(--highlighted-button);
+    border: 5px solid var(--highlighted-button);
+}
+
+.plans a {
+    transition: 0.3s;
+}
+
+.plans:hover a {
+    color: var(--highlighted-button);
 }
 
 
@@ -130,6 +165,7 @@ header {
 
 .showcase {
     position: relative;
+    overflow: hidden;
 }
 
 .showcase-title-container {
@@ -156,6 +192,8 @@ header {
 }
 
 .showcase-img {
+    position: absolute;
+    z-index: -1;
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -164,6 +202,24 @@ header {
 .showcase-title {
     font-size: 25px;
     text-align: center;
+}
+
+.showcase-description-container {
+    position: absolute;
+    inset: 150px 50px 150px;
+    min-height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 50px;
+    background-color: #0000007f;
+    border-radius: 20px;
+}
+
+.showcase-item-description {
+    text-align: justify;
+    letter-spacing: 2.5px;
+    line-height: 25px;
 }
 
 
