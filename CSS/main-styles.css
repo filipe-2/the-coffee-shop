@@ -4,7 +4,7 @@
 :root {
     --primary-text: white;
     --secondary-text: chocolate;
-    --highlighted-button: rgb(255, 106, 0);
+    --highlighted: rgb(255, 106, 0);
 
     --primary-backgroud: #000;
     --secondary-background: #252525;
@@ -85,21 +85,21 @@ ul {
 .scrollBtn {
     background-color: #0000007f;
     font-size: 18px;
-    border: 5px double var(--highlighted-button);
+    border: 5px double var(--highlighted);
     color: white;
     cursor: pointer;
     padding: 5px;
     border-radius: 50%;
     transition: 0.3s;
-    box-shadow: 0 0 8px var(--highlighted-button);
+    box-shadow: 0 0 8px var(--highlighted);
     opacity: 0;
     visibility: hidden;
 }
 
 .scrollBtn:hover {
-    border: 5px solid var(--highlighted-button);
-    box-shadow: 0 0 15px var(--highlighted-button);
-    color: var(--highlighted-button);
+    border: 5px solid var(--highlighted);
+    box-shadow: 0 0 15px var(--highlighted);
+    color: var(--highlighted);
     padding: 8px;
 }
 
@@ -153,7 +153,7 @@ header {
     font-weight: bold;
     padding: 5px 15px;
     color: var(--primary-text);
-    border: 5px double var(--highlighted-button);
+    border: 5px double var(--highlighted);
     border-left: none;
     border-radius: 20px;
     margin-left: -5px;
@@ -164,20 +164,20 @@ header {
     width: 50px;
     height: 50px;
     padding: 5px;
-    border: 5px solid var(--highlighted-button);
+    border: 5px solid var(--highlighted);
     border-radius: 50%;
     pointer-events: none;
 }
 
 .title-img {
-    box-shadow: 0px 0px 15px var(--highlighted-button);
+    box-shadow: 0px 0px 15px var(--highlighted);
 }
 
 .title:hover {
-    border: 5px solid var(--highlighted-button);
+    border: 5px solid var(--highlighted);
     border-left: none;
-    box-shadow: 0px 0px 15px var(--highlighted-button);
-    color: var(--highlighted-button);
+    box-shadow: 0px 0px 15px var(--highlighted);
+    color: var(--highlighted);
     font-size: 27px;
     padding: 5px 25px;
 }
@@ -216,14 +216,14 @@ header {
 }
 
 .main-nav-list .plans {
-    border: 5px solid var(--highlighted-button);
-    box-shadow: 0px 0px 15px var(--highlighted-button);
+    border: 5px solid var(--highlighted);
+    box-shadow: 0px 0px 15px var(--highlighted);
     transition: 0.3s;
 }
 
 .main-nav-list .plans:hover {
-    box-shadow: 0px 0px 20px var(--highlighted-button);
-    border-color: var(--highlighted-button);
+    box-shadow: 0px 0px 20px var(--highlighted);
+    border-color: var(--highlighted);
 }
 
 .plans a {
@@ -231,7 +231,7 @@ header {
 }
 
 .main-nav-list .plans:hover a {
-    color: var(--highlighted-button);
+    color: var(--highlighted);
 }
 
 
@@ -321,14 +321,14 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #0000007f;
-    border: 5px solid var(--highlighted-button);
+    border: 5px solid var(--highlighted);
     border-radius: 20px;
     transition: 0.3s;
     box-shadow: 5px 5px 15px var(--primary-backgroud);
 }
 
 .showcase-slides:hover {
-    box-shadow: 0px 0px 10px var(--highlighted-button);
+    box-shadow: 0px 0px 10px var(--highlighted);
 }
 
 .showcase-slider-button {
@@ -336,7 +336,7 @@ header {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    border: 5px solid var(--highlighted-button);
+    border: 5px solid var(--highlighted);
     margin: 0 15px;
     background-color: #0000007f;
     color: var(--primary-text);
@@ -363,7 +363,7 @@ header {
 }
 
 .showcase-slide.checked {
-    border: 5px solid var(--highlighted-button);
+    border: 5px solid var(--highlighted);
     background-color: var(--primary-backgroud);
 }
 
@@ -373,9 +373,9 @@ header {
 }
 
 .showcase-slider-button:hover {
-    border: 5px solid var(--highlighted-button);
-    color: var(--highlighted-button);
-    box-shadow: 0px 0px 10px var(--highlighted-button);
+    border: 5px solid var(--highlighted);
+    color: var(--highlighted);
+    box-shadow: 0px 0px 10px var(--highlighted);
 }
 
 
