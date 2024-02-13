@@ -34,6 +34,8 @@ To view the website locally, follow these steps:
    ```bash
    git clone https://github.com/filipe-2/TheCoffeeShop.git
 
+2. Navigate to the project directory and open the `index.html` file.
+
 ## Preview
 
 Header and showcase section
