@@ -30,6 +30,7 @@ To view the website locally, follow these steps:
 ### Option 2: Clone the repository (if you have Git installed)
 
 1. **Clone the repository**: Open your terminal and run the following command to clone the repository to your local machine:
+   
    ```bash
    git clone https://github.com/filipe-2/TheCoffeeShop.git
 
