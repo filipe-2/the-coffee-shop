@@ -16,7 +16,7 @@ The Coffee Shop project consists of HTML and CSS files that create a static webs
 
 ## Usage
 
-To view the website locally, follow [THIS LINK](https://filipe-2.github.io/TheCoffeeShop/).
+To view the website, follow [THIS LINK](https://filipe-2.github.io/TheCoffeeShop/).
 ## Preview
 
 Header and showcase section
