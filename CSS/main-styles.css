@@ -91,7 +91,7 @@ ul {
     padding: 5px;
     border-radius: 50%;
     transition: 0.3s;
-    box-shadow: 0 0 8px var(--highlighted);
+    box-shadow: 5px 5px 10px var(--primary-backgroud);
     opacity: 0;
     visibility: hidden;
 }
@@ -120,6 +120,7 @@ header {
     background-color: var(--primary-backgroud);
     background-size: cover;
     background-position: center;
+    transition: 0.3s;
 }
 
 .main-nav::before {
@@ -134,10 +135,18 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 90%;
     max-width: 1140px;
     margin: auto;
     min-height: 100px;
+}
+
+.main-nav:hover::before {
+    border-bottom: 3px solid var(--highlighted);
+}
+
+header:hover {
+    box-shadow: 0px 0 55px var(--highlighted);
 }
 
 .branding {
@@ -147,7 +156,7 @@ header {
     z-index: 1;
 }
 
-.title {
+.main-nav .title {
     font-family: var(--secondary-font);
     font-size: 25px;
     font-weight: bold;
@@ -173,7 +182,7 @@ header {
     box-shadow: 0px 0px 15px var(--highlighted);
 }
 
-.title:hover {
+.main-nav .title:hover {
     border: 5px solid var(--highlighted);
     border-left: none;
     box-shadow: 0px 0px 15px var(--highlighted);
@@ -183,19 +192,7 @@ header {
 }
 
 .main-nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.main-nav-list li {
-    padding: 5px 10px;
-    border: 5px double var(--secondary-text);
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: 0.3s;
-    cursor: pointer;
+    visibility: hidden;
 }
 
 .main-nav-list li:hover {
@@ -234,6 +231,15 @@ header {
     color: var(--highlighted);
 }
 
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
+    color: var(--highlighted);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
 
 /* Showcase */
 
@@ -243,7 +249,7 @@ header {
     padding-top: 100px;
 }
 
-.showcase-title-container {
+.showcase .section-title-container {
     margin-top: 100px;
     position: absolute;
     z-index: 1;
@@ -251,14 +257,19 @@ header {
     background-color: #0000007f;
 }
 
-.showcase-content {
-    padding: 1px 0;
-    width: 100%;
-    height: 100vh;
-    position: relative;
+.showcase .section-title {
+    font-size: 25px;
+    padding: 25px 0;
+    text-align: center;
 }
 
-.showcase-content::before {
+.showcase .content {
+    padding: 1px 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.showcase .content::before {
     position: absolute;
     content: '';
     inset: 0;
@@ -267,21 +278,15 @@ header {
     height: 100%;
 }
 
-.showcase-img {
+.showcase .slide-img {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     object-fit: cover;
 }
 
-.showcase-title {
-    font-size: 25px;
-    padding: 25px 0;
-    text-align: center;
-}
-
-.showcase-description-container {
+.showcase .slide-description-container {
     min-height: max-content;
     margin: 150px 50px 50px;
     display: flex;
@@ -294,29 +299,29 @@ header {
     position: relative;
 }
 
-.showcase-item-description {
+.showcase .slide-description {
     text-align: justify;
     letter-spacing: 2.5px;
     line-height: 25px;
 }
 
-.showcase .drink-title {
+.showcase .slide-title {
     font-family: var(--secondary-font);
     font-size: 45px;
     text-shadow: 0 0 15px var(--secondary-text);
     margin-bottom: 25px;
 }
 
-.showcase-slider {
+.showcase .slider {
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 25px;
     width: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.showcase-slides {
+.showcase .slide-indicators {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -327,11 +332,11 @@ header {
     box-shadow: 5px 5px 15px var(--primary-backgroud);
 }
 
-.showcase-slides:hover {
+.showcase .slide-indicators:hover {
     box-shadow: 0px 0px 10px var(--highlighted);
 }
 
-.showcase-slider-button {
+.showcase .slider-button {
     font-weight: bold;
     height: 40px;
     width: 40px;
@@ -345,13 +350,13 @@ header {
     box-shadow: 5px 5px 15px var(--primary-backgroud);
 }
 
-.showcase-slide input {
+.showcase .slide-indicator input {
     display: none;
     margin: 0;
     padding: 0;
 }
 
-.showcase-slide {
+.showcase .slide-indicator {
     width: 20px;
     height: 20px;
     margin: 5px;
@@ -362,17 +367,17 @@ header {
     transition: 0.3s;
 }
 
-.showcase-slide.checked {
+.showcase .slide-indicator.checked {
     border: 5px solid var(--highlighted);
     background-color: var(--primary-backgroud);
 }
 
-.showcase-slide:hover {
+.showcase .slide-indicator:hover {
     border: 5px solid var(--secondary-text);
     background-color: var(--primary-backgroud);
 }
 
-.showcase-slider-button:hover {
+.showcase .slider-button:hover {
     border: 5px solid var(--highlighted);
     color: var(--highlighted);
     box-shadow: 0px 0px 10px var(--highlighted);
@@ -387,6 +392,14 @@ header {
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0 50px var(--secondary-text);
+    border-top: 3px double var(--secondary-text);
+}
+
+.drinks::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #0000007f;
 }
 
 .drinks-title-container {
@@ -405,7 +418,7 @@ header {
 
 .drinks-content {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -417,6 +430,7 @@ header {
     gap: 25px;
     margin-top: 50px;
     align-items: stretch;
+    z-index: 1;
 }
 
 .drink {
@@ -424,8 +438,9 @@ header {
     padding: 10px;
     margin: 5px 0;
     border-radius: 25px;
-    background-color: rgba(20, 10, 5, 0.9);
+    background-color: var(--primary-backgroud);
     box-shadow: 5px 5px 15px var(--primary-backgroud);
+    position: relative;
 }
 
 .drinks .drink-title {
@@ -437,13 +452,31 @@ header {
 
 .drink img {
     width: 250px;
+    border-radius: 10px;
 }
 
 .drink-description {
     max-width: 240px;
     word-wrap: break-word;
-    text-align: center;
-    margin: 10px auto;
+    text-align: justify;
+    margin: 10px auto 25px;
+    font-size: 15px;
+}
+
+.drink-description-button {
+    position: absolute;
+    bottom: -20px;
+    left: 75px;
+    right: 75px;
+    background-color: #0000007f;
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    color: var(--primary-text);
+    border-radius: 50%;
+    border: 5px solid var(--highlighted);
+    padding: 5px 0;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--highlighted);
 }
 
 
@@ -458,6 +491,11 @@ footer {
     position: relative;
     box-shadow: 0px 0 50px var(--secondary-text);
     z-index: 1;
+    transition: 0.3s;
+}
+
+footer:hover {
+    box-shadow: 0px 0 55px var(--highlighted);
 }
 
 .footer-nav {
@@ -472,6 +510,10 @@ footer {
     background-color: #0000007f;
     z-index: 1;
     border-top: 3px double var(--secondary-text);
+}
+
+.footer-nav:hover::before {
+    border-top: 3px solid var(--highlighted);
 }
 
 .footer-nav-lists {
@@ -548,4 +590,30 @@ footer {
     background-color: #0000007f;
     position: relative;
     z-index: 1;
+}
+
+
+/* Media queries */
+
+@media (min-width: 768px) {
+    .main-nav-list {
+        visibility: visible;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .main-nav-list li {
+        padding: 5px 10px;
+        border: 5px double var(--secondary-text);
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
 }
