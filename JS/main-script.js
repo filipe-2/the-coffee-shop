@@ -25,7 +25,6 @@ function goToTop() {
 
 // Function to go back to the bottom of the page
 function goToBottom() {
-    alert(document.documentElement.scrollHeight);
     window.scrollTo({
         top: document.documentElement.scrollHeight,
         behavior: 'smooth',
