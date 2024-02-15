@@ -52,7 +52,7 @@ ul {
 .highlight-one {
     font-family: var(--secondary-font);
     font-weight: bold;
-    color: var(--highlighted)
+    color: var(--secondary-text)
 }
 
 .highlight-two {
@@ -62,7 +62,7 @@ ul {
 }
 
 .highlight-three {
-    color: var(--highlighted);
+    color: var(--secondary-text);
 }
 
 .controls {
@@ -499,7 +499,6 @@ header:hover {
 
 .drink:hover::before {
     opacity: 1;
-
 }
 
 .drink img {
