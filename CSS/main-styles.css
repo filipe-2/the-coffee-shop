@@ -49,21 +49,20 @@ ul {
     padding: 0;
 }
 
-.container {
-    width: 90%;
-    margin: auto;
-}
-
 .highlight-one {
     font-family: var(--secondary-font);
     font-weight: bold;
-    color: var(--secondary-text)
+    color: var(--highlighted)
 }
 
 .highlight-two {
     font-family: var(--secondary-font);
     font-weight: bold;
     text-shadow: 0 0 15px var(--secondary-text);
+}
+
+.highlight-three {
+    color: var(--highlighted);
 }
 
 .controls {
@@ -440,10 +439,15 @@ header:hover {
 .drinks-list {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 50px;
     align-items: stretch;
+    gap: 25px;
     z-index: 1;
+    padding: 15px 25px;
+}
+
+.drinks-lists {
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
 .drink {
@@ -463,6 +467,21 @@ header:hover {
     cursor: pointer;
 }
 
+.drink::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #0000007f;
+    border-radius: inherit;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.drinks-lists:hover {
+    backdrop-filter: blur(10px);
+}
+
 .drinks .drink-title {
     font-family: var(--secondary-font);
     font-size: 35px;
@@ -476,6 +495,11 @@ header:hover {
 
 .drink:hover {
     transform: scale(1.03);
+}
+
+.drink:hover::before {
+    opacity: 1;
+
 }
 
 .drink img {
