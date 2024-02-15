@@ -3,20 +3,24 @@ function moveFirstSlideToEnd() {
     const slides = document.querySelector('.slides');
     const firstSlide = slides.firstElementChild;
 
-    slides.appendChild(firstSlide);
+    slides.appendChild(firstSlide); // Moves the first slide to the end
 }
 
 // Function to switch slides
 function switchSlide() {
     const activeSlide = document.querySelector('.slide.active');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no next slide, loop back to the first
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no slide next, loops back to the first
     const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loop back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no indicator next, loops back to the first
 
     activeSlide.classList.remove('active');
     activeSlideIndicator.classList.remove('checked');
     nextSlide.classList.add('active');
     nextSlideIndicator.classList.add('checked');
+
+    // Changes aria-current attribute to the current slide item
+    activeSlideIndicator.removeAttribute('aria-current');
+    nextSlideIndicator.setAttribute('aria-current', 'step');
 }
 
 // Function to start the slideshow
@@ -24,13 +28,13 @@ function startSlideshow() {
     setInterval(() => {
         moveFirstSlideToEnd();
         switchSlide();
-    }, 5000); // Switch slides every 5 seconds
+    }, 5000); // Switches slides every 5 seconds
 }
 
-// Start the slideshow when the page loads
+// Starts the slideshow when the page loads
 window.addEventListener('load', startSlideshow);
 
-// Handling scrolling controls and their visibility
+// Handles scroll buttons and their visibility
 window.addEventListener('scroll', function () {
     let scroll = document.querySelectorAll('.scrollBtn');
     let isOnBottom = (window.innerHeight + window.scrollY + 50) >= document.documentElement.offsetHeight;
@@ -40,7 +44,7 @@ window.addEventListener('scroll', function () {
     scrollTop.classList.toggle('active', window.scrollY > 0);
     scrollBottom.classList.toggle('active', !isOnBottom);
 
-    // Positioning the scrolling buttons based on the position inside the page 
+    // Positions the scrolling buttons based on the window
     if (this.window.scrollY <= 0 || isOnBottom) {
         scrollTop.style.marginBottom = '-50px';
     } else {

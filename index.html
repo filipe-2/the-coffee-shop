@@ -175,8 +175,8 @@
             </div>
 
             <div class="slider">
-                <button class="slider-button">
-                    <i class="fa fa-chevron-left"></i>
+                <button class="slider-button" onclick="prevSlide()" aria-label="Previous slide">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
                 <ul class="slide-indicators">
@@ -188,8 +188,8 @@
                     <li class="slide-indicator"><input type="radio" id="slide-four" name="showcase-slide"></li>
                 </ul>
 
-                <button class="slider-button">
-                    <i class="fa fa-chevron-right"></i>
+                <button class="slider-button" onclick="nextSlide()" aria-label="Next slide">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
         </section>
@@ -200,92 +200,162 @@
             </div>
 
             <div class="drinks-content">
-                <ul class="drinks-list">
-                    <li class="drink">
-                        <h3 class="drink-title">Americano</h3>
-                        <img src="./Images/americano.png" alt="Americano coffee drink.">
+                <ul class="drinks-lists">
+                    <ul class="drinks-list">
+                        <li class="drink">
+                            <img src="./Images/americano.png" alt="Americano coffee drink.">
+                            <h3 class="drink-title">Americano</h3>
 
-                        <div class="drink-description">
-                            <p>Savor the rich, bold flavors of our meticulously crafted
-                                Americano
-                                coffee, a quintessential favorite among coffee connoisseurs.</p>
-                            <p>Our Americano starts with a foundation of premium, carefully
-                                selected Arabica beans, sourced
-                                from the world's finest coffee regions. Each batch is expertly roasted to perfection,
-                                unlocking a symphony of flavors that dance on your palate with every sip.
-                            </p>
-                        </div>
+                            <!-- <div class="drink-description">
+                                <p>Savor the rich, bold flavors of our meticulously crafted
+                                    Americano
+                                    coffee, a quintessential favorite among coffee connoisseurs.</p>
+                                <p>Our Americano starts with a foundation of premium, carefully
+                                    selected Arabica beans, sourced
+                                    from the world's finest coffee regions. Each batch is expertly roasted to perfection,
+                                    unlocking a symphony of flavors that dance on your palate with every sip.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <button class="drink-description-button" aria-label="View details of Americano">See
-                            Drink</button>
-                    </li>
+                        <li class="drink">
+                            <img src="./Images/latte.png" alt="Latte coffee drink.">
+                            <h3 class="drink-title">Latte</h3>
 
-                    <li class="drink">
-                        <h3 class="drink-title">Latte</h3>
-                        <img src="./Images/latte.png" alt="Latte coffee drink.">
+                            <!-- <div class="drink-description">
+                                <p>Indulge in the epitome of coffee elegance with our exquisite
+                                    Latte,
+                                    a masterpiece crafted to captivate your senses and elevate your coffee experience.</p>
+    
+                                <p>Immerse yourself in the velvety embrace of perfectly steamed
+                                    milk,
+                                    expertly blended with
+                                    rich, aromatic espresso sourced from the finest Arabica beans. Each sip unfolds a
+                                    delicate
+                                    balance of creamy sweetness and robust espresso notes, harmoniously intertwined to
+                                    create a
+                                    symphony of flavor that lingers on your palate.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <div class="drink-description">
-                            <p>Indulge in the epitome of coffee elegance with our exquisite
-                                Latte,
-                                a masterpiece crafted to captivate your senses and elevate your coffee experience.</p>
+                        <li class="drink">
+                            <img src="./Images/coffee-machiatto.png" alt="Macchiato coffee drink.">
+                            <h3 class="drink-title">Macchiato</h3>
 
-                            <p>Immerse yourself in the velvety embrace of perfectly steamed
-                                milk,
-                                expertly blended with
-                                rich, aromatic espresso sourced from the finest Arabica beans. Each sip unfolds a
-                                delicate
-                                balance of creamy sweetness and robust espresso notes, harmoniously intertwined to
-                                create a
-                                symphony of flavor that lingers on your palate.
-                            </p>
-                        </div>
+                            <!-- <div class="drink-description">
+                                <p>Embark on a journey of refined taste and exquisite
+                                    craftsmanship
+                                    with our distinguished Macchiato, a testament to the artistry of coffee-making.</p>
+    
+                                <p>A harmonious blend of velvety espresso and delicately frothed
+                                    milk,
+                                    our Macchiato is a
+                                    masterpiece of balance and flavor. With each sip, experience the perfect marriage of
+                                    bold
+                                    espresso intensity and creamy smoothness, delicately accented by a touch of frothy
+                                    sweetness.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <button class="drink-description-button" aria-label="View details of Latte">See Drink</button>
-                    </li>
+                        <li class="drink">
+                            <img src="./Images/lungo.png" alt="Lungo coffee drink.">
+                            <h3 class="drink-title">Lungo</h3>
 
-                    <li class="drink">
-                        <h3 class="drink-title">Macchiato</h3>
-                        <img src="./Images/coffee-machiatto.png" alt="Macchiato coffee drink.">
+                            <!-- <div class="drink-description">
+                                <p class="drink-description">Unveil the depths of coffee complexity with our distinguished
+                                    Lungo, a testament to the bold and unyielding spirit of true coffee aficionados.</p>
+    
+                                <p class="drink-description">Experience the unparalleled intensity of our Lungo, crafted
+                                    from
+                                    the finest Arabica beans
+                                    sourced from the world's most renowned coffee estates. Delve into a sensory adventure as
+                                    each sip reveals layers of robust flavor, enveloping your palate in a rich tapestry of
+                                    depth
+                                    and character.
+                                </p>
+                            </div> -->
+                        </li>
+                    </ul>
 
-                        <div class="drink-description">
-                            <p>Embark on a journey of refined taste and exquisite
-                                craftsmanship
-                                with our distinguished Macchiato, a testament to the artistry of coffee-making.</p>
+                    <ul class="drinks-list">
+                        <li class="drink">
+                            <img src="./Images/doppio.jpg" alt="Doppio coffee drink.">
+                            <h3 class="drink-title">Doppio</h3>
 
-                            <p>A harmonious blend of velvety espresso and delicately frothed
-                                milk,
-                                our Macchiato is a
-                                masterpiece of balance and flavor. With each sip, experience the perfect marriage of
-                                bold
-                                espresso intensity and creamy smoothness, delicately accented by a touch of frothy
-                                sweetness.
-                            </p>
-                        </div>
+                            <!-- <div class="drink-description">
+                                <p>Savor the rich, bold flavors of our meticulously crafted
+                                    Americano
+                                    coffee, a quintessential favorite among coffee connoisseurs.</p>
+                                <p>Our Americano starts with a foundation of premium, carefully
+                                    selected Arabica beans, sourced
+                                    from the world's finest coffee regions. Each batch is expertly roasted to perfection,
+                                    unlocking a symphony of flavors that dance on your palate with every sip.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <button class="drink-description-button" aria-label="View details of Macchiato">See
-                            Drink</button>
-                    </li>
+                        <li class="drink">
+                            <img src="./Images/mocha.jpg" alt="Mocha coffee drink.">
+                            <h3 class="drink-title">Mocha</h3>
 
-                    <li class="drink">
-                        <h3 class="drink-title">Lungo</h3>
-                        <img src="./Images/lungo.png" alt="Lungo coffee drink.">
+                            <!-- <div class="drink-description">
+                                <p>Indulge in the epitome of coffee elegance with our exquisite
+                                    Latte,
+                                    a masterpiece crafted to captivate your senses and elevate your coffee experience.</p>
+    
+                                <p>Immerse yourself in the velvety embrace of perfectly steamed
+                                    milk,
+                                    expertly blended with
+                                    rich, aromatic espresso sourced from the finest Arabica beans. Each sip unfolds a
+                                    delicate
+                                    balance of creamy sweetness and robust espresso notes, harmoniously intertwined to
+                                    create a
+                                    symphony of flavor that lingers on your palate.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <div class="drink-description">
-                            <p class="drink-description">Unveil the depths of coffee complexity with our distinguished
-                                Lungo, a testament to the bold and unyielding spirit of true coffee aficionados.</p>
+                        <li class="drink">
+                            <img src="./Images/cappuccino.png" alt="Cappuccino coffee drink.">
+                            <h3 class="drink-title">Cappuccino</h3>
 
-                            <p class="drink-description">Experience the unparalleled intensity of our Lungo, crafted
-                                from
-                                the finest Arabica beans
-                                sourced from the world's most renowned coffee estates. Delve into a sensory adventure as
-                                each sip reveals layers of robust flavor, enveloping your palate in a rich tapestry of
-                                depth
-                                and character.
-                            </p>
-                        </div>
+                            <!-- <div class="drink-description">
+                                <p>Embark on a journey of refined taste and exquisite
+                                    craftsmanship
+                                    with our distinguished Macchiato, a testament to the artistry of coffee-making.</p>
+    
+                                <p>A harmonious blend of velvety espresso and delicately frothed
+                                    milk,
+                                    our Macchiato is a
+                                    masterpiece of balance and flavor. With each sip, experience the perfect marriage of
+                                    bold
+                                    espresso intensity and creamy smoothness, delicately accented by a touch of frothy
+                                    sweetness.
+                                </p>
+                            </div> -->
+                        </li>
 
-                        <button class="drink-description-button" aria-label="View details of Lungo">See Drink</button>
-                    </li>
+                        <li class="drink">
+                            <img src="./Images/affogato.jpg" alt="Affogato drink.">
+                            <h3 class="drink-title">Affogato</h3>
+
+                            <!-- <div class="drink-description">
+                                <p class="drink-description">Unveil the depths of coffee complexity with our distinguished
+                                    Lungo, a testament to the bold and unyielding spirit of true coffee aficionados.</p>
+    
+                                <p class="drink-description">Experience the unparalleled intensity of our Lungo, crafted
+                                    from
+                                    the finest Arabica beans
+                                    sourced from the world's most renowned coffee estates. Delve into a sensory adventure as
+                                    each sip reveals layers of robust flavor, enveloping your palate in a rich tapestry of
+                                    depth
+                                    and character.
+                                </p>
+                            </div> -->
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </section>
@@ -293,9 +363,10 @@
 
     <!-- Scrolling control buttons -->
     <section class="controls">
-        <button onclick="goToTop()" class="scrollBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
-        <button onclick="goToBottom()" class="scrollBtn active" title="Go to bottom"><i
-                class="fa fa-chevron-down"></i></button>
+        <button onclick="goToTop()" class="scrollBtn" title="Go to top" aria-label="Go to the top of the page"><i
+                class="fa fa-chevron-up" aria-hidden="true"></i></button>
+        <button onclick="goToBottom()" class="scrollBtn active" title="Go to bottom"
+            aria-label="Go to the bottom of the page"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
     </section>
 
     <footer>
