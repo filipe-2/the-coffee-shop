@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function () {
     let scroll = document.querySelectorAll('.scrollBtn');
-    let isOnBottom = (window.innerHeight + window.scrollY) >= document.documentElement.offsetHeight;
+    let isOnBottom = (window.innerHeight + window.scrollY + 50) >= document.documentElement.offsetHeight;
     let scrollTop = scroll[0];
     let scrollBottom = scroll[1];
 
@@ -25,6 +25,7 @@ function goToTop() {
 
 // Function to go back to the bottom of the page
 function goToBottom() {
+    alert(document.documentElement.scrollHeight);
     window.scrollTo({
         top: document.documentElement.scrollHeight,
         behavior: 'smooth',
