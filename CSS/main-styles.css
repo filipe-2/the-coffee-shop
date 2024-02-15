@@ -263,19 +263,31 @@ header:hover {
     text-align: center;
 }
 
-.showcase .content {
-    padding: 1px 0;
-    width: 100%;
+.showcase .slides {
     min-height: 100vh;
+    position: relative;
 }
 
-.showcase .content::before {
+.showcase .slide {
+    padding: 1px 0;
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.showcase .slide::before {
     position: absolute;
     content: '';
     inset: 0;
     background: #0000007f;
-    width: 100%;
-    height: 100%;
+}
+
+.showcase .slide.active {
+    opacity: 1;
+}
+
+.showcase .slide:not(.active) {
+    position: absolute;
 }
 
 .showcase .slide-img {
@@ -287,13 +299,12 @@ header:hover {
 }
 
 .showcase .slide-description-container {
-    min-height: max-content;
-    margin: 150px 50px 50px;
+    margin: 150px 35px 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 50px 25px;
     background-color: #0000007f;
     border-radius: 20px;
     position: relative;
@@ -313,8 +324,10 @@ header:hover {
 }
 
 .showcase .slider {
-    position: relative;
-    margin: 0 auto 25px;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
     width: max-content;
     display: flex;
     justify-content: center;
@@ -438,9 +451,15 @@ header:hover {
     padding: 10px;
     margin: 5px 0;
     border-radius: 25px;
-    background-color: var(--primary-backgroud);
+    background-color: #160900cc;
     box-shadow: 5px 5px 15px var(--primary-backgroud);
     position: relative;
+    transition: 0.3s;
+    border: 2px solid var(--highlighted);
+}
+
+.drink:hover {
+    transform: scale(1.03);
 }
 
 .drinks .drink-title {
@@ -477,6 +496,12 @@ header:hover {
     padding: 5px 0;
     cursor: pointer;
     box-shadow: 0 0 15px var(--highlighted);
+    transition: 0.3s;
+}
+
+.drink-description-button:hover {
+    color: var(--highlighted);
+    box-shadow: 0 0 20px var(--highlighted);
 }
 
 
