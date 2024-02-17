@@ -264,6 +264,7 @@ header:hover {
 
 .showcase .slides {
     min-height: 100vh;
+    min-height: 100svh;
     position: relative;
 }
 
@@ -271,6 +272,8 @@ header:hover {
     padding: 1px 0;
     min-height: 100vh;
     opacity: 0;
+    visibility: hidden;
+    /* Hide non-active slides */
     transition: opacity 0.5s ease;
 }
 
@@ -283,6 +286,8 @@ header:hover {
 
 .showcase .slide.active {
     opacity: 1;
+    z-index: 1;
+    visibility: visible;
 }
 
 .showcase .slide:not(.active) {
@@ -430,7 +435,7 @@ header:hover {
 
 .drinks-content {
     width: 100%;
-    min-height: 100vh;
+    min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,16 +443,12 @@ header:hover {
 
 .drinks-list {
     display: flex;
-    justify-content: center;
-    align-items: stretch;
     gap: 25px;
-    z-index: 1;
     padding: 15px 25px;
-}
-
-.drinks-lists {
-    border-radius: 20px;
+    margin: 100px auto 25px;
     transition: 0.3s;
+    position: absolute;
+    left: 0;
 }
 
 .drink {
@@ -455,10 +456,10 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 250px;
+    min-width: 225px;
     min-height: 200px;
     padding: 10px;
-    margin: 5px 0;
+    margin: 25px 0;
     border-radius: 25px;
     background-color: #160900cc;
     box-shadow: 10px 10px 20px var(--primary-backgroud);
@@ -478,7 +479,7 @@ header:hover {
     transition: 0.3s;
 }
 
-.drinks-lists:hover {
+.drinks-list:hover {
     backdrop-filter: blur(10px);
 }
 
@@ -657,7 +658,7 @@ footer:hover {
 
 /* Media queries */
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .main-nav-list {
         visibility: visible;
         display: flex;
