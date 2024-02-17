@@ -138,7 +138,7 @@ function startSlideshow() {
 window.addEventListener('load', startSlideshow);
 
 
-
+// CONTROLS //
 
 // Handles scroll buttons and their visibility
 window.addEventListener('scroll', function () {
