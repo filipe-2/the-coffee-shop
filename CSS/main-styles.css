@@ -7,7 +7,7 @@
     --highlighted: rgb(255, 106, 0);
 
     --primary-backgroud: #000;
-    --secondary-background: #252525;
+    --secondary-background: #0000007f;
 
     --primary-font: 'Cormorant SC', serif;
     --secondary-font: 'Great Vibes', cursive;
@@ -82,7 +82,7 @@ ul {
 }
 
 .scrollBtn {
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     font-size: 18px;
     border: 5px double var(--highlighted);
     color: white;
@@ -115,7 +115,7 @@ header {
     width: 100%;
     box-shadow: 0px 0 50px var(--secondary-text);
     z-index: 100;
-    background: url(../Images/coffee-beans.png);
+    background: url('../Images/coffee-beans.png');
     background-color: var(--primary-backgroud);
     background-size: cover;
     background-position: center;
@@ -127,7 +127,7 @@ header {
     position: absolute;
     inset: 0;
     border-bottom: 3px double var(--secondary-text);
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
 }
 
 .main-nav {
@@ -253,7 +253,7 @@ header:hover {
     position: absolute;
     z-index: 1;
     inset: 0 0 auto 0;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
 }
 
 .showcase .section-title {
@@ -273,7 +273,6 @@ header:hover {
     min-height: 100vh;
     opacity: 0;
     visibility: hidden;
-    /* Hide non-active slides */
     transition: opacity 0.5s ease;
 }
 
@@ -281,7 +280,7 @@ header:hover {
     position: absolute;
     content: '';
     inset: 0;
-    background: #0000007f;
+    background: var(--secondary-background);
 }
 
 .showcase .slide.active {
@@ -309,7 +308,7 @@ header:hover {
     justify-content: center;
     align-items: center;
     padding: 50px 25px;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     border-radius: 20px;
     position: relative;
 }
@@ -342,7 +341,7 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     border: 5px solid var(--highlighted);
     border-radius: 20px;
     transition: 0.3s;
@@ -360,7 +359,7 @@ header:hover {
     border-radius: 50%;
     border: 5px solid var(--highlighted);
     margin: 0 15px;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     color: var(--primary-text);
     cursor: pointer;
     transition: 0.3s;
@@ -405,7 +404,7 @@ header:hover {
 .drinks {
     position: relative;
     overflow: hidden;
-    background: url(../Images/coffee-background.jpg);
+    background: url('../Images/coffee-background.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0 50px var(--secondary-text);
@@ -416,14 +415,14 @@ header:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
 }
 
 .drinks-title-container {
     position: absolute;
     text-align: center;
     inset: 0 0 auto 0;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     min-height: 85px;
 }
 
@@ -461,7 +460,7 @@ header:hover {
     padding: 10px;
     margin: 25px 0;
     border-radius: 25px;
-    background-color: #160900cc;
+    background-color: var(--secondary-background);
     box-shadow: 10px 10px 20px var(--primary-backgroud);
     position: relative;
     transition: 0.3s;
@@ -472,7 +471,7 @@ header:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     border-radius: inherit;
     z-index: 1;
     opacity: 0;
@@ -490,7 +489,7 @@ header:hover {
     position: absolute;
     z-index: 1;
     padding: 10px 15px;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     border-radius: inherit;
 }
 
@@ -546,7 +545,7 @@ header:hover {
 /* Footer */
 
 footer {
-    background: url(../Images/coffee-beans.png);
+    background: url('../Images/coffee-beans.png');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -570,7 +569,7 @@ footer:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     z-index: 1;
     border-top: 3px double var(--secondary-text);
 }
@@ -650,7 +649,7 @@ footer:hover {
     padding: 10px;
     margin: 10px;
     border-radius: 20px;
-    background-color: #0000007f;
+    background-color: var(--secondary-background);
     position: relative;
     z-index: 1;
 }
