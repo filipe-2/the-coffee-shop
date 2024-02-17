@@ -1,3 +1,31 @@
+// HEADER //
+
+// Selects hamburger menu and it's icon
+const hamburger = document.querySelector('.hamburger-menu');
+const hamburgerIcon = document.querySelector('.hamburger-menu i');
+const mainNavList = document.querySelector('.main-nav-list')
+
+// Handles clicks on the hamburger menu
+hamburger.addEventListener('click', function () {
+    // Toggles the 'open' and 'closed' classes of the hamburger
+    hamburger.classList.toggle('open');
+    hamburger.classList.toggle('closed');
+
+    // Toggles the hamburger icons
+    hamburgerIcon.classList.toggle('fa-bars-staggered');
+    hamburgerIcon.classList.toggle('fa-bars');
+
+    // Displays the nav list when the hamburger is open and hides when it's closed
+    if (hamburger.classList.contains('open')) {
+        mainNavList.classList.add('visible');
+    } else if (hamburger.classList.contains('closed')) {
+        mainNavList.classList.remove('visible');
+    }
+});
+
+
+// SHOWCASE //
+
 let autoplayInterval;
 
 // Function to switch slides
@@ -108,6 +136,7 @@ function startSlideshow() {
 
 // Starts the slideshow when the page loads
 window.addEventListener('load', startSlideshow);
+
 
 
 

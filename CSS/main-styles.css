@@ -191,7 +191,19 @@ header:hover {
 }
 
 .main-nav-list {
-    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.main-nav-list li {
+    padding: 5px 10px;
+    border: 5px double var(--secondary-text);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .main-nav-list li:hover {
@@ -231,12 +243,20 @@ header:hover {
 }
 
 .hamburger-menu {
+    display: none;
     background-color: transparent;
     border: none;
     color: var(--highlighted);
     font-size: 30px;
     cursor: pointer;
     z-index: 1;
+    transition: 0.3s;
+    padding: 5px 8px;
+}
+
+.hamburger-menu:hover {
+    background-color: #d2691e34;
+    border-radius: 50%;
 }
 
 
@@ -263,7 +283,9 @@ header:hover {
 }
 
 .showcase .slides {
+    /* Fallback for browsers that don't support svh */
     min-height: 100vh;
+
     min-height: 100svh;
     position: relative;
 }
@@ -657,25 +679,33 @@ footer:hover {
 
 /* Media queries */
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
+    .hamburger-menu {
+        display: inline;
+    }
+
     .main-nav-list {
-        visibility: visible;
-        display: flex;
+        position: absolute;
+        inset: 0 -100% auto auto;
+        visibility: hidden;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #000000ee;
+        width: 100%;
+        height: 100vh;
         justify-content: center;
-        align-items: center;
-        z-index: 1;
+
+    }
+
+    .main-nav-list.visible {
+        left: 0;
+        visibility: visible;
     }
 
     .main-nav-list li {
-        padding: 5px 10px;
-        border: 5px double var(--secondary-text);
-        border-radius: 50%;
-        margin: 0 10px;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .hamburger-menu {
-        display: none;
+        width: 75%;
+        max-width: 350px;
+        text-align: center;
+        border-radius: 10px;
     }
 }
