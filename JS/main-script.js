@@ -2,16 +2,16 @@
 
 let lastScrollTop = 0; // Stores the last vertical scrolling position. Zero by default
 
-const header = document.querySelector('header'); // Selects the header
+const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 
 window.addEventListener('scroll', function () {
     let currentScrollTop = window.scrollY || document.documentElement.scrollTop; // Stores the current scrolling position
 
     // Toggles the visibility of the navbar based on the scrolling position
     if (currentScrollTop > lastScrollTop) {
-        header.style.top = '-100px';
+        navbar.style.top = '-100px';
     } else {
-        header.style.top = '100px';
+        navbar.style.top = '100px';
     }
 
     lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
