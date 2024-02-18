@@ -78,7 +78,7 @@ ul {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10;
+    z-index: 5;
 }
 
 .controls .scrollBtn:first-child {
@@ -115,22 +115,23 @@ ul {
 /* HEADER */
 
 header {
+    margin-top: -100px;
     position: fixed;
+    z-index: 10;
     width: 100%;
     box-shadow: 0px 0 50px var(--secondary-text);
-    z-index: 100;
     background: url('../Images/coffee-beans.png');
     background-color: var(--bg-dark-one);
     background-size: cover;
     background-position: center;
     transition: 0.3s;
+    border-bottom: 3px double var(--highlighted);
 }
 
-.main-nav::before {
+header::before {
     content: '';
     position: absolute;
     inset: 0;
-    border-bottom: 3px double var(--secondary-text);
     background-color: var(--bg-dark-three);
 }
 
@@ -142,14 +143,12 @@ header {
     max-width: 1140px;
     margin: auto;
     min-height: 100px;
-}
-
-.main-nav:hover::before {
-    border-bottom: 3px solid var(--highlighted);
+    z-index: 10;
 }
 
 header:hover {
     box-shadow: 0px 0 55px var(--highlighted);
+    border-bottom-style: solid;
 }
 
 .branding {
@@ -198,6 +197,7 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px 5px;
     z-index: 1;
 }
 
@@ -282,15 +282,15 @@ header:hover {
 /* SHOWCASE */
 
 .showcase {
+    margin-top: 100px;
+    padding: 1px 0;
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
 }
 
 .showcase .section-title-container {
-    margin-top: 100px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     inset: 0 0 auto 0;
     background-color: var(--bg-dark-three);
 }
@@ -315,6 +315,7 @@ header:hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease;
+    position: relative
 }
 
 .showcase .slide::before {
@@ -369,6 +370,7 @@ header:hover {
 
 .showcase .slider {
     position: absolute;
+    z-index: 1;
     bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
@@ -705,6 +707,7 @@ footer:hover {
     }
 
     .main-nav-list {
+        display: none;
         position: absolute;
         inset: 0 -100% auto auto;
         visibility: hidden;
@@ -713,7 +716,7 @@ footer:hover {
         background: url('../Images/coffee-beans.png');
         background-color: var(--bg-dark-one);
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         justify-content: center;
     }
 
@@ -728,6 +731,7 @@ footer:hover {
     .main-nav-list.visible {
         left: 0;
         visibility: visible;
+        display: flex;
     }
 
     .main-nav-list li {

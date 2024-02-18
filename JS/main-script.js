@@ -5,6 +5,15 @@ const hamburger = document.querySelector('.hamburger-menu');
 const hamburgerIcon = document.querySelector('.hamburger-menu i');
 const mainNavList = document.querySelector('.main-nav-list')
 
+// Function to toggle scroll lock based on window width and hamburger menu state
+function toggleScrollLock() {
+    if (window.innerWidth < 800 && hamburger.classList.contains('open')) {
+        document.body.style.overflowY = 'hidden';
+    } else {
+        document.body.style.overflowY = 'auto';
+    }
+}
+
 // Handles clicks on the hamburger menu
 hamburger.addEventListener('click', function () {
     // Toggles the 'open' and 'closed' classes of the hamburger
@@ -15,13 +24,15 @@ hamburger.addEventListener('click', function () {
     hamburgerIcon.classList.toggle('fa-bars-staggered');
     hamburgerIcon.classList.toggle('fa-bars');
 
-    // Displays the nav list when the hamburger is open and hides when it's closed
-    if (hamburger.classList.contains('open')) {
-        mainNavList.classList.add('visible');
-    } else if (hamburger.classList.contains('closed')) {
-        mainNavList.classList.remove('visible');
-    }
+    // Toggles the visibility of the nav list
+    mainNavList.classList.toggle('visible');
+
+    // Toggles the scroll lock
+    toggleScrollLock();
 });
+
+// Listens for window resize events to update scroll lock
+window.addEventListener('resize', toggleScrollLock);
 
 
 // SHOWCASE //
