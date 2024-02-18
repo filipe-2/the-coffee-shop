@@ -4,17 +4,21 @@
 :root {
     --primary-text: white;
     --secondary-text: chocolate;
+
     --highlighted: rgb(255, 106, 0);
 
-    --primary-backgroud: #000;
-    --secondary-background: #0000007f;
+    --bg-dark-one: #000;
+    --bg-dark-two: #000000ee;
+    --bg-dark-three: #0000007f;
 
     --primary-font: 'Cormorant SC', serif;
     --secondary-font: 'Great Vibes', cursive;
+
+    --menu-bg: #d2691e34;
 }
 
 
-/* Global */
+/* GLOBAL */
 
 *,
 *::after,
@@ -27,7 +31,7 @@ body {
     padding: 0;
     color: var(--primary-text);
     font-family: var(--primary-font);
-    background-color: var(--primary-backgroud);
+    background-color: var(--bg-dark-one);
 }
 
 h1,
@@ -74,7 +78,7 @@ ul {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 10;
 }
 
 .controls .scrollBtn:first-child {
@@ -82,15 +86,15 @@ ul {
 }
 
 .scrollBtn {
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     font-size: 18px;
     border: 5px double var(--highlighted);
-    color: white;
+    color: var(--primary-text);
     cursor: pointer;
     padding: 5px;
     border-radius: 50%;
     transition: 0.3s;
-    box-shadow: 5px 5px 10px var(--primary-backgroud);
+    box-shadow: 5px 5px 10px var(--bg-dark-one);
     opacity: 0;
     visibility: hidden;
 }
@@ -108,7 +112,7 @@ ul {
 }
 
 
-/* Header */
+/* HEADER */
 
 header {
     position: fixed;
@@ -116,7 +120,7 @@ header {
     box-shadow: 0px 0 50px var(--secondary-text);
     z-index: 100;
     background: url('../Images/coffee-beans.png');
-    background-color: var(--primary-backgroud);
+    background-color: var(--bg-dark-one);
     background-size: cover;
     background-position: center;
     transition: 0.3s;
@@ -127,12 +131,12 @@ header {
     position: absolute;
     inset: 0;
     border-bottom: 3px double var(--secondary-text);
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
 }
 
 .main-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
     max-width: 1140px;
@@ -204,11 +208,20 @@ header:hover {
     margin: 0 10px;
     transition: 0.3s;
     cursor: pointer;
+    position: relative;
 }
 
 .main-nav-list li:hover {
     box-shadow: 0px 0px 15px var(--secondary-text);
     border: 5px solid var(--secondary-text);
+}
+
+.main-nav-list i {
+    float: left;
+    color: var(--secondary-text);
+    margin: 2px 5px 2px 0;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
 .main-nav-list a {
@@ -217,13 +230,14 @@ header:hover {
     transition: 0.3s;
 }
 
-.main-nav-list li:hover a {
+.main-nav-list li:hover a,
+.main-nav-list li:hover i {
     color: var(--secondary-text);
-    padding: 8px 12px;
     font-size: 20px;
 }
 
 .main-nav-list .plans {
+    color: var(--highlighted);
     border: 5px solid var(--highlighted);
     box-shadow: 0px 0px 15px var(--highlighted);
     transition: 0.3s;
@@ -234,11 +248,17 @@ header:hover {
     border-color: var(--highlighted);
 }
 
-.plans a {
+.main-nav-list .plans a {
     transition: 0.3s;
+    color: var(--highlighted);
 }
 
-.main-nav-list .plans:hover a {
+.main-nav-list .plans i {
+    color: var(--highlighted);
+}
+
+.main-nav-list .plans:hover a,
+.main-nav-list .plans:hover i {
     color: var(--highlighted);
 }
 
@@ -255,12 +275,12 @@ header:hover {
 }
 
 .hamburger-menu:hover {
-    background-color: #d2691e34;
+    background-color: var(--menu-bg);
     border-radius: 50%;
 }
 
 
-/* Showcase */
+/* SHOWCASE */
 
 .showcase {
     position: relative;
@@ -273,7 +293,7 @@ header:hover {
     position: absolute;
     z-index: 1;
     inset: 0 0 auto 0;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
 }
 
 .showcase .section-title {
@@ -302,7 +322,7 @@ header:hover {
     position: absolute;
     content: '';
     inset: 0;
-    background: var(--secondary-background);
+    background: var(--bg-dark-three);
 }
 
 .showcase .slide.active {
@@ -330,7 +350,7 @@ header:hover {
     justify-content: center;
     align-items: center;
     padding: 50px 25px;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     border-radius: 20px;
     position: relative;
 }
@@ -363,11 +383,11 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     border: 5px solid var(--highlighted);
     border-radius: 20px;
     transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--primary-backgroud);
+    box-shadow: 5px 5px 15px var(--bg-dark-one);
 }
 
 .showcase .slide-indicators:hover {
@@ -381,11 +401,11 @@ header:hover {
     border-radius: 50%;
     border: 5px solid var(--highlighted);
     margin: 0 15px;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     color: var(--primary-text);
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--primary-backgroud);
+    box-shadow: 5px 5px 15px var(--bg-dark-one);
 }
 
 .showcase .slide-indicator input {
@@ -407,12 +427,12 @@ header:hover {
 
 .showcase .slide-indicator.checked {
     border: 5px solid var(--highlighted);
-    background-color: var(--primary-backgroud);
+    background-color: var(--bg-dark-one);
 }
 
 .showcase .slide-indicator:hover {
     border: 5px solid var(--secondary-text);
-    background-color: var(--primary-backgroud);
+    background-color: var(--bg-dark-one);
 }
 
 .showcase .slider-button:hover {
@@ -421,7 +441,8 @@ header:hover {
     box-shadow: 0px 0px 10px var(--highlighted);
 }
 
-/* Drinks */
+
+/* DRINKS */
 
 .drinks {
     position: relative;
@@ -437,14 +458,14 @@ header:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
 }
 
 .drinks-title-container {
     position: absolute;
     text-align: center;
     inset: 0 0 auto 0;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     min-height: 85px;
 }
 
@@ -482,8 +503,8 @@ header:hover {
     padding: 10px;
     margin: 25px 0;
     border-radius: 25px;
-    background-color: var(--secondary-background);
-    box-shadow: 10px 10px 20px var(--primary-backgroud);
+    background-color: var(--bg-dark-three);
+    box-shadow: 10px 10px 20px var(--bg-dark-one);
     position: relative;
     transition: 0.3s;
     cursor: pointer;
@@ -493,7 +514,7 @@ header:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     border-radius: inherit;
     z-index: 1;
     opacity: 0;
@@ -511,7 +532,7 @@ header:hover {
     position: absolute;
     z-index: 1;
     padding: 10px 15px;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     border-radius: inherit;
 }
 
@@ -564,7 +585,7 @@ header:hover {
 }
 
 
-/* Footer */
+/* FOOTER */
 
 footer {
     background: url('../Images/coffee-beans.png');
@@ -591,7 +612,7 @@ footer:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     z-index: 1;
     border-top: 3px double var(--secondary-text);
 }
@@ -671,13 +692,13 @@ footer:hover {
     padding: 10px;
     margin: 10px;
     border-radius: 20px;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-dark-three);
     position: relative;
     z-index: 1;
 }
 
 
-/* Media queries */
+/* MEDIA QUERIES */
 
 @media (max-width: 800px) {
     .hamburger-menu {
@@ -690,11 +711,18 @@ footer:hover {
         visibility: hidden;
         flex-direction: column;
         gap: 30px;
-        background-color: #000000ee;
+        background: url('../Images/coffee-beans.png');
+        background-color: var(--bg-dark-one);
         width: 100%;
         height: 100vh;
         justify-content: center;
+    }
 
+    .main-nav-list::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: var(--bg-dark-three)
     }
 
     .main-nav-list.visible {
@@ -707,5 +735,10 @@ footer:hover {
         max-width: 350px;
         text-align: center;
         border-radius: 10px;
+        background-color: var(--bg-dark-two);
+    }
+
+    .main-nav-list i {
+        margin-right: 0;
     }
 }
