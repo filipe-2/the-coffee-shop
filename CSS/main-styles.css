@@ -5,9 +5,9 @@
     --primary-text: white;
     --secondary-text: chocolate;
 
-    --highlighted: rgb(255, 106, 0);
+    --highlighted: #ff6a00;
 
-    --bg-dark-one: #000;
+    --bg-dark-one: black;
     --bg-dark-two: #000000ee;
     --bg-dark-three: #0000007f;
 
@@ -208,7 +208,6 @@ header:hover {
     margin: 0 10px;
     transition: 0.3s;
     cursor: pointer;
-    position: relative;
 }
 
 .main-nav-list li:hover {
@@ -722,7 +721,8 @@ footer:hover {
         content: '';
         position: absolute;
         inset: 0;
-        background-color: var(--bg-dark-three)
+        background-color: var(--bg-dark-three);
+        z-index: -1;
     }
 
     .main-nav-list.visible {
