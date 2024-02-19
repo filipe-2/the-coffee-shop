@@ -707,10 +707,10 @@ footer:hover {
     }
 
     .main-nav-list {
-        display: none;
         position: absolute;
-        inset: 0 -100% auto auto;
+        inset: 0;
         visibility: hidden;
+        opacity: 0;
         flex-direction: column;
         gap: 30px;
         background: url('../Images/coffee-beans.png');
@@ -718,6 +718,7 @@ footer:hover {
         width: 100%;
         min-height: 100vh;
         justify-content: center;
+        transition: 0.3s;
     }
 
     .main-nav-list::before {
@@ -731,6 +732,7 @@ footer:hover {
     .main-nav-list.visible {
         left: 0;
         visibility: visible;
+        opacity: 1;
         display: flex;
     }
 

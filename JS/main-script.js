@@ -8,7 +8,7 @@ window.addEventListener('scroll', function () {
     let currentScrollTop = window.scrollY || document.documentElement.scrollTop; // Stores the current scrolling position
 
     // Toggles the visibility of the navbar based on the scrolling position
-    if (currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
+    if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
         navbar.style.transform = 'translateY(-100px)';
     } else {
         navbar.style.transform = 'translateY(0)';
@@ -20,16 +20,10 @@ window.addEventListener('scroll', function () {
 // Selects hamburger menu and it's icon
 const hamburger = document.querySelector('.hamburger-menu');
 const hamburgerIcon = document.querySelector('.hamburger-menu i');
-const mainNavList = document.querySelector('.main-nav-list')
+const mainNavList = document.querySelector('.main-nav-list');
 
 // Function to toggle scroll lock based on window width and hamburger menu state
-function toggleScrollLock() {
-    if (window.innerWidth < 800 && hamburger.classList.contains('open')) {
-        document.body.style.overflowY = 'hidden';
-    } else {
-        document.body.style.overflowY = 'auto';
-    }
-}
+
 
 // Handles clicks on the hamburger menu
 hamburger.addEventListener('click', function () {
