@@ -8,10 +8,10 @@ window.addEventListener('scroll', function () {
     let currentScrollTop = window.scrollY || document.documentElement.scrollTop; // Stores the current scrolling position
 
     // Toggles the visibility of the navbar based on the scrolling position
-    if (currentScrollTop > lastScrollTop) {
-        navbar.style.top = '-100px';
+    if (currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
+        navbar.style.transform = 'translateY(-100px)';
     } else {
-        navbar.style.top = '100px';
+        navbar.style.transform = 'translateY(0)';
     }
 
     lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
