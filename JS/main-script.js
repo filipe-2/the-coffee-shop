@@ -37,13 +37,7 @@ hamburger.addEventListener('click', function () {
 
     // Toggles the visibility of the nav list
     mainNavList.classList.toggle('visible');
-
-    // Toggles the scroll lock
-    toggleScrollLock();
 });
-
-// Listens for window resize events to update scroll lock
-window.addEventListener('resize', toggleScrollLock);
 
 
 // SHOWCASE //
