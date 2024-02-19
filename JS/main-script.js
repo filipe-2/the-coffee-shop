@@ -145,7 +145,7 @@ function startSlideshow() {
     const slideIndicators = document.querySelectorAll('.slide-indicator');
 
     // Binds manual sliding functions to slider indicators
-    slideIndicators.forEach(function (indicator, index) {
+    slideIndicators.forEach(function (indicator) {
         indicator.addEventListener('click', slideThroughIndicators);
     })
 }
