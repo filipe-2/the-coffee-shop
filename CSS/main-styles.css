@@ -81,7 +81,7 @@ section {
 .section-title-container {
     position: absolute;
     z-index: 2;
-    inset: 0 0 auto 0;
+    inset: 0 0 auto;
     background-color: var(--bg-dark-three);
 }
 
