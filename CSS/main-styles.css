@@ -73,6 +73,88 @@ ul {
     color: var(--secondary-text);
 }
 
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title-container {
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto 0;
+    background-color: var(--bg-dark-three);
+}
+
+.section-title {
+    font-size: 25px;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.slides {
+    /* Fallback for browsers that don't support svh */
+    min-height: 100vh;
+
+    min-height: 100svh;
+    position: relative;
+}
+
+.slide {
+    padding: 1px 0;
+    min-height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.slide::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: var(--bg-dark-three);
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+.slide-img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.slide-description-container {
+    margin: 200px auto 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 25px;
+    background-color: var(--bg-dark-three);
+    border-radius: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 1140px;
+}
+
+.slide-description {
+    text-align: justify;
+    letter-spacing: 2.5px;
+    line-height: 25px;
+}
+
+.slide-title {
+    font-family: var(--secondary-font);
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
 .controls {
     display: flex;
     flex-direction: column;
@@ -124,7 +206,7 @@ header {
     z-index: 10;
     width: 100%;
     box-shadow: 0px 0 50px var(--secondary-text);
-    background: url('../Images/coffee-beans.png');
+    background: url('../assets/coffee-beans.png');
     background-color: var(--bg-dark-one);
     background-size: cover;
     background-position: center;
@@ -175,6 +257,15 @@ header:hover {
     transition: 0.3s;
 }
 
+.main-nav .title:hover {
+    border-style: solid;
+    border-left: none;
+    box-shadow: 0px 0px 15px var(--highlighted);
+    color: var(--highlighted);
+    font-size: 27px;
+    padding: 5px 25px;
+}
+
 .title-img {
     width: 50px;
     height: 50px;
@@ -188,15 +279,6 @@ header:hover {
     box-shadow: 0px 0px 15px var(--highlighted);
 }
 
-.main-nav .title:hover {
-    border: 5px solid var(--highlighted);
-    border-left: none;
-    box-shadow: 0px 0px 15px var(--highlighted);
-    color: var(--highlighted);
-    font-size: 27px;
-    padding: 5px 25px;
-}
-
 .main-nav-list {
     display: flex;
     justify-content: center;
@@ -205,7 +287,7 @@ header:hover {
     z-index: 1;
 }
 
-.main-nav-list li {
+.main-nav-list>* {
     padding: 5px 10px;
     border: 5px double var(--secondary-text);
     border-radius: 50%;
@@ -214,9 +296,9 @@ header:hover {
     cursor: pointer;
 }
 
-.main-nav-list li:hover {
-    box-shadow: 0px 0px 15px var(--secondary-text);
-    border: 5px solid var(--secondary-text);
+.main-nav-list>*:hover {
+    box-shadow: 0 0 15px var(--secondary-text);
+    border-style: solid;
 }
 
 .main-nav-list i {
@@ -288,97 +370,20 @@ header:hover {
 .showcase {
     margin-top: 100px;
     padding: 1px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.showcase .section-title-container {
-    position: absolute;
-    z-index: 2;
-    inset: 0 0 auto 0;
-    background-color: var(--bg-dark-three);
-}
-
-.showcase .section-title {
-    font-size: 25px;
-    padding: 25px 0;
-    text-align: center;
-}
-
-.showcase .slides {
-    /* Fallback for browsers that don't support svh */
-    min-height: 100vh;
-
-    min-height: 100svh;
-    position: relative;
-}
-
-.showcase .slide {
-    padding: 1px 0;
-    min-height: 100vh;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-    position: relative;
-}
-
-.showcase .slide::before {
-    position: absolute;
-    content: '';
-    inset: 0;
-    background: var(--bg-dark-three);
-}
-
-.showcase .slide.active {
-    opacity: 1;
-    z-index: 1;
-    visibility: visible;
 }
 
 .showcase .slide:not(.active) {
     position: absolute;
 }
 
-.showcase .slide-img {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-}
-
-.showcase .slide-description-container {
-    margin: 200px auto 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 25px;
-    background-color: var(--bg-dark-three);
-    border-radius: 20px;
-    position: relative;
-    width: 90%;
-    max-width: 1140px;
-}
-
-.showcase .slide-description {
-    text-align: justify;
-    letter-spacing: 2.5px;
-    line-height: 25px;
-}
-
 .showcase .slide-title {
-    font-family: var(--secondary-font);
-    font-size: 45px;
     text-shadow: 0 0 15px var(--secondary-text);
-    margin-bottom: 25px;
 }
 
 .showcase .slider {
     position: absolute;
     z-index: 1;
-    bottom: 80px;
-    left: 50%;
+    inset: auto auto 80px 50%;
     transform: translateX(-50%);
     width: max-content;
     display: flex;
@@ -415,12 +420,6 @@ header:hover {
     box-shadow: 5px 5px 15px var(--bg-dark-one);
 }
 
-.showcase .slide-indicator input {
-    display: none;
-    margin: 0;
-    padding: 0;
-}
-
 .showcase .slide-indicator {
     width: 20px;
     height: 20px;
@@ -438,12 +437,11 @@ header:hover {
 }
 
 .showcase .slide-indicator:hover {
-    border: 5px solid var(--secondary-text);
+    border-style: solid;
     background-color: var(--bg-dark-one);
 }
 
 .showcase .slider-button:hover {
-    border: 5px solid var(--highlighted);
     color: var(--highlighted);
     box-shadow: 0px 0px 10px var(--highlighted);
 }
@@ -452,9 +450,7 @@ header:hover {
 /* DRINKS */
 
 .drinks {
-    position: relative;
-    overflow: hidden;
-    background: url('../Images/coffee-background.jpg');
+    background: url('../assets/coffee-background.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0 50px var(--secondary-text);
@@ -466,14 +462,6 @@ header:hover {
     position: absolute;
     inset: 0;
     background-color: var(--bg-dark-three);
-}
-
-.drinks-title-container {
-    position: absolute;
-    text-align: center;
-    inset: 0 0 auto 0;
-    background-color: var(--bg-dark-three);
-    min-height: 85px;
 }
 
 .drinks-title {
@@ -595,181 +583,26 @@ header:hover {
 /* SPECIAL DRINKS */
 
 .special-drinks {
-    position: relative;
-    overflow: hidden;
-
     border-top: 3px double var(--blue-scheme);
 }
 
-.special-drinks .section-title-container {
-    position: absolute;
-    z-index: 2;
-    inset: 0 0 auto 0;
-    background-color: var(--bg-dark-three);
-}
-
-.special-drinks .section-title {
-    font-size: 25px;
-    padding: 25px 0;
-    text-align: center;
-}
-
-.special-drinks .slides {
-    /* Fallback for browsers that don't support svh */
-    min-height: 100vh;
-
-    min-height: 100svh;
-    position: relative;
-}
-
-.special-drinks .slide {
-    padding: 1px 0;
-    min-height: 100vh;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-    position: relative;
-}
-
-.special-drinks .slide::before {
-    position: absolute;
-    content: '';
-    inset: 0;
-    background: var(--bg-dark-three);
-}
-
-.special-drinks .slide.active {
-    opacity: 1;
-    z-index: 1;
-    visibility: visible;
+.special-drinks .highlight-three {
+    color: var(--blue-scheme);
 }
 
 .special-drinks .slide:not(.active) {
     position: absolute;
 }
 
-.special-drinks .slide-img {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-}
-
-.special-drinks .slide-description-container {
-    margin: 200px auto 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 25px;
-    background-color: var(--bg-dark-three);
-    border-radius: 20px;
-    position: relative;
-    width: 90%;
-    max-width: 1140px;
-}
-
-.special-drinks .slide-description {
-    text-align: justify;
-    letter-spacing: 2.5px;
-    line-height: 25px;
-}
-
 .special-drinks .slide-title {
-    font-family: var(--secondary-font);
-    font-size: 45px;
     text-shadow: 0 0 15px var(--blue-scheme);
-    margin-bottom: 25px;
-}
-
-.special-drinks .slider {
-    position: absolute;
-    z-index: 1;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.special-drinks .slide-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-dark-three);
-    border: 5px solid var(--blue-scheme);
-    border-radius: 20px;
-    transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--bg-dark-one);
-}
-
-.special-drinks .slide-indicators:hover {
-    box-shadow: 0px 0px 10px var(--blue-scheme);
-}
-
-.special-drinks .slider-button {
-    font-weight: bold;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 5px solid var(--blue-scheme);
-    margin: 0 15px;
-    background-color: var(--bg-dark-three);
-    color: var(--primary-text);
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--bg-dark-one);
-}
-
-.special-drinks .slide-indicator input {
-    display: none;
-    margin: 0;
-    padding: 0;
-}
-
-.special-drinks .slide-indicator {
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    background-color: var(--primary-text);
-    border: 5px double var(--blue-scheme);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.special-drinks .slide-indicator.checked {
-    border: 5px solid var(--blue-scheme);
-    background-color: var(--bg-dark-one);
-}
-
-.special-drinks .slide-indicator:hover {
-    border: 5px solid var(--blue-scheme);
-    background-color: var(--bg-dark-one);
-}
-
-.special-drinks .slider-button:hover {
-    border: 5px solid var(--blue-scheme);
-    color: var(--blue-scheme);
-    box-shadow: 0px 0px 10px var(--blue-scheme);
-}
-
-.special-drinks .highlight-two {
-    text-shadow: 0 0 15px var(--blue-scheme);
-}
-
-.special-drinks .highlight-three {
-    color: var(--blue-scheme)
 }
 
 
 /* FOOTER */
 
 footer {
-    background: url('../Images/coffee-beans.png');
+    background: url('../assets/coffee-beans.png');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -799,7 +632,8 @@ footer:hover {
 }
 
 .footer-nav:hover::before {
-    border-top: 3px solid var(--highlighted);
+    border-top-style: solid;
+    border-top-color: var(--highlighted);
 }
 
 .footer-nav-lists {
@@ -893,7 +727,7 @@ footer:hover {
         opacity: 0;
         flex-direction: column;
         gap: 30px;
-        background: url('../Images/coffee-beans.png');
+        background: url('../assets/coffee-beans.png');
         background-color: var(--bg-dark-one);
         width: 100%;
         min-height: 100vh;
@@ -928,11 +762,11 @@ footer:hover {
         margin-right: 0;
     }
 
-    .showcase .slide-title {
+    .slide-title {
         font-size: 28px;
     }
 
-    .showcase .slide-description {
+    .slide-description {
         font-size: 13px;
         line-height: 20px;
     }
