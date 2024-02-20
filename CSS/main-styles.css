@@ -24,6 +24,8 @@
 
 /* GLOBAL */
 
+
+
 *,
 *::after,
 *::before {
@@ -86,7 +88,7 @@ section {
 }
 
 .section-title {
-    font-size: 25px;
+    font-size: clamp(1rem, 5vw, 1.8rem);
     padding: 25px 0;
     text-align: center;
 }
@@ -121,6 +123,10 @@ section {
     visibility: visible;
 }
 
+.slide:not(.active) {
+    position: absolute;
+}
+
 .slide-img {
     position: absolute;
     z-index: -1;
@@ -143,27 +149,94 @@ section {
     max-width: 1140px;
 }
 
+.slide-title {
+    font-family: var(--secondary-font);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 0.25em;
+}
+
 .slide-description {
     text-align: justify;
     letter-spacing: 2.5px;
     line-height: 25px;
+    font-size: clamp(0.75rem, 3vw, 1.125rem);
 }
 
-.slide-title {
-    font-family: var(--secondary-font);
-    font-size: 45px;
-    margin-bottom: 25px;
+.slider {
+    position: absolute;
+    z-index: 1;
+    inset: auto auto 80px 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-dark-three);
+    border: 5px solid var(--highlighted);
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 5px 5px 15px var(--bg-dark-one);
+}
+
+.slide-indicators:hover {
+    box-shadow: 0 0 10px var(--highlighted);
+}
+
+.slide-indicator {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: var(--primary-text);
+    border: 5px double var(--secondary-text);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slide-indicator.checked {
+    border: 5px solid var(--highlighted);
+    background-color: var(--bg-dark-one);
+}
+
+.slide-indicator:hover {
+    border-style: solid;
+    background-color: var(--bg-dark-one);
+}
+
+.slider-button {
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 5px solid var(--highlighted);
+    margin: 0 15px;
+    background-color: var(--bg-dark-three);
+    color: var(--primary-text);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 5px 5px 15px var(--bg-dark-one);
+}
+
+.slider-button:hover {
+    color: var(--highlighted);
+    box-shadow: 0 0 10px var(--highlighted);
 }
 
 .controls {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    inset: auto 0 0 auto;
     z-index: 5;
 }
 
@@ -173,8 +246,8 @@ section {
 
 .scrollBtn {
     background-color: var(--bg-dark-three);
-    font-size: 18px;
-    border: 5px double var(--highlighted);
+    font-size: 1.125rem;
+    border: 0.35rem double var(--highlighted);
     color: var(--primary-text);
     cursor: pointer;
     padding: 5px;
@@ -205,7 +278,7 @@ header {
     position: fixed;
     z-index: 10;
     width: 100%;
-    box-shadow: 0px 0 50px var(--secondary-text);
+    box-shadow: 0 0 50px var(--secondary-text);
     background: url('../assets/coffee-beans.png');
     background-color: var(--bg-dark-one);
     background-size: cover;
@@ -233,7 +306,7 @@ header::before {
 }
 
 header:hover {
-    box-shadow: 0px 0 55px var(--highlighted);
+    box-shadow: 0 0 55px var(--highlighted);
     border-bottom-style: solid;
 }
 
@@ -246,7 +319,7 @@ header:hover {
 
 .main-nav .title {
     font-family: var(--secondary-font);
-    font-size: 25px;
+    font-size: clamp(1rem, 6vw, 1.5rem);
     font-weight: bold;
     padding: 5px 15px;
     color: var(--primary-text);
@@ -260,10 +333,8 @@ header:hover {
 .main-nav .title:hover {
     border-style: solid;
     border-left: none;
-    box-shadow: 0px 0px 15px var(--highlighted);
+    box-shadow: 0 0 15px var(--highlighted);
     color: var(--highlighted);
-    font-size: 27px;
-    padding: 5px 25px;
 }
 
 .title-img {
@@ -276,7 +347,7 @@ header:hover {
 }
 
 .title-img {
-    box-shadow: 0px 0px 15px var(--highlighted);
+    box-shadow: 0 0 15px var(--highlighted);
 }
 
 .main-nav-list {
@@ -305,7 +376,7 @@ header:hover {
     float: left;
     color: var(--secondary-text);
     margin: 2px 5px 2px 0;
-    font-size: 18px;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
@@ -315,21 +386,21 @@ header:hover {
     transition: 0.3s;
 }
 
-.main-nav-list li:hover a,
-.main-nav-list li:hover i {
+.main-nav-list>*:hover a,
+.main-nav-list>*:hover i {
     color: var(--secondary-text);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .main-nav-list .plans {
     color: var(--highlighted);
     border: 5px solid var(--highlighted);
-    box-shadow: 0px 0px 15px var(--highlighted);
+    box-shadow: 0 0 15px var(--highlighted);
     transition: 0.3s;
 }
 
 .main-nav-list .plans:hover {
-    box-shadow: 0px 0px 20px var(--highlighted);
+    box-shadow: 0 0 20px var(--highlighted);
     border-color: var(--highlighted);
 }
 
@@ -352,7 +423,7 @@ header:hover {
     background-color: transparent;
     border: none;
     color: var(--highlighted);
-    font-size: 30px;
+    font-size: 2rem;
     cursor: pointer;
     z-index: 1;
     transition: 0.3s;
@@ -372,78 +443,8 @@ header:hover {
     padding: 1px 0;
 }
 
-.showcase .slide:not(.active) {
-    position: absolute;
-}
-
 .showcase .slide-title {
     text-shadow: 0 0 15px var(--secondary-text);
-}
-
-.showcase .slider {
-    position: absolute;
-    z-index: 1;
-    inset: auto auto 80px 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.showcase .slide-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-dark-three);
-    border: 5px solid var(--highlighted);
-    border-radius: 20px;
-    transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--bg-dark-one);
-}
-
-.showcase .slide-indicators:hover {
-    box-shadow: 0px 0px 10px var(--highlighted);
-}
-
-.showcase .slider-button {
-    font-weight: bold;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 5px solid var(--highlighted);
-    margin: 0 15px;
-    background-color: var(--bg-dark-three);
-    color: var(--primary-text);
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 5px 5px 15px var(--bg-dark-one);
-}
-
-.showcase .slide-indicator {
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    background-color: var(--primary-text);
-    border: 5px double var(--secondary-text);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.showcase .slide-indicator.checked {
-    border: 5px solid var(--highlighted);
-    background-color: var(--bg-dark-one);
-}
-
-.showcase .slide-indicator:hover {
-    border-style: solid;
-    background-color: var(--bg-dark-one);
-}
-
-.showcase .slider-button:hover {
-    color: var(--highlighted);
-    box-shadow: 0px 0px 10px var(--highlighted);
 }
 
 
@@ -453,7 +454,7 @@ header:hover {
     background: url('../assets/coffee-background.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 0px 0 50px var(--secondary-text);
+    box-shadow: 0 0 50px var(--secondary-text);
     border-top: 3px double var(--secondary-text);
 }
 
@@ -462,12 +463,6 @@ header:hover {
     position: absolute;
     inset: 0;
     background-color: var(--bg-dark-three);
-}
-
-.drinks-title {
-    font-size: 25px;
-    padding: 25px 0;
-    text-align: center;
 }
 
 .drinks-content {
@@ -522,7 +517,7 @@ header:hover {
 
 .drinks .drink-title {
     font-family: var(--secondary-font);
-    font-size: 35px;
+    font-size: 2rem;
     text-shadow: 0 0 10px var(--highlighted);
     position: absolute;
     z-index: 1;
@@ -548,37 +543,6 @@ header:hover {
     border-radius: inherit;
 }
 
-.drink-description {
-    max-width: 240px;
-    word-wrap: break-word;
-    text-align: justify;
-    margin: 10px auto 25px;
-    font-size: 15px;
-}
-
-.drink-description-button {
-    position: absolute;
-    bottom: -20px;
-    left: 75px;
-    right: 75px;
-    background-color: #160900;
-    font-family: var(--secondary-font);
-    font-size: 20px;
-    color: var(--primary-text);
-    border-radius: 50%;
-    border: 5px solid var(--highlighted);
-    padding: 5px 0;
-    cursor: pointer;
-    box-shadow: 0 0 15px var(--highlighted);
-    transition: 0.3s;
-    z-index: 1;
-}
-
-.drink-description-button:hover {
-    color: var(--highlighted);
-    box-shadow: 0 0 20px var(--highlighted);
-}
-
 
 /* SPECIAL DRINKS */
 
@@ -586,7 +550,8 @@ header:hover {
     border-top: 3px double var(--blue-scheme);
 }
 
-.special-drinks .highlight-three {
+.special-drinks .highlight-three,
+.special-drinks .slider-button:hover {
     color: var(--blue-scheme);
 }
 
@@ -596,6 +561,17 @@ header:hover {
 
 .special-drinks .slide-title {
     text-shadow: 0 0 15px var(--blue-scheme);
+}
+
+.special-drinks .slide-indicators:hover,
+.special-drinks .slider-button:hover {
+    box-shadow: 0 0 10px var(--blue-scheme);
+}
+
+.special-drinks .slide-indicators,
+.special-drinks .slide-indicator,
+.special-drinks .slider-button {
+    border-color: var(--blue-scheme);
 }
 
 
@@ -608,13 +584,13 @@ footer {
     text-align: center;
     min-height: 100px;
     position: relative;
-    box-shadow: 0px 0 50px var(--secondary-text);
+    box-shadow: 0 0 50px var(--secondary-text);
     z-index: 1;
     transition: 0.3s;
 }
 
 footer:hover {
-    box-shadow: 0px 0 55px var(--highlighted);
+    box-shadow: 0 0 55px var(--highlighted);
 }
 
 .footer-nav {
@@ -659,9 +635,9 @@ footer:hover {
 
 .footer-nav-list a:hover {
     color: var(--secondary-text);
-    text-shadow: 0px 0px 10px var(--secondary-text);
+    text-shadow: 0 0 10px var(--secondary-text);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .social,
@@ -671,12 +647,12 @@ footer:hover {
     align-items: center;
     position: relative;
     z-index: 1;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin: 0 15px;
 }
 
 .social .fa-apple {
-    font-size: 23px;
+    font-size: 1.5rem;
 }
 
 .footer-nav-list li,
@@ -693,7 +669,7 @@ footer:hover {
 }
 
 .social a:hover {
-    text-shadow: 0px 0px 15px var(--secondary-text);
+    text-shadow: 0 0 15px var(--secondary-text);
 }
 
 .social li:nth-child(3) {
@@ -760,14 +736,5 @@ footer:hover {
 
     .main-nav-list i {
         margin-right: 0;
-    }
-
-    .slide-title {
-        font-size: 28px;
-    }
-
-    .slide-description {
-        font-size: 13px;
-        line-height: 20px;
     }
 }

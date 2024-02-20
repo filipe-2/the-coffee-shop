@@ -117,6 +117,8 @@
                 </div>
             </div>
 
+            <!-- REMINDER: Merge the slider and the slide-description-container elements inside of a div and
+                center the div on top of it's corresponding slide, then modify the script to account for that change -->
             <div class="slider">
                 <button class="slider-button prev" aria-label="Previous slide">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -137,7 +139,7 @@
 
         <section class="drinks">
             <div class="section-title-container">
-                <h3 class="drinks-title">Wanna see some of our most <span class="highlight-three">delicious</span>
+                <h3 class="section-title">Wanna see some of our most <span class="highlight-three">delicious</span>
                     drinks?</h3>
             </div>
 
@@ -237,6 +239,22 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div class="slider">
+                <button class="slider-button prev" aria-label="Previous slide">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <ul class="slide-indicators">
+                    <li class="slide-indicator checked" aria-current="step"></li>
+                    <li class="slide-indicator"></li>
+                    <li class="slide-indicator"></li>
+                </ul>
+
+                <button class="slider-button next" aria-label="Next slide">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
         </section>
     </main>

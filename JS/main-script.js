@@ -91,10 +91,10 @@ function nextSlide() {
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to next slide
 
     // Gets the active next slides and their indicators
-    const activeSlide = document.querySelector('.slide.active');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
-    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+    const activeSlide = document.querySelector('.showcase .slide.active');
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.showcase .slide:first-child'); // If there's no next slide, loops back to the first
+    const activeSlideIndicator = document.querySelector('.showcase .slide-indicator.checked');
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.showcase .slide-indicator:first-child'); // If there's no next indicator, loops back to the first
 
     // Updates classes to show the next slide and its indicator
     activeSlide.classList.remove('active');
@@ -117,10 +117,10 @@ function slideThroughIndicators(event) {
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
 
     if (!indicator.classList.contains('checked')) {
-        document.querySelector('.slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
+        document.querySelector('.showcase .slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
         indicator.classList.add('checked'); // Checks the clicked indicator
-        document.querySelector('.slide.active').classList.remove('active'); // Deactivates the currently active slide
-        document.querySelectorAll('.slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
+        document.querySelector('.showcase .slide.active').classList.remove('active'); // Deactivates the currently active slide
+        document.querySelectorAll('.showcase .slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
     }
 
     startAutoplay(); // Restarts the autoplay after sliding manually
@@ -139,10 +139,10 @@ function startSlideshow() {
     startAutoplay(); // Starts autoplay
 
     // Binds manual sliding functions to slider buttons
-    document.querySelector('.slider-button.prev').addEventListener('click', prevSlide);
-    document.querySelector('.slider-button.next').addEventListener('click', nextSlide);
+    document.querySelector('.showcase .slider-button.prev').addEventListener('click', prevSlide);
+    document.querySelector('.showcase .slider-button.next').addEventListener('click', nextSlide);
 
-    const slideIndicators = document.querySelectorAll('.slide-indicator');
+    const slideIndicators = document.querySelectorAll('.showcase .slide-indicator');
 
     // Binds manual sliding functions to slider indicators
     slideIndicators.forEach(function (indicator) {
