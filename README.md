@@ -20,8 +20,6 @@ To access the website, just follow [this link](https://filipe-2.github.io/TheCof
 
 ## Preview
 
-Header and showcase section
-
 ![Preview 1](assets/preview.png)
 
 ![Preview 2](assets/preview2.png)
