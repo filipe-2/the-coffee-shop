@@ -9,7 +9,7 @@ window.addEventListener('scroll', function () {
 
     // Toggles the visibility of the navbar based on the scrolling position
     if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
-        navbar.style.transform = 'translateY(-100px)';
+        navbar.style.transform = 'translateY(-6.25rem)';
     } else {
         navbar.style.transform = 'translateY(0)';
     }
@@ -139,8 +139,8 @@ function startSlideshow() {
     startAutoplay(); // Starts autoplay
 
     // Binds manual sliding functions to slider buttons
-    document.querySelector('.showcase .slider-button.prev').addEventListener('click', prevSlide);
-    document.querySelector('.showcase .slider-button.next').addEventListener('click', nextSlide);
+    document.querySelector('.showcase .action-button.prev').addEventListener('click', prevSlide);
+    document.querySelector('.showcase .action-button.next').addEventListener('click', nextSlide);
 
     const slideIndicators = document.querySelectorAll('.showcase .slide-indicator');
 
@@ -169,9 +169,9 @@ window.addEventListener('scroll', function () {
 
     // Positions the scrolling buttons based on the window
     if (this.window.scrollY <= 0 || isOnBottom) {
-        scrollTop.style.marginBottom = '-50px';
+        scrollTop.style.marginBottom = '-3.5rem';
     } else {
-        scrollTop.style.marginBottom = '0'
+        scrollTop.style.marginBottom = '0';
     }
 })
 

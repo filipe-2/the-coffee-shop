@@ -120,7 +120,7 @@
             <!-- REMINDER: Merge the slider and the slide-description-container elements inside of a div and
                 center the div on top of it's corresponding slide, then modify the script to account for that change -->
             <div class="slider">
-                <button class="slider-button prev" aria-label="Previous slide">
+                <button class="action-button prev" aria-label="Previous slide">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
@@ -131,7 +131,7 @@
                     <li class="slide-indicator"></li>
                 </ul>
 
-                <button class="slider-button next" aria-label="Next slide">
+                <button class="action-button next" aria-label="Next slide">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -242,7 +242,7 @@
             </div>
 
             <div class="slider">
-                <button class="slider-button prev" aria-label="Previous slide">
+                <button class="action-button prev" aria-label="Previous slide">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
@@ -252,7 +252,7 @@
                     <li class="slide-indicator"></li>
                 </ul>
 
-                <button class="slider-button next" aria-label="Next slide">
+                <button class="action-button next" aria-label="Next slide">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -261,9 +261,9 @@
 
     <!-- Scrolling control buttons -->
     <section class="controls">
-        <button onclick="goToTop()" class="scrollBtn" title="Go to top" aria-label="Go to the top of the page"><i
-                class="fa fa-chevron-up" aria-hidden="true"></i></button>
-        <button onclick="goToBottom()" class="scrollBtn active" title="Go to bottom"
+        <button onclick="goToTop()" class="action-button scrollBtn" title="Go to top"
+            aria-label="Go to the top of the page"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+        <button onclick="goToBottom()" class="action-button scrollBtn active" title="Go to bottom"
             aria-label="Go to the bottom of the page"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
     </section>
 
