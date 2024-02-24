@@ -1,6 +1,13 @@
+import {
+    startSlideshow,
+    goToTop,
+    goToBottom,
+} from './utils.js';
+
+
 // HEADER //
 
-let lastScrollTop = 0; // Stores the last vertical scrolling position. Zero by default
+let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
 
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 
@@ -22,9 +29,6 @@ const hamburger = document.querySelector('.hamburger-menu');
 const hamburgerIcon = document.querySelector('.hamburger-menu i');
 const mainNavList = document.querySelector('.main-nav-list');
 
-// Function to toggle scroll lock based on window width and hamburger menu state
-
-
 // Handles clicks on the hamburger menu
 hamburger.addEventListener('click', function () {
     // Toggles the 'open' and 'closed' classes of the hamburger
@@ -42,116 +46,7 @@ hamburger.addEventListener('click', function () {
 
 // SHOWCASE //
 
-let autoplayInterval;
-
-// Function to switch slides
-function switchSlide() {
-    // Gets the active and next slides and their indicators
-    const activeSlide = document.querySelector('.slide.active');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
-    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
-
-    // Updates classes to show the next slide and its indicator
-    activeSlide.classList.remove('active');
-    activeSlideIndicator.classList.remove('checked');
-    nextSlide.classList.add('active');
-    nextSlideIndicator.classList.add('checked');
-
-    // Changes aria-current attribute to the current slide item
-    activeSlideIndicator.removeAttribute('aria-current');
-    nextSlideIndicator.setAttribute('aria-current', 'step');
-}
-
-// Function to go to the previous slide
-function prevSlide() {
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to previous slide
-
-    // Gets the active and previous slides and their indicators
-    const activeSlide = document.querySelector('.slide.active');
-    const prevSlide = activeSlide.previousElementSibling || document.querySelector('.slide:last-child'); // If there's no previous slide, loops back to the last
-    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || document.querySelector('.slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
-
-    // Updates classes to show the previous slide and its indicator
-    activeSlide.classList.remove('active');
-    activeSlideIndicator.classList.remove('checked');
-    prevSlide.classList.add('active');
-    prevSlideIndicator.classList.add('checked');
-
-    // Changes aria-current attribute to the current slide item
-    activeSlideIndicator.removeAttribute('aria-current');
-    prevSlideIndicator.setAttribute('aria-current', 'step');
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
-}
-
-// Function to go to the next slide
-function nextSlide() {
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to next slide
-
-    // Gets the active next slides and their indicators
-    const activeSlide = document.querySelector('.showcase .slide.active');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.showcase .slide:first-child'); // If there's no next slide, loops back to the first
-    const activeSlideIndicator = document.querySelector('.showcase .slide-indicator.checked');
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.showcase .slide-indicator:first-child'); // If there's no next indicator, loops back to the first
-
-    // Updates classes to show the next slide and its indicator
-    activeSlide.classList.remove('active');
-    activeSlideIndicator.classList.remove('checked');
-    nextSlide.classList.add('active');
-    nextSlideIndicator.classList.add('checked');
-
-    // Changes aria-current attribute to the next slide item
-    activeSlideIndicator.removeAttribute('aria-current');
-    nextSlideIndicator.setAttribute('aria-current', 'step');
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
-}
-
-function slideThroughIndicators(event) {
-    // Gets the target indicator and it's index
-    const indicator = event.currentTarget;
-    const index = Array.from(indicator.parentElement.children).indexOf(indicator);
-
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
-
-    if (!indicator.classList.contains('checked')) {
-        document.querySelector('.showcase .slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
-        indicator.classList.add('checked'); // Checks the clicked indicator
-        document.querySelector('.showcase .slide.active').classList.remove('active'); // Deactivates the currently active slide
-        document.querySelectorAll('.showcase .slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
-    }
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
-}
-
-// Function to start the autoplay slideshow
-function startAutoplay() {
-    // Sets up an interval to switch slides automatically
-    autoplayInterval = setInterval(() => {
-        switchSlide();
-    }, 5000); // Switches slides every 5 seconds
-}
-
-// Function to start the slideshow
-function startSlideshow() {
-    startAutoplay(); // Starts autoplay
-
-    // Binds manual sliding functions to slider buttons
-    document.querySelector('.showcase .action-button.prev').addEventListener('click', prevSlide);
-    document.querySelector('.showcase .action-button.next').addEventListener('click', nextSlide);
-
-    const slideIndicators = document.querySelectorAll('.showcase .slide-indicator');
-
-    // Binds manual sliding functions to slider indicators
-    slideIndicators.forEach(function (indicator) {
-        indicator.addEventListener('click', slideThroughIndicators);
-    })
-}
-
-// Starts the slideshow when the page loads
-window.addEventListener('load', startSlideshow);
+window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
 
 
 // CONTROLS //
@@ -175,18 +70,6 @@ window.addEventListener('scroll', function () {
     }
 })
 
-// Function to go back to the top of the page
-function goToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-}
-
-// Function to go back to the bottom of the page
-function goToBottom() {
-    window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth',
-    })
-}
+// Add event listeners to the buttons
+document.querySelector('.scrollBtn[data-action="top"]').addEventListener('click', goToTop);
+document.querySelector('.scrollBtn[data-action="bottom"]').addEventListener('click', goToBottom);

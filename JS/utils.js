@@ -1,0 +1,122 @@
+let autoplayInterval; // Variable for the sliding interval
+
+
+// Function to change slide classes
+function updateSlideClasses(activeSlide, activeSlideIndicator, newSlide, newSlideIndicator) {
+    // Updates slide classes
+    activeSlide.classList.remove('active');
+    activeSlideIndicator.classList.remove('checked');
+    newSlide.classList.add('active');
+    newSlideIndicator.classList.add('checked');
+
+    // Changes aria-current attribute
+    activeSlideIndicator.removeAttribute('aria-current');
+    newSlideIndicator.setAttribute('aria-current', 'step');
+}
+
+
+// Function to switch slides
+function switchSlide() {
+    // Gets the active and next slides and their indicators
+    const activeSlide = document.querySelector('.slide.active');
+    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+
+    updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
+}
+
+
+// Function to go to the previous slide
+function prevSlide() {
+    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to previous slide
+
+    // Gets the active and previous slides and their indicators
+    const activeSlide = document.querySelector('.slide.active');
+    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
+    const prevSlide = activeSlide.previousElementSibling || document.querySelector('.slide:last-child'); // If there's no previous slide, loops back to the last
+    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || document.querySelector('.slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
+
+    updateSlideClasses(activeSlide, activeSlideIndicator, prevSlide, prevSlideIndicator); // Updates classes to show the previous slide and its indicator; changes aria-current attribute to the previous slide item
+
+    startAutoplay(); // Restarts the autoplay after sliding manually
+}
+
+
+// Function to go to the next slide
+function nextSlide() {
+    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to next slide
+
+    // Gets the active next slides and their indicators
+    const activeSlide = document.querySelector('.showcase .slide.active');
+    const activeSlideIndicator = document.querySelector('.showcase .slide-indicator.checked');
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.showcase .slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.showcase .slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+
+    updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
+
+    startAutoplay(); // Restarts the autoplay after sliding manually
+}
+
+
+// Function to slide using indicators
+function slideThroughIndicators(event) {
+    // Gets the target indicator and it's index
+    const indicator = event.currentTarget;
+    const index = Array.from(indicator.parentElement.children).indexOf(indicator);
+
+    clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
+
+    if (!indicator.classList.contains('checked')) {
+        document.querySelector('.showcase .slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
+        indicator.classList.add('checked'); // Checks the clicked indicator
+        document.querySelector('.showcase .slide.active').classList.remove('active'); // Deactivates the currently active slide
+        document.querySelectorAll('.showcase .slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
+    }
+
+    startAutoplay(); // Restarts the autoplay after sliding manually
+}
+
+
+// Function to start the autoplay slideshow
+function startAutoplay() {
+    // Sets up an interval to switch slides automatically
+    autoplayInterval = setInterval(() => {
+        switchSlide();
+    }, 5000); // Switches slides every 5 seconds
+}
+
+
+// Function to start the slideshow
+export function startSlideshow() {
+    startAutoplay(); // Starts autoplay
+
+    // Binds manual sliding functions to slider buttons
+    document.querySelector('.showcase .action-button.prev').addEventListener('click', prevSlide);
+    document.querySelector('.showcase .action-button.next').addEventListener('click', nextSlide);
+
+    const slideIndicators = document.querySelectorAll('.showcase .slide-indicator');
+
+    // Binds manual sliding functions to slider indicators
+    slideIndicators.forEach(function (indicator) {
+        indicator.addEventListener('click', slideThroughIndicators);
+    })
+}
+
+
+// Function to go back to the top of the page
+export function goToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+}
+
+
+// Function to go back to the bottom of the page
+export function goToBottom() {
+    window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+    })
+}

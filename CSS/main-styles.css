@@ -1,5 +1,9 @@
+/* ________________ FONTS _________________ */
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
+
+/* ________________________________________ */
 
 
 /* ________________ GLOBAL ________________ */
@@ -78,7 +82,7 @@ button {
 .highlight-two {
     font-family: var(--font-2);
     font-weight: bold;
-    text-shadow: 0 0 15px var(--clr-neutral-2);
+    text-shadow: 0 0 1rem var(--clr-neutral-2);
 }
 
 .highlight-three {
@@ -106,13 +110,17 @@ section {
 .slides {
     /* Fallback for browsers that don't support svh */
     min-height: 100vh;
+    /* ____________________________________________ */
 
     min-height: 100svh;
     position: relative;
 }
 
 .slide {
-    padding-block: 1px;
+    /* Disables margin collapse */
+    display: flow-root;
+    /* ________________________ */
+
     min-height: 100vh;
     opacity: 0;
     visibility: hidden;
@@ -267,7 +275,6 @@ section {
 /* ________________________________________ */
 
 
-
 /* ________________ HEADER ________________ */
 
 header {
@@ -275,7 +282,7 @@ header {
     position: fixed;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 0 3rem var(--clr-neutral-2);
+    box-shadow: 0 0 2rem var(--clr-neutral-3);
     background: url('../assets/coffee-beans.png');
     background-color: var(--bg-dark-1);
     background-size: cover;
@@ -291,6 +298,11 @@ header::before {
     background-color: var(--bg-dark-3);
 }
 
+header:hover {
+    box-shadow: 0 0 3.5rem var(--clr-neutral-3);
+    border-bottom-style: solid;
+}
+
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -299,18 +311,6 @@ header::before {
     margin: auto;
     min-height: 6.25rem;
     z-index: 10;
-}
-
-header:hover {
-    box-shadow: 0 0 55px var(--clr-neutral-3);
-    border-bottom-style: solid;
-}
-
-.branding {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
 }
 
 .main-nav .title {
@@ -331,6 +331,13 @@ header:hover {
     border-left: none;
     box-shadow: 0 0 1rem var(--clr-neutral-3);
     color: var(--clr-neutral-3);
+}
+
+.branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .title-img {
@@ -433,12 +440,10 @@ header:hover {
 /* ________________________________________ */
 
 
-
-/* _______________ SHOWCASE  _______________ */
+/* _______________ SHOWCASE _______________ */
 
 .showcase {
     margin-top: 6.25rem;
-    padding-block: 0.625rem;
 }
 
 .showcase .slide-title {
@@ -446,7 +451,6 @@ header:hover {
 }
 
 /* ________________________________________ */
-
 
 
 /* ________________ DRINKS ________________ */
@@ -547,7 +551,6 @@ header:hover {
 /* ________________________________________ */
 
 
-
 /* ____________ SPECIAL DRINKS ____________ */
 
 .special-drinks {
@@ -579,7 +582,6 @@ header:hover {
 }
 
 /* ________________________________________ */
-
 
 
 /* ________________ FOOTER ________________ */
@@ -696,7 +698,6 @@ footer:hover {
 }
 
 /* ________________________________________ */
-
 
 
 /* _____________ MEDIA QUERIES ____________ */

@@ -261,9 +261,9 @@
 
     <!-- Scrolling control buttons -->
     <section class="controls">
-        <button onclick="goToTop()" class="action-button scrollBtn" title="Go to top"
+        <button data-action="top" class="action-button scrollBtn" title="Go to top"
             aria-label="Go to the top of the page"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-        <button onclick="goToBottom()" class="action-button scrollBtn active" title="Go to bottom"
+        <button data-action="bottom" class="action-button scrollBtn active" title="Go to bottom"
             aria-label="Go to the bottom of the page"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
     </section>
 
@@ -304,7 +304,8 @@
         </nav>
     </footer>
 
-    <script src="./JS/main-script.js"></script>
+    <script type="module" src="./JS/utils.js"></script>
+    <script type="module" src="./JS/main-script.js"></script>
 </body>
 
 </html>
