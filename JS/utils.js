@@ -1,5 +1,13 @@
 let autoplayInterval; // Variable for the sliding interval
 
+// Selects hamburger menu and it's icon
+export const hamburger = document.querySelector('.hamburger-menu');
+const hamburgerIcon = document.querySelector('.hamburger-menu i');
+const mainNavList = document.querySelector('.main-nav-list');
+const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
+
+let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
+
 
 // Function to change slide classes
 function updateSlideClasses(activeSlide, activeSlideIndicator, newSlide, newSlideIndicator) {
@@ -63,7 +71,7 @@ function nextSlide() {
 function slideThroughIndicators(event) {
     // Gets the target indicator and it's index
     const indicator = event.currentTarget;
-    const index = Array.from(indicator.parentElement.children).indexOf(indicator);
+    const index = Array.from(indicator.parentElement.children).indexOf(indicator); // Converts the HTML collection into an array and stores the index of the target indicator
 
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
 
@@ -101,6 +109,53 @@ export function startSlideshow() {
     slideIndicators.forEach(function (indicator) {
         indicator.addEventListener('click', slideThroughIndicators);
     })
+}
+
+
+// Function to toggle navbar visibility when scrolling
+export function toggleNavbarVisibility() {
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    // Toggles the visibility of the navbar based on the scrolling position
+    if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
+        navbar.style.transform = 'translateY(-6.25rem)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
+}
+
+
+// Function to handle clicks on hamburger menu
+export function toggleHamburgerMenu() {
+    // Toggles the 'open' and 'closed' classes of the hamburger
+    hamburger.classList.toggle('open');
+    hamburger.classList.toggle('closed');
+
+    // Toggles the hamburger icons
+    hamburgerIcon.classList.toggle('fa-bars-staggered');
+    hamburgerIcon.classList.toggle('fa-bars');
+
+    // Toggles the visibility of the nav list
+    mainNavList.classList.toggle('visible');
+}
+
+
+// Function to handle scroll button visibility and position
+export function handleScrollButtons() {
+    const scrollButtons = document.querySelectorAll('.scrollBtn'); // Selects the scroll buttons
+    const isOnBottom = (window.innerHeight + window.scrollY + 50) >= document.documentElement.offsetHeight; // Stores true or false depending on whether the user is at the bottom or not
+
+    [...scrollButtons].forEach(function (button) {
+        const action = button.getAttribute('data-action');
+        const isTop = action === 'top'; // Stores true or false depending on whether the button is for scrolling to the top or not
+
+        button.classList.toggle('active', (isTop && window.scrollY > 0) || (!isTop && !isOnBottom)); // Toggles the 'active' class of the button based on the scroll position by checking if it's a top button and the page is scrolled down, or if it's a bottom button and not at the bottom
+
+        // Sets the margin-bottom property of the button based on the scroll position; if it's at the top or bottom, and it's a top button, it adds a negative margin to hide it
+        button.style.marginBottom = (window.scrollY <= 0 || isOnBottom) && isTop ? '-3.5rem' : '0';
+    });
 }
 
 
