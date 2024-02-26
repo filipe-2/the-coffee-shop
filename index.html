@@ -11,6 +11,7 @@
         content="Welcome to The Coffee Shop! We specialize in serving the best coffee drinks you will ever find. Visit us for a cozy atmosphere and a delightful coffee experience.">
     <meta name="keywords"
         content="coffee, cafe, The Coffee Shop, beverages, espresso, cappuccino, latte, coffee shop, cozy cafe, coffeehouse">
+    <meta name="author" content="Carlos Filipe">
 
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/1c689b6540.js" crossorigin="anonymous"></script>
@@ -23,13 +24,18 @@
 
 <body>
     <header>
-        <nav class="main-nav">
-            <div class="branding">
+        <nav class="main-nav" aria-label="primary navigation">
+            <ul class="branding">
                 <img class="title-img" src="./assets/logo.png" alt="Website logo: A cup of hot coffee.">
                 <h1><a href="./" class="title">The Coffee Shop</a></h1>
-            </div>
+            </ul>
 
-            <ul class="main-nav-list">
+            <button class="hamburger-menu closed" aria-label="main navigation menu" aria-controls="primary-navigation"
+                aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="main-nav-list" id="primary-navigation">
                 <li><a href="./" aria-current="page" aria-label="Homepage"><i class="fa fa-home"
                             aria-hidden="true"></i>Home</a></li>
                 <li><a href="#" aria-label="Drinks menu page"><i class="fa fa-cutlery" aria-hidden="true"></i>Menu</a>
@@ -39,10 +45,6 @@
                 <li class="plans"><a href="#" aria-label="Plans page"><i class="fa fa-diamond"
                             aria-hidden="true"></i>Plans</a></li>
             </ul>
-
-            <button class="hamburger-menu closed">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
         </nav>
     </header>
 
@@ -128,6 +130,7 @@
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
+                <!-- REMINDER: Indicators should be tabbable -->
                 <ul class="slide-indicators">
                     <li class="slide-indicator checked" aria-current="step"></li>
                     <li class="slide-indicator"></li>
