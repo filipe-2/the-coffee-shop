@@ -126,19 +126,18 @@
             <!-- REMINDER: Merge the slider and the slide-description-container elements inside of a div and
                 center the div on top of it's corresponding slide, then modify the script to account for that change -->
             <div class="slider">
-                <button class="action-button prev" aria-label="Previous slide">
+                <button class="action-button prev" aria-label="previous slide">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
-                <!-- REMINDER: Indicators should be tabbable -->
-                <ul class="slide-indicators">
-                    <li class="slide-indicator checked" aria-current="step"></li>
-                    <li class="slide-indicator"></li>
-                    <li class="slide-indicator"></li>
-                    <li class="slide-indicator"></li>
-                </ul>
+                <div class="slide-indicators">
+                    <button class="slide-indicator checked" aria-current="step"></button>
+                    <button class="slide-indicator"></button>
+                    <button class="slide-indicator"></button>
+                    <button class="slide-indicator"></button>
+                </div>
 
-                <button class="action-button next" aria-label="Next slide">
+                <button class="action-button next" aria-label="next slide">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -253,11 +252,11 @@
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
-                <ul class="slide-indicators">
-                    <li class="slide-indicator checked" aria-current="step"></li>
-                    <li class="slide-indicator"></li>
-                    <li class="slide-indicator"></li>
-                </ul>
+                <div class="slide-indicators">
+                    <button class="slide-indicator checked" aria-current="step"></button>
+                    <button class="slide-indicator"></button>
+                    <button class="slide-indicator"></button>
+                </div>
 
                 <button class="action-button next" aria-label="Next slide">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -300,9 +299,9 @@
             </div>
 
             <ul class="social">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-google-play" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-apple" aria-hidden="true"></i></i></a></li>
             </ul>
