@@ -71,6 +71,7 @@ a {
 
 button {
     cursor: pointer;
+    font-family: var(--font-1);
 }
 
 .highlight-one {
@@ -110,21 +111,18 @@ section {
 .slides {
     /* Fallback for browsers that don't support svh */
     min-height: 100vh;
-    /* ____________________________________________ */
 
     min-height: 100svh;
     position: relative;
 }
 
 .slide {
-    /* Disables margin collapse */
-    display: flow-root;
-    /* ________________________ */
-
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-time-2) ease;
+    transition: var(--transition-time-2) ease;
     position: relative;
 }
 
@@ -230,7 +228,26 @@ section {
     background-color: var(--bg-dark-1);
 }
 
-.scrollBtn {
+.expand-slide-btn {
+    z-index: 1;
+    padding: 0.5em 1em;
+    margin: 1.25rem auto;
+    border-radius: 50%;
+    border: var(--border-thickness-2) solid var(--text-clr, var(--border-clr, var(--clr-neutral-3)));
+    box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-3));
+    background-color: var(--bg-dark-2);
+    font-weight: bold;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    color: var(--text-clr, var(--clr-neutral-3));
+    transition: 0.3s ease;
+}
+
+.expand-slide-btn:hover {
+    box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
+    transform: scale(1.03);
+}
+
+.scroll-btn {
     opacity: 0;
     visibility: hidden;
 }
@@ -266,11 +283,11 @@ section {
     z-index: 5;
 }
 
-.scrollBtn:first-child {
+.scroll-btn:first-child {
     margin-bottom: -3.5rem;
 }
 
-.scrollBtn.active {
+.scroll-btn.active {
     opacity: 1;
     visibility: visible;
 }
@@ -531,7 +548,7 @@ header:hover {
 }
 
 .drink:hover {
-    transform: scale(1.03);
+    transform: scale(1.04) rotate(-5deg);
 }
 
 .drink:hover::before {
