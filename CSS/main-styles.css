@@ -86,7 +86,7 @@ button {
 }
 
 .highlight-three {
-    color: var(--clr-neutral-2);
+    color: var(--text-clr, var(--clr-neutral-2));
 }
 
 section {
@@ -154,7 +154,7 @@ section {
 }
 
 .slide-description-container {
-    margin: 12.5rem auto 6.25rem;
+    margin: clamp(12rem, 40vw, 17rem) auto 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,6 +167,7 @@ section {
 }
 
 .slide-title {
+    text-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-2));
     font-family: var(--font-2);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     margin-bottom: 0.25em;
@@ -181,9 +182,10 @@ section {
 
 .slider {
     position: absolute;
-    z-index: 1;
-    inset: auto auto 5rem 50%;
+    inset: 0 auto auto 50%;
     transform: translateX(-50%);
+    z-index: 1;
+    margin: clamp(7rem, 25vw, 10rem) auto;
     width: max-content;
     display: flex;
     justify-content: center;
@@ -195,14 +197,15 @@ section {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-dark-3);
-    border: var(--border-thickness-1) solid var(--clr-neutral-3);
+    border: var(--border-thickness-1) solid var(--border-clr, var(--clr-neutral-3));
     border-radius: 1.25rem;
     transition: var(--transition-time-1);
-    box-shadow: 0.25rem 0.25rem 1rem var(--bg-dark-1);
+    box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-2));
+
 }
 
 .slide-indicators:hover {
-    box-shadow: 0 0 0.625rem var(--clr-neutral-3);
+    box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
 }
 
 .slide-indicator {
@@ -210,7 +213,7 @@ section {
     height: 1.25rem;
     margin: 0.25rem;
     background-color: var(--clr-neutral-1);
-    border: var(--border-thickness-1) double var(--clr-neutral-2);
+    border: var(--border-thickness-1) double var(--border-clr, var(--clr-neutral-2));
     border-radius: 50%;
     cursor: pointer;
     transition: var(--transition-time-1);
@@ -218,7 +221,7 @@ section {
 
 .slide-indicator.checked {
     border-style: solid;
-    border-color: var(--clr-neutral-3);
+    border-color: var(--border-clr, var(--clr-neutral-3));
     background-color: var(--bg-dark-1);
 }
 
@@ -239,16 +242,16 @@ section {
     width: 2.5rem;
     border-radius: 50%;
     background-color: var(--bg-dark-3);
-    border: var(--border-thickness-1) solid var(--clr-neutral-3);
+    border: var(--border-thickness-1) solid var(--border-clr, var(--clr-neutral-3));
     color: var(--clr-neutral-1);
     transition: var(--transition-time-1);
-    box-shadow: 0.25rem 0.25rem 1rem var(--bg-dark-1);
+    box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-2));
     margin-inline: 1.25rem;
 }
 
 .action-button:hover {
-    color: var(--clr-neutral-3);
-    box-shadow: 0 0 0.625rem var(--clr-neutral-3);
+    color: var(--text-clr, var(--clr-neutral-3));
+    box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
 }
 
 .controls {
@@ -446,10 +449,6 @@ header:hover {
     margin-top: 6.25rem;
 }
 
-.showcase .slide-title {
-    text-shadow: 0 0 1rem var(--clr-neutral-2);
-}
-
 /* ________________________________________ */
 
 
@@ -557,28 +556,28 @@ header:hover {
     border-top: var(--border-thickness-2) double var(--clr-accent-1);
 }
 
-.special-drinks .highlight-three,
-.special-drinks .action-button:hover {
-    color: var(--clr-accent-1);
-}
-
-.special-drinks .slide:not(.active) {
+.special-slide:not(.active) {
     position: absolute;
 }
 
-.special-drinks .slide-title {
-    text-shadow: 0 0 1rem var(--clr-accent-1);
+.special-one {
+    --text-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
 }
 
-.special-drinks .slide-indicators:hover,
-.special-drinks .action-button:hover {
-    box-shadow: 0 0 0.625rem var(--clr-accent-1);
+.special-two {
+    --shadow-clr: var(--clr-accent-2);
 }
 
-.special-drinks .slide-indicators,
-.special-drinks .slide-indicator,
-.special-drinks .action-button {
-    border-color: var(--clr-accent-1);
+.special-three {
+    --shadow-clr: var(--clr-accent-3);
+}
+
+.special-indicators,
+.special-action-button {
+    --border-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
+    --text-clr: var(--clr-accent-1);
 }
 
 /* ________________________________________ */
