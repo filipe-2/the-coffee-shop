@@ -208,7 +208,7 @@ section {
 
 .slide-indicator {
     width: 1.25rem;
-    height: 1.25rem;
+    aspect-ratio: 1;
     margin: 0.25rem;
     background-color: var(--clr-neutral-1);
     border: var(--border-thickness-1) double var(--border-clr, var(--clr-neutral-2));
@@ -231,14 +231,14 @@ section {
 .expand-slide-btn {
     z-index: 1;
     padding: 0.5em 1em;
-    margin: 1.25rem auto;
-    border-radius: 50%;
-    border: var(--border-thickness-2) solid var(--text-clr, var(--border-clr, var(--clr-neutral-3)));
+    margin: 1.25rem auto 2rem;
+    border-radius: 1.5rem;
+    border: var(--border-thickness-2) solid var(--border-clr, var(--clr-neutral-3));
     box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-3));
-    background-color: var(--bg-dark-2);
+    background-color: var(--bg-dark-3);
     font-weight: bold;
     font-size: clamp(1rem, 5vw, 1.25rem);
-    color: var(--text-clr, var(--clr-neutral-1));
+    color: var(--clr-neutral-1);
     transition: 0.3s ease;
 }
 
@@ -264,7 +264,7 @@ section {
     color: var(--clr-neutral-1);
     transition: var(--transition-time-1);
     box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-2));
-    margin-inline: 1.25rem;
+    margin-inline: clamp(0.25rem, 3vw, 1.25rem)
 }
 
 .action-button:hover {
@@ -581,6 +581,7 @@ header:hover {
 .special-one {
     --text-clr: var(--clr-accent-1);
     --shadow-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
 }
 
 .special-two {
@@ -595,9 +596,9 @@ header:hover {
 
 .special-indicators,
 .special-action-button {
-    --border-clr: var(--clr-accent-1);
-    --shadow-clr: var(--clr-accent-1);
     --text-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
 }
 
 /* ________________________________________ */
