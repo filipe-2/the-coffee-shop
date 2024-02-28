@@ -238,13 +238,14 @@ section {
     background-color: var(--bg-dark-2);
     font-weight: bold;
     font-size: clamp(1rem, 5vw, 1.25rem);
-    color: var(--text-clr, var(--clr-neutral-3));
+    color: var(--text-clr, var(--clr-neutral-1));
     transition: 0.3s ease;
 }
 
 .expand-slide-btn:hover {
     box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
     transform: scale(1.03);
+    color: var(--text-clr, var(--clr-neutral-3));
 }
 
 .scroll-btn {
@@ -583,10 +584,12 @@ header:hover {
 }
 
 .special-two {
+    --text-clr: var(--clr-accent-2);
     --shadow-clr: var(--clr-accent-2);
 }
 
 .special-three {
+    --text-clr: var(--clr-accent-3);
     --shadow-clr: var(--clr-accent-3);
 }
 
