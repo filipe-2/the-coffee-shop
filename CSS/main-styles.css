@@ -1,18 +1,18 @@
-/* ________________ FONTS _________________ */
+/* -------------- Fonts -------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* ________________ GLOBAL ________________ */
-
+/* ------------- Global -------------- */
 :root {
     --clr-neutral-1: white;
     --clr-neutral-2: chocolate;
     --clr-neutral-3: #FF6A00;
     --clr-neutral-4: rgb(255, 148, 72);
+    --clr-neutral-5: #ff6a002a;
 
     --clr-accent-1: #008CFF;
     --clr-accent-2: #9F00CF;
@@ -31,6 +31,9 @@
 
     --border-thickness-1: 0.325rem;
     --border-thickness-2: 0.2rem;
+
+    --line-height: 1.5rem;
+    --letter-spacing: 0.2rem;
 }
 
 *,
@@ -111,7 +114,7 @@ section {
 .slides {
     /* Fallback for browsers that don't support svh */
     min-height: 100vh;
-
+    /* -------------------------------------------- */
     min-height: 100svh;
     position: relative;
 }
@@ -173,8 +176,8 @@ section {
 
 .slide-description {
     text-align: justify;
-    letter-spacing: 0.2rem;
-    line-height: 1.5rem;
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
     font-size: clamp(0.75rem, 3vw, 1.125rem);
 }
 
@@ -293,10 +296,80 @@ section {
     visibility: visible;
 }
 
-/* ________________________________________ */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: var(--bg-dark-2);
+    display: none;
+}
 
 
-/* ________________ HEADER ________________ */
+
+.modal-content {
+    background: linear-gradient(90deg, var(--clr-neutral-5), transparent, transparent);
+    width: min(90%, 1140px);
+    max-height: 90vh;
+    margin-inline: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    padding: 2rem;
+    overflow-y: scroll;
+    border-radius: 2rem;
+    border-inline-start: var(--border-thickness-1) solid var(--clr-neutral-3);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 0 3rem var(--clr-neutral-3);
+}
+
+.modal-title {
+    text-align: center;
+    font-family: var(--font-2);
+    text-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-2));
+    font-size: 2rem;
+}
+
+.close-modal-btn {
+    float: right;
+    color: var(--clr-neutral-1);
+    background-color: var(--bg-dark-1);
+    border: var(--border-thickness-2) solid var(--clr-neutral-3);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.drink-content {
+    --gap: 2rem;
+
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.drink-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    margin-top: 1.25rem;
+}
+
+.drink-images img {
+    max-width: 12.5rem;
+    border-radius: 1rem;
+    box-shadow: 0.75rem 0.75rem 1rem var(--bg-dark-3);
+}
+
+.drink-description {
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    font-size: 0.85rem;
+}
+
+/* ----------------------------------- */
+
+
+/* ------------- Header -------------- */
 
 header {
     margin-top: -6.25rem;
@@ -458,19 +531,19 @@ header:hover {
     border-radius: 50%;
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* _______________ SHOWCASE _______________ */
+/* ------------ Showcase ------------- */
 
 .showcase {
     margin-top: 6.25rem;
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* ________________ DRINKS ________________ */
+/* ------------- Drinks -------------- */
 
 .drinks {
     background: url('../assets/coffee-background.jpg');
@@ -565,10 +638,10 @@ header:hover {
     border-radius: inherit;
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* ____________ SPECIAL DRINKS ____________ */
+/* --------- Special drinks ---------- */
 
 .special-drinks {
     border-top: var(--border-thickness-2) double var(--clr-accent-1);
@@ -601,10 +674,10 @@ header:hover {
     --border-clr: var(--clr-accent-1);
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* ________________ FOOTER ________________ */
+/* ------------- Footer -------------- */
 
 footer {
     background: url('../assets/coffee-beans.png');
@@ -717,10 +790,10 @@ footer:hover {
     font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
 
 
-/* _____________ MEDIA QUERIES ____________ */
+/* ---------- Media queries ---------- */
 
 @media (max-width: 800px) {
     .hamburger-menu {
@@ -769,4 +842,4 @@ footer:hover {
     }
 }
 
-/* ________________________________________ */
+/* ----------------------------------- */
