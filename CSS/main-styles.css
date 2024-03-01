@@ -231,11 +231,17 @@ section {
     background-color: var(--bg-dark-1);
 }
 
-.expand-slide-btn {
+.slide-options {
     z-index: 1;
+    margin-inline: auto;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.slide-options-btn {
     padding: 0.5em 1em;
-    margin: 1.25rem auto 2rem;
-    border-radius: 1.5rem;
+    margin: 2rem auto 2rem;
+    border-radius: 2rem;
     border: var(--border-thickness-2) solid var(--border-clr, var(--clr-neutral-3));
     box-shadow: 0 0 0.625rem var(--shadow-clr, var(--clr-neutral-3));
     background-color: var(--bg-dark-3);
@@ -245,10 +251,21 @@ section {
     transition: 0.3s ease;
 }
 
-.expand-slide-btn:hover {
+.slide-options-btn:hover {
     box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
     transform: scale(1.03);
     color: var(--text-clr, var(--clr-neutral-3));
+}
+
+.slide-option-btn--white {
+    --shadow-clr: var(--clr-neutral-1);
+    --border-clr: var(--clr-neutral-1);
+}
+
+.slide-option-btn--white:hover {
+    --shadow-clr: var(--clr-neutral-3);
+    --text-clr: var(--clr-neutral-3);
+    --border-clr: var(--clr-neutral-3);
 }
 
 .scroll-btn {
@@ -300,11 +317,9 @@ section {
     position: fixed;
     inset: 0;
     z-index: 10;
-    background-color: var(--bg-dark-2);
+    background-color: var(--bg-dark-3);
     display: none;
 }
-
-
 
 .modal-content {
     background: linear-gradient(90deg, var(--clr-neutral-5), transparent, transparent);
@@ -318,7 +333,7 @@ section {
     border-radius: 2rem;
     border-inline-start: var(--border-thickness-1) solid var(--clr-neutral-3);
     backdrop-filter: blur(1rem);
-    box-shadow: 0 0 3rem var(--clr-neutral-3);
+    
 }
 
 .modal-title {
@@ -333,10 +348,17 @@ section {
     color: var(--clr-neutral-1);
     background-color: var(--bg-dark-1);
     border: var(--border-thickness-2) solid var(--clr-neutral-3);
-    border-radius: 50%;
-    aspect-ratio: 1;
+    border-radius: 0.75rem;
+    padding: 0.25em 0.5em;
     font-size: 1rem;
     font-weight: bold;
+    transition: var(--transition-time-1) ease;
+}
+
+.close-modal-btn:hover {
+    color: var(--clr-neutral-3);
+    transform: scale(1.03);
+    border-radius: 50%;
 }
 
 .drink-content {
