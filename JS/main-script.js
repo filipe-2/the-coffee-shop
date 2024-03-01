@@ -28,9 +28,11 @@ console.log(closeModalBtn);
 [...expandSlideBtns].forEach(function (btn) {
     btn.addEventListener('click', function () {
         modal.style.display = "block";
+        document.body.style.overflowY = "hidden";
     });
 });
 
 closeModalBtn.addEventListener('click', function () {
     modal.style.display = "none";
+    document.body.style.overflowY = "visible";
 })

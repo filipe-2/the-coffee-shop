@@ -133,6 +133,13 @@ export function toggleHamburgerMenu() {
     hamburger.classList.toggle('open');
     hamburger.classList.toggle('closed');
 
+    // Locks the scrollbar of the body when the menu is open
+    if (hamburger.classList.contains('open')) {
+        document.body.style.overflowY = "hidden";
+    } else {
+        document.body.style.overflowY = "visible";
+    }
+    
     // Toggles the hamburger icons
     hamburgerIcon.classList.toggle('fa-bars-staggered');
     hamburgerIcon.classList.toggle('fa-bars');
