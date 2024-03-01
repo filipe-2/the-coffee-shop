@@ -5,6 +5,7 @@ export const hamburger = document.querySelector('.hamburger-menu');
 const hamburgerIcon = document.querySelector('.hamburger-menu i');
 const mainNavList = document.querySelector('.main-nav-list');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
+export const modal = document.getElementById('drinkModal'); // Selects the modal
 
 let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
 
@@ -181,4 +182,18 @@ export function goToBottom() {
         top: document.documentElement.scrollHeight,
         behavior: 'smooth',
     })
+}
+
+
+// Function to open the modal
+export function openModal() {
+    modal.style.display = "block";
+    document.body.style.overflowY = "hidden";
+}
+
+
+// Function to close the modal
+export function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflowY = "visible";
 }
