@@ -11,9 +11,11 @@ import {
 
     // Variables
     hamburger,
+    modal,
 } from './utils.js';
 
-const expandSlideBtns = document.querySelectorAll('.showcase .expand-slide-btn');
+// Gets the expand and close modal buttons
+const expandSlideBtns = [...document.querySelectorAll('.showcase .expand-slide-btn')];
 const closeModalBtn = document.querySelector('.close-modal-btn');
 
 window.addEventListener('scroll', toggleNavbarVisibility); // Toggles the navbar visibility when scrolling
@@ -25,8 +27,15 @@ window.addEventListener('scroll', handleScrollButtons) // Handles position and v
 document.querySelector('.scroll-btn[data-action="top"]').addEventListener('click', goToTop); // Goes to the top of the page when clicking
 document.querySelector('.scroll-btn[data-action="bottom"]').addEventListener('click', goToBottom); // Goes to the bottom of the page when clicking
 
-[...expandSlideBtns].forEach(function (btn) {
+// Opens modal when clicked
+expandSlideBtns.forEach(function (btn) {
     btn.addEventListener('click', openModal);
 });
 
-closeModalBtn.addEventListener('click', closeModal)
+closeModalBtn.addEventListener('click', closeModal); // Closes modal when clicked
+
+modal.addEventListener('click', function (event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+})

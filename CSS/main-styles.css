@@ -249,6 +249,7 @@ section {
     font-size: clamp(1rem, 5vw, 1.25rem);
     color: var(--clr-neutral-1);
     transition: 0.3s ease;
+    z-index: 0;
 }
 
 .slide-options-btn:hover {
@@ -317,7 +318,7 @@ section {
     position: fixed;
     inset: 0;
     z-index: 10;
-    background-color: var(--bg-dark-3);
+    background-color: var(--bg-dark-2);
     display: none;
 }
 
@@ -331,9 +332,7 @@ section {
     padding: 2rem;
     overflow-y: scroll;
     border-radius: 2rem;
-    border-inline-start: var(--border-thickness-1) solid var(--clr-neutral-3);
     backdrop-filter: blur(1rem);
-    
 }
 
 .modal-title {
@@ -363,29 +362,63 @@ section {
 
 .drink-content {
     --gap: 2rem;
+    --h-offset: 0.75rem;
+    --v-offset: 0.75rem;
+    --b-radius: 1rem;
+    --s-radius: 0;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: var(--gap);
 }
 
 .drink-images {
     display: flex;
-    flex-direction: column;
     gap: var(--gap);
-    margin-top: 1.25rem;
+    margin: 1.25rem 0;
 }
 
 .drink-images img {
-    max-width: 12.5rem;
-    border-radius: 1rem;
-    box-shadow: 0.75rem 0.75rem 1rem var(--bg-dark-3);
+    border-radius: 0.5rem;
+    box-shadow: var(--h-offset) var(--v-offset) var(--b-radius) var(--s-radius) var(--bg-dark-3);
+}
+
+.minimized-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.minimized-imgs img {
+    width: 12.5rem;
+}
+
+.expanded-img {
+    flex: 1;
+}
+
+.expanded-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
 }
 
 .drink-description {
     line-height: var(--line-height);
     letter-spacing: var(--letter-spacing);
     font-size: 0.85rem;
+}
+
+.drink-video {
+    max-width: 1000px;
+    margin: 1rem auto;
+}
+
+.drink-video video {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--h-offset) var(--v-offset) var(--b-radius) var(--s-radius) var(--bg-dark-3);
 }
 
 /* ----------------------------------- */
@@ -399,7 +432,7 @@ header {
     z-index: 10;
     width: 100%;
     box-shadow: 0 0 2rem var(--clr-neutral-3);
-    background: url('../assets/coffee-beans.png');
+    background: url('../assets/imgs/coffee-beans.png');
     background-color: var(--bg-dark-1);
     background-size: cover;
     background-position: center;
@@ -568,7 +601,7 @@ header:hover {
 /* ------------- Drinks -------------- */
 
 .drinks {
-    background: url('../assets/coffee-background.jpg');
+    background: url('../assets/imgs/coffee-background.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 3rem var(--clr-neutral-2);
@@ -699,10 +732,105 @@ header:hover {
 /* ----------------------------------- */
 
 
+/* ------------- Plans --------------- */
+
+.plans-section {
+    min-height: 100svh;
+
+    min-height: 100vh;
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.plan-cards {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.plan-card {
+    position: relative;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 50vh;
+    max-width: 300px;
+    transition: var(--transition-time-1) ease;
+}
+
+.plan-card:hover {
+    transform: scale(1.03);
+}
+
+.plan-card:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.plan-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.plan-card .fa-check {
+    color: greenyellow;
+}
+
+.plan-card .fa-times {
+    color: rgb(255, 47, 47)
+}
+
+.plan-card-title {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: var(--border-thickness-2) solid var(--border-clr);
+    padding: 1rem 0;
+    font-family: var(--font-2);
+    font-size: 2rem;
+}
+
+.plan-card-list {
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0;
+}
+
+.plan-card-list li {
+    margin: 0.5rem 0;
+}
+
+.silver {
+    --border-clr: silver;
+}
+
+.gold {
+    --border-clr: goldenrod;
+}
+
+.diamond {
+    --border-clr: lightcyan;
+}
+
+
+/* ----------------------------------- */
+
+
 /* ------------- Footer -------------- */
 
 footer {
-    background: url('../assets/coffee-beans.png');
+    background: url('../assets/imgs/coffee-beans.png');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -829,7 +957,7 @@ footer:hover {
         opacity: 0;
         flex-direction: column;
         gap: 2rem;
-        background: url('../assets/coffee-beans.png');
+        background: url('../assets/imgs/coffee-beans.png');
         background-color: var(--bg-dark-1);
         width: 100%;
         min-height: 100vh;
