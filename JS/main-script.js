@@ -27,15 +27,8 @@ window.addEventListener('scroll', handleScrollButtons) // Handles position and v
 document.querySelector('.scroll-btn[data-action="top"]').addEventListener('click', goToTop); // Goes to the top of the page when clicking
 document.querySelector('.scroll-btn[data-action="bottom"]').addEventListener('click', goToBottom); // Goes to the bottom of the page when clicking
 
-// Opens modal when clicked
-expandSlideBtns.forEach(function (btn) {
-    btn.addEventListener('click', openModal);
-});
+expandSlideBtns.forEach(btn => btn.addEventListener('click', openModal)); // Opens modal when click
 
 closeModalBtn.addEventListener('click', closeModal); // Closes modal when clicked
 
-modal.addEventListener('click', function (event) {
-    if (event.target == modal) {
-        closeModal();
-    }
-})
+modal.addEventListener('click', (event) => event.target === modal && closeModal()); // Closes modal when clicking outside of it

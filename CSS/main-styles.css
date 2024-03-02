@@ -7,7 +7,10 @@
 
 
 /* ------------- Global -------------- */
+
 :root {
+    /* -------- Custom properties -------- */
+
     --clr-neutral-1: white;
     --clr-neutral-2: chocolate;
     --clr-neutral-3: #FF6A00;
@@ -17,11 +20,18 @@
     --clr-accent-1: #008CFF;
     --clr-accent-2: #9F00CF;
     --clr-accent-3: #FF0037;
+    --clr-accent-4: silver;
+    --clr-accent-5: goldenrod;
+    --clr-accent-6: cyan;
 
     --bg-dark-1: black;
     --bg-dark-2: #000000ee;
     --bg-dark-3: #0000007f;
     --bg-dark-4: #d2691e34;
+    --bg-dark-5: #000000bf;
+
+    --clr-check: greenyellow;
+    --clr-deny: #ff2f2f;
 
     --font-1: 'Cormorant SC', serif;
     --font-2: 'Great Vibes', cursive;
@@ -34,6 +44,8 @@
 
     --line-height: 1.5rem;
     --letter-spacing: 0.2rem;
+
+    /* ----------------------------------- */
 }
 
 *,
@@ -735,12 +747,15 @@ header:hover {
 /* ------------- Plans --------------- */
 
 .plans-section {
-    min-height: 100svh;
-
+    /* Fallback for browsers that don't support svh */
     min-height: 100vh;
-    width: 90%;
-    max-width: 1140px;
+    /* -------------------------------------------- */
+    min-height: 100vh;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-dark-4);
 }
 
 .plan-cards {
@@ -750,6 +765,8 @@ header:hover {
     gap: 1rem;
     justify-items: center;
     align-items: center;
+    width: 100%;
+    max-width: 1140px;
 }
 
 .plan-card {
@@ -759,6 +776,7 @@ header:hover {
     min-height: 50vh;
     max-width: 300px;
     transition: var(--transition-time-1) ease;
+    box-shadow: 0.5rem 0.5rem 1rem black;
 }
 
 .plan-card:hover {
@@ -771,7 +789,7 @@ header:hover {
     z-index: 1;
     inset: 0;
     border-radius: inherit;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: var(--bg-dark-5);
 }
 
 .plan-card img {
@@ -784,11 +802,11 @@ header:hover {
 }
 
 .plan-card .fa-check {
-    color: greenyellow;
+    color: var(--clr-check);
 }
 
 .plan-card .fa-times {
-    color: rgb(255, 47, 47)
+    color: var(--clr-deny)
 }
 
 .plan-card-title {
@@ -799,6 +817,7 @@ header:hover {
     padding: 1rem 0;
     font-family: var(--font-2);
     font-size: 2rem;
+    text-shadow: 0 0 1rem var(--shadow-clr);
 }
 
 .plan-card-list {
@@ -812,17 +831,45 @@ header:hover {
 }
 
 .silver {
-    --border-clr: silver;
+    --shadow-clr: var(--clr-accent-4);
+    --border-clr: var(--clr-accent-4);
 }
 
 .gold {
-    --border-clr: goldenrod;
+    --shadow-clr: var(--clr-accent-5);
+    --border-clr: var(--clr-accent-5);
 }
 
 .diamond {
-    --border-clr: lightcyan;
+    --shadow-clr: var(--clr-accent-6);
+    --border-clr: var(--clr-accent-6);
 }
 
+.plan-card-btns {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.plan-card-btn {
+    padding: 0.25rem 0.5rem;
+    border: 2px solid var(--clr-neutral-3);
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
+    color: var(--clr-neutral-1);
+    background-color: var(--bg-dark-3);
+}
+
+.plan-card-btn:nth-child(3) {
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--clr-neutral-3);
+    padding: 0.4rem;
+}
 
 /* ----------------------------------- */
 

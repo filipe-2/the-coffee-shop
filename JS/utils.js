@@ -14,8 +14,10 @@ let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by d
 function updateSlideClasses(activeSlide, activeSlideIndicator, newSlide, newSlideIndicator) {
     // Updates slide classes
     activeSlide.classList.remove('active');
-    activeSlideIndicator.classList.remove('checked');
     newSlide.classList.add('active');
+
+    // Updates slide indicator classes
+    activeSlideIndicator.classList.remove('checked');
     newSlideIndicator.classList.add('checked');
 
     // Changes aria-current attribute
@@ -87,13 +89,8 @@ function slideThroughIndicators(event) {
 }
 
 
-// Function to start the autoplay slideshow
-function startAutoplay() {
-    // Sets up an interval to switch slides automatically
-    autoplayInterval = setInterval(() => {
-        switchSlide();
-    }, 5000); // Switches slides every 5 seconds
-}
+// Function to start the autoplay slideshow; sets up an interval to switch slides automatically; switches slides every 5 seconds
+const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 5000);
 
 
 // Function to start the slideshow
@@ -140,7 +137,7 @@ export function toggleHamburgerMenu() {
     } else {
         document.body.style.overflowY = "visible";
     }
-    
+
     // Toggles the hamburger icons
     hamburgerIcon.classList.toggle('fa-bars-staggered');
     hamburgerIcon.classList.toggle('fa-bars');
@@ -168,21 +165,11 @@ export function handleScrollButtons() {
 
 
 // Function to go back to the top of the page
-export function goToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-}
+export const goToTop = () => window.scrollTo({ top: 0, behavior: 'smooth', });
 
 
 // Function to go back to the bottom of the page
-export function goToBottom() {
-    window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth',
-    })
-}
+export const goToBottom = () => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
 
 
 // Function to open the modal
