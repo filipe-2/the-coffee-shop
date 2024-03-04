@@ -1,31 +1,31 @@
 :root {
     /* --------- Default colors ---------- */
-    --clr-neutral-1: white;
-    --clr-neutral-2: chocolate;
-    --clr-neutral-3: #FF6A00;
-    --clr-neutral-4: #ff9448;
-    --clr-neutral-5: #ff6a002a;
-    --clr-neutral-6: black;
+    --clr-neutral-1: hsl(0, 0%, 100%);
+    --clr-neutral-2: hsl(25, 75%, 47%);
+    --clr-neutral-3: hsl(25, 100%, 50%);
+    --clr-neutral-4: hsl(25, 100%, 64%);
+    --clr-neutral-5: hsla(25, 100%, 50%, 0.165);
+    --clr-neutral-6: hsl(0, 0%, 0%);
     /* ----------------------------------- */
 
     /* --------- Special colors ---------- */
-    --clr-accent-1: #008CFF;
-    --clr-accent-2: #9F00CF;
-    --clr-accent-3: #FF0037;
-    --clr-accent-4: silver;
-    --clr-accent-5: goldenrod;
-    --clr-accent-6: cyan;
+    --clr-accent-1: hsl(207, 100%, 50%);
+    --clr-accent-2: hsl(286, 100%, 41%);
+    --clr-accent-3: hsl(347, 100%, 50%);
+    --clr-accent-4: hsl(0, 0%, 75%);
+    --clr-accent-5: hsl(43, 74%, 49%);
+    --clr-accent-6: hsl(180, 100%, 50%);
 
-    --clr-check: greenyellow;
-    --clr-deny: #ff2f2f;
+    --clr-check: hsl(84, 100%, 59%);
+    --clr-deny: hsl(0, 100%, 59%);
     /* ----------------------------------- */
 
     /* -------- Background colors -------- */
-    --bg-dark-1: black;
-    --bg-dark-2: #000000ee;
-    --bg-dark-3: #0000007f;
-    --bg-dark-4: #d2691e34;
-    --bg-dark-5: #000000bf;
+    --bg-dark-1: hsl(0, 0%, 0%);
+    --bg-dark-2: hsla(0, 0%, 0%, 0.933);
+    --bg-dark-3: hsla(0, 0%, 0%, 0.498);
+    --bg-dark-4: hsla(25, 75%, 47%, 0.204);
+    --bg-dark-5: hsla(0, 0%, 0%, 0.749);
     /* ----------------------------------- */
 
     /* -------------- Fonts -------------- */
@@ -44,6 +44,6 @@
     --letter-spacing: 0.2rem;
 
     --wrapper-width: 90%;
-    --wrapper-max-width: 71.8125rem;
+    --wrapper-max-width: 71.25rem;
     /* ----------------------------------- */
 }

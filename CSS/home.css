@@ -438,7 +438,6 @@
 
 .plans-section__cards {
     display: grid;
-    grid-auto-flow: row;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     justify-items: center;

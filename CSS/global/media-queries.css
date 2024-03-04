@@ -1,0 +1,46 @@
+@media (max-width: 50rem) {
+    .main-nav__hamburger-menu {
+        display: inline;
+    }
+
+    .main-nav__list {
+        position: absolute;
+        inset: 0;
+        visibility: hidden;
+        opacity: 0;
+        flex-direction: column;
+        gap: 2rem;
+        background: url('../../assets/imgs/coffee-beans.png');
+        background-color: var(--bg-dark-1);
+        width: 100%;
+        min-height: 100vh;
+        justify-content: center;
+        transition: var(--transition-time-1);
+    }
+
+    .main-nav__list::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: var(--bg-dark-3);
+        z-index: -1;
+    }
+
+    .main-nav__list.visible {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+    }
+
+    .main-nav__list li {
+        width: min(75%, 350px);
+        text-align: center;
+        border-radius: 0.625rem;
+        background-color: var(--bg-dark-2);
+    }
+
+    .main-nav__list i {
+        margin-right: 0;
+    }
+}
