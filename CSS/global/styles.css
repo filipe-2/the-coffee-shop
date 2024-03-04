@@ -37,7 +37,7 @@
 
 .action-button:hover {
     color: var(--text-clr, var(--clr-neutral-3));
-    box-shadow: 0 0 1rem var(--shadow-clr, var(--clr-neutral-3));
+    box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
 }
 
 .controls {
@@ -46,7 +46,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
     position: fixed;
     inset: auto 0 0 auto;
     z-index: 5;
@@ -71,7 +71,7 @@ header {
     position: fixed;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 0 2rem var(--clr-neutral-3);
+    box-shadow: 0 0 32px var(--clr-neutral-3);
     background: url('../../assets/imgs/coffee-beans.png');
     background-color: var(--bg-dark-1);
     background-size: cover;
@@ -93,7 +93,6 @@ header:hover {
 }
 
 .main-nav {
-    width: min(var(--wrapper-width), var(--wrapper-max-width));
     margin: auto;
     position: relative;
     z-index: 10;
@@ -115,7 +114,7 @@ header:hover {
 .main-nav__title:hover {
     border-style: solid;
     border-left: none;
-    box-shadow: 0 0 1rem var(--clr-neutral-3);
+    box-shadow: 0 0 16px var(--clr-neutral-3);
     color: var(--clr-neutral-3);
 }
 
@@ -133,7 +132,7 @@ header:hover {
     border: var(--border-thickness-1) solid var(--clr-neutral-3);
     border-radius: 50%;
     pointer-events: none;
-    box-shadow: 0 0 1rem var(--clr-neutral-3);
+    box-shadow: 0 0 16px var(--clr-neutral-3);
 }
 
 .main-nav__wrapper {
@@ -141,18 +140,19 @@ header:hover {
     justify-content: space-between;
     align-items: center;
     min-height: 6.25rem;
+    margin-inline: auto;
+    width: min(var(--wrapper-width), var(--wrapper-max-width));
 }
 
 .main-nav__list {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
+    gap: 4px;
 }
 
 .main-nav__list-item {
     padding: 0.5em;
-    border-radius: 50%;
     transition: var(--transition-time-1);
     cursor: pointer;
 }
@@ -168,10 +168,6 @@ header:hover {
     color: var(--clr-neutral-4);
     margin-right: 0.25rem;
     transition: var(--transition-time-1);
-}
-
-.main-nav__list-item:hover {
-    transform: scale(1.05);
 }
 
 .main-nav__list-item:hover .main-nav__link,
@@ -197,6 +193,16 @@ header:hover {
     background-color: transparent;
     color: var(--clr-neutral-4);
     border: none;
+    transition: var(--transition-time-1);
+}
+
+.main-nav__list-item:hover {
+    transform: scale(1.05);
+}
+
+.main-nav__btn:hover {
+    transform: scale(1.05);
+    color: var(--clr-neutral-3);
 }
 
 .main-nav__hamburger-menu {

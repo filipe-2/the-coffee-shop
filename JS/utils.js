@@ -4,6 +4,7 @@ let autoplayInterval; // Variable for the sliding interval
 export const hamburger = document.querySelector('.main-nav__hamburger-menu');
 const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
 const mainNavList = document.querySelector('.main-nav__list');
+const mainNavBtns = document.querySelector('.main-nav__btns');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 export const modal = document.getElementById('drinkModal'); // Selects the modal
 
@@ -142,8 +143,9 @@ export function toggleHamburgerMenu() {
     hamburgerIcon.classList.toggle('fa-bars-staggered');
     hamburgerIcon.classList.toggle('fa-bars');
 
-    // Toggles the visibility of the nav list
+    // Toggles the visibility of the nav list and nav buttons
     mainNavList.classList.toggle('visible');
+    mainNavBtns.classList.toggle('visible');
 }
 
 

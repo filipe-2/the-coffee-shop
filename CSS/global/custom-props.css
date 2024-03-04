@@ -37,11 +37,12 @@
     --transition-time-1: 0.3s;
     --transition-time-2: 0.5s;
 
-    --border-thickness-1: 0.325rem;
-    --border-thickness-2: 0.2rem;
+    --border-thickness-1: 5px;
+    --border-thickness-2: 3px;
+    --border-thickness-3: 1px;
 
-    --line-height: 1.5rem;
-    --letter-spacing: 0.2rem;
+    --line-height: 24px;
+    --letter-spacing: 3px;
 
     --wrapper-width: 90%;
     --wrapper-max-width: 71.25rem;

@@ -294,7 +294,7 @@
     background: url('../assets/imgs/coffee-background.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 0 3rem var(--clr-neutral-2);
+    box-shadow: 0 0 48px var(--clr-neutral-2);
     border-top: var(--border-thickness-2) double var(--clr-neutral-2);
 }
 
@@ -307,7 +307,7 @@
 
 .drinks-content {
     width: 100%;
-    min-height: 500px;
+    min-height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,7 +315,7 @@
 
 .drinks-list {
     display: flex;
-    gap: 1.5rem;
+    gap: 25px;
     padding: 1rem 1.5rem;
     margin: 6.25rem auto 1.5rem;
     transition: var(--transition-time-1);
@@ -328,11 +328,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 225px;
+    min-width: 14.0625rem;
     min-height: 12.5rem;
     padding: 0.625rem;
     margin-block: 1.5rem;
-    border-radius: 1.5rem;
+    border-radius: 25px;
     background-color: var(--bg-dark-3);
     box-shadow: 0.625rem 0.625rem 1.25rem var(--bg-dark-1);
     position: relative;
