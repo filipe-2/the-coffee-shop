@@ -6,14 +6,14 @@
     <title>The Coffee Shop | Home</title>
     <!----------------------------------->
 
-    <!-------------- Meta --------------->
+    <!----------- Meta data ------------->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carlos Filipe">
     <meta name="description"
         content="Welcome to The Coffee Shop! We specialize in serving the best coffee drinks you will ever find. Visit us for a cozy atmosphere and a delightful coffee experience.">
     <meta name="keywords"
         content="coffee, cafe, The Coffee Shop, beverages, espresso, cappuccino, latte, coffee shop, cozy cafe, coffeehouse">
-    <meta name="author" content="Carlos Filipe">
     <!----------------------------------->
 
     <!------------- Icons --------------->
@@ -21,9 +21,22 @@
     <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.png">
     <!----------------------------------->
 
+    <!------------- Fonts --------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <!----------------------------------->
+
     <!------------- Styles -------------->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./CSS/main-styles.css">
+    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="./CSS/global/boilerplate.css">
+    <link rel="stylesheet" href="./CSS/global/styles.css">
+    <link rel="stylesheet" href="./CSS/global/custom-props.css">
+    <link rel="stylesheet" href="./CSS/global/typography.css">
     <!----------------------------------->
 </head>
 
@@ -33,26 +46,26 @@
         <!--------- Main navigation --------->
         <nav class="main-nav" aria-label="primary navigation">
             <!-------- Navigation title --------->
-            <ul class="branding">
+            <ul class="main-nav__branding">
                 <!---------- Website logo ----------->
-                <img class="title-img" src="./assets/imgs/logo.png" alt="Website logo: A cup of hot coffee.">
+                <img class="main-nav__img-logo" src="./assets/imgs/logo.png" alt="Website logo: A cup of hot coffee.">
                 <!----------------------------------->
 
                 <!---------- Website title ---------->
-                <h1><a href="./" class="title">The Coffee Shop</a></h1>
+                <h1><a href="./" class="main-nav__title">The Coffee Shop</a></h1>
                 <!----------------------------------->
             </ul>
             <!----------------------------------->
 
             <!--------- Hamburger menu ---------->
-            <button class="hamburger-menu closed" aria-label="main navigation menu" aria-controls="primary-navigation"
-                aria-expanded="false">
+            <button class="main-nav__hamburger-menu closed" aria-label="main navigation menu"
+                aria-controls="primary-navigation" aria-expanded="false">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
             <!----------------------------------->
 
             <!-------- Navigation links --------->
-            <ul class="main-nav-list" id="primary-navigation">
+            <ul class="main-nav__list" id="primary-navigation">
                 <li>
                     <a href="./" aria-current="page" aria-label="Homepage">
                         <i class="fa fa-home" aria-hidden="true"></i>Home
@@ -451,38 +464,39 @@
 
         <!---------- Plans section ---------->
         <section class="plans-section">
-            <div class="plan-cards">
-                <div class="plan-card silver">
+            <div class="plans-section__cards">
+                <div class="plans-section__card plans-section__card--silver-plan">
                     <!----------- Card title ------------>
-                    <h2 class="plan-card-title">Silver</h2>
+                    <h2 class="plans-section__card-title">Silver</h2>
                     <!----------------------------------->
 
                     <!------- Plan features list -------->
-                    <ul class="plan-card-list">
-                        <li>Special drinks <i class="fa fa-check"></i></li>
-                        <li>Special discounts <i class="fa fa-check"></i></li>
-                        <li>Surprise gifts <i class="fa fa-times"></i></li>
-                        <li>Free drinks for special occasions <i class="fa fa-times"></i></li>
-                        <li>Free pastries and savories <i class="fa fa-times"></i></li>
-                        <li>Include familiars or friends <i class="fa fa-times"></i></li>
+                    <ul class="plans-section__card-list plans-section__card-list--silver-plan">
+                        <li class="plans-section__card-list-item">Special drinks <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Special discounts <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Surprise gifts <i class="fa fa-times"></i></li>
+                        <li class="plans-section__card-list-item">Free drinks for special occasions <i
+                                class="fa fa-times"></i></li>
+                        <li class="plans-section__card-list-item">Free pastries and savories <i class="fa fa-times"></i>
+                        </li>
+                        <li class="plans-section__card-list-item">Include a familiar or friend <i
+                                class="fa fa-times"></i></li>
                     </ul>
                     <!----------------------------------->
 
                     <!---------- Card buttons ----------->
-                    <div class="plan-card-btns">
+                    <div class="plans-section__card-btns">
                         <!----- Prices dropdown button ------>
-                        <button class="plan-card-btn drop-prices">
-                            <i class="fa fa-chevron-down"></i>&dollar;25
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--dropdown plans-section__card-btn--silver-plan">
+                            <i class="fa fa-chevron-down"></i> &dollar;25
                         </button>
                         <!----------------------------------->
 
-                        <!----------- Buy button ------------>
-                        <button class="plan-card-btn buy-btn">Buy</button>
-                        <!----------------------------------->
-
                         <!------- Add to cart button -------->
-                        <button class="plan-card-btn add-cart">
-                            <i class="fa fa-shopping-cart"></i>
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--add-cart plans-section__card-btn--silver-plan">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
                         </button>
                         <!----------------------------------->
                     </div>
@@ -493,78 +507,37 @@
                     <!----------------------------------->
                 </div>
 
-                <div class="plan-card gold">
-                    <!----------- Card title ------------>
-                    <h2 class="plan-card-title">Gold</h2>
+                <div class="plans-section__card plans-section__card--diamond-plan">
+                    <h2 class="plans-section__card-title">Diamond</h2>
                     <!----------------------------------->
 
                     <!------- Plan features list -------->
-                    <ul class="plan-card-list">
-                        <li>Special drinks <i class="fa fa-check"></i></li>
-                        <li>Special discounts <i class="fa fa-check"></i></li>
-                        <li>Surprise gifts <i class="fa fa-check"></i></li>
-                        <li>Free drinks for special occasions <i class="fa fa-check"></i></li>
-                        <li>Free pastries and savories <i class="fa fa-times"></i></li>
-                        <li>Include familiars or friends <i class="fa fa-times"></i></li>
-                        <li></li>
+                    <ul class="plans-section__card-list plans-section__card-list--diamond-plan">
+                        <li class="plans-section__card-list-item">Special drinks <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Special discounts <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Surprise gifts <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Free drinks for special occasions <i
+                                class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Free pastries and savories <i class="fa fa-check"></i>
+                        </li>
+                        <li class="plans-section__card-list-item">Include a familiar or friend <i
+                                class="fa fa-check"></i></li>
                     </ul>
                     <!----------------------------------->
 
                     <!---------- Card buttons ----------->
-                    <div class="plan-card-btns">
+                    <div class="plans-section__card-btns">
                         <!----- Prices dropdown button ------>
-                        <button class="plan-card-btn drop-prices">
-                            <i class="fa fa-chevron-down"></i>&dollar;50
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--dropdown plans-section__card-btn--diamond-plan">
+                            <i class="fa fa-chevron-down"></i> &dollar;100
                         </button>
-                        <!----------------------------------->
-
-                        <!----------- Buy button ------------>
-                        <button class="plan-card-btn buy-btn">Buy</button>
                         <!----------------------------------->
 
                         <!------- Add to cart button -------->
-                        <button class="plan-card-btn add-cart">
-                            <i class="fa fa-shopping-cart"></i>
-                        </button>
-                        <!----------------------------------->
-                    </div>
-                    <!----------------------------------->
-
-                    <!----------- Card image ------------>
-                    <img src="./assets/imgs/gold.jpg" alt="gold plan image">
-                    <!----------------------------------->
-                </div>
-
-                <div class="plan-card diamond">
-                    <h2 class="plan-card-title">Diamond</h2>
-                    <!----------------------------------->
-
-                    <!------- Plan features list -------->
-                    <ul class="plan-card-list">
-                        <li>Special drinks <i class="fa fa-check"></i></li>
-                        <li>Special discounts <i class="fa fa-check"></i></li>
-                        <li>Surprise gifts <i class="fa fa-check"></i></li>
-                        <li>Free drinks for special occasions <i class="fa fa-check"></i></li>
-                        <li>Free pastries and savories <i class="fa fa-check"></i></li>
-                        <li>Include familiars or friends <i class="fa fa-check"></i></li>
-                    </ul>
-                    <!----------------------------------->
-
-                    <!---------- Card buttons ----------->
-                    <div class="plan-card-btns">
-                        <!----- Prices dropdown button ------>
-                        <button class="plan-card-btn drop-prices">
-                            <i class="fa fa-chevron-down"></i>&dollar;100
-                        </button>
-                        <!----------------------------------->
-
-                        <!----------- Buy button ------------>
-                        <button class="plan-card-btn buy-btn">Buy</button>
-                        <!----------------------------------->
-
-                        <!------- Add to cart button -------->
-                        <button class="plan-card-btn add-cart">
-                            <i class="fa fa-shopping-cart"></i>
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--add-cart plans-section__card-btn--diamond-plan">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
                         </button>
                         <!----------------------------------->
                     </div>
@@ -572,6 +545,48 @@
 
                     <!----------- Card image ------------>
                     <img src="./assets/imgs/diamond.jpg" alt="diamond plan image">
+                    <!----------------------------------->
+                </div>
+
+                <div class="plans-section__card plans-section__card--gold-plan">
+                    <!----------- Card title ------------>
+                    <h2 class="plans-section__card-title">Gold</h2>
+                    <!----------------------------------->
+
+                    <!------- Plan features list -------->
+                    <ul class="plans-section__card-list plans-section__card-list--gold-plan">
+                        <li class="plans-section__card-list-item">Special drinks <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Special discounts <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Surprise gifts <i class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Free drinks for special occasions <i
+                                class="fa fa-check"></i></li>
+                        <li class="plans-section__card-list-item">Free pastries and savories <i class="fa fa-times"></i>
+                        </li>
+                        <li class="plans-section__card-list-item">Include a familiar or friend <i
+                                class="fa fa-times"></i></li>
+                    </ul>
+                    <!----------------------------------->
+
+                    <!---------- Card buttons ----------->
+                    <div class="plans-section__card-btns">
+                        <!----- Prices dropdown button ------>
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--dropdown plans-section__card-btn--gold-plan">
+                            <i class="fa fa-chevron-down"></i> &dollar;50
+                        </button>
+                        <!----------------------------------->
+
+                        <!------- Add to cart button -------->
+                        <button
+                            class="plans-section__card-btn plans-section__card-btn--add-cart plans-section__card-btn--gold-plan">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
+                        </button>
+                        <!----------------------------------->
+                    </div>
+                    <!----------------------------------->
+
+                    <!----------- Card image ------------>
+                    <img src="./assets/imgs/gold.jpg" alt="gold plan image">
                     <!----------------------------------->
                 </div>
             </div>
@@ -646,6 +661,7 @@
     <!----------------------------------->
 
     <!------------- Modal --------------->
+    <!-- Should it be here? Also, pressing ESCAPE should close the modal as well. -->
     <div id="drinkModal" class="modal">
         <!--------- Modal content ----------->
         <div class="modal-content">

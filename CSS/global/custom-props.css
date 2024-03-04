@@ -1,0 +1,49 @@
+:root {
+    /* --------- Default colors ---------- */
+    --clr-neutral-1: white;
+    --clr-neutral-2: chocolate;
+    --clr-neutral-3: #FF6A00;
+    --clr-neutral-4: #ff9448;
+    --clr-neutral-5: #ff6a002a;
+    --clr-neutral-6: black;
+    /* ----------------------------------- */
+
+    /* --------- Special colors ---------- */
+    --clr-accent-1: #008CFF;
+    --clr-accent-2: #9F00CF;
+    --clr-accent-3: #FF0037;
+    --clr-accent-4: silver;
+    --clr-accent-5: goldenrod;
+    --clr-accent-6: cyan;
+
+    --clr-check: greenyellow;
+    --clr-deny: #ff2f2f;
+    /* ----------------------------------- */
+
+    /* -------- Background colors -------- */
+    --bg-dark-1: black;
+    --bg-dark-2: #000000ee;
+    --bg-dark-3: #0000007f;
+    --bg-dark-4: #d2691e34;
+    --bg-dark-5: #000000bf;
+    /* ----------------------------------- */
+
+    /* -------------- Fonts -------------- */
+    --font-1: 'Cormorant SC', serif;
+    --font-2: 'Great Vibes', cursive;
+    /* ----------------------------------- */
+
+    /* -------------- Misc --------------- */
+    --transition-time-1: 0.3s;
+    --transition-time-2: 0.5s;
+
+    --border-thickness-1: 0.325rem;
+    --border-thickness-2: 0.2rem;
+
+    --line-height: 1.5rem;
+    --letter-spacing: 0.2rem;
+
+    --wrapper-width: 90%;
+    --wrapper-max-width: 71.8125rem;
+    /* ----------------------------------- */
+}

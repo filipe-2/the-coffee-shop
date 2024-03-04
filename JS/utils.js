@@ -1,9 +1,9 @@
 let autoplayInterval; // Variable for the sliding interval
 
 // Selects hamburger menu and it's icon
-export const hamburger = document.querySelector('.hamburger-menu');
-const hamburgerIcon = document.querySelector('.hamburger-menu i');
-const mainNavList = document.querySelector('.main-nav-list');
+export const hamburger = document.querySelector('.main-nav__hamburger-menu');
+const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
+const mainNavList = document.querySelector('.main-nav__list');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 export const modal = document.getElementById('drinkModal'); // Selects the modal
 
