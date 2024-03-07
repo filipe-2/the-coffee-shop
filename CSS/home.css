@@ -63,11 +63,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 1.5rem;
-    background-color: var(--bg-dark-3);
+    padding-block: 48px 0;
+    backdrop-filter: blur(16px);
+    box-shadow: 8px 8px 16px var(--bg-dark-3);
     border-radius: 20px;
     position: relative;
     width: min(var(--wrapper-width), var(--wrapper-max-width));
+}
+
+.slide-description-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent, transparent, var(--bg-dark-3));
+    border-radius: inherit;
+    pointer-events: none;
 }
 
 .slide-title {
@@ -77,17 +87,22 @@
     font-size: clamp(1.5rem, 1.1896551724137931rem + 1.839080459770115vw, 2.5rem);
     text-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-2));
     font-family: var(--font-2);
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 .slide-description {
     /* Fallbacks */
     font-size: 0.75rem;
 
-    font-size: clamp(0.75rem, 0.6336206896551724rem + 0.6896551724137931vw, 1.125rem);
+    font-size: clamp(0.75rem, 0.6336206896551724rem + 0.6896551724137931vw, 1rem);
     text-align: justify;
     letter-spacing: var(--letter-spacing);
     line-height: var(--line-height);
+    width: 100%;
+    margin: 0;
+    padding: 8px 32px;
+    max-height: clamp(8rem, 20rem - 10vw, 20rem);
+    overflow: hidden;
 }
 
 .slider {
@@ -140,10 +155,11 @@
 }
 
 .slide-options {
-    z-index: 1;
     margin-inline: auto;
     display: flex;
-    gap: 20px;
+    margin: 2rem auto 2rem;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px var(--shadow-clr, var(--clr-neutral-6));
 }
 
 .slide-options-btn {
@@ -152,29 +168,37 @@
 
     font-size: clamp(0.9375rem, 0.8405172413793104rem + 0.5747126436781609vw, 1.25rem);
     padding: 0.5em 1em;
-    margin: 2rem auto 2rem;
-    border-radius: 32px;
-    border: var(--border-thickness-2) solid var(--border-clr, var(--clr-neutral-3));
-    box-shadow: 0 0 10px var(--shadow-clr, var(--clr-neutral-3));
-    background-color: var(--bg-dark-3);
+    border: none;
+    background-color: var(--bg-color, var(--clr-neutral-7));
     font-weight: bold;
-    color: var(--clr-neutral-1);
+    color: var(--text-clr, var(--clr-neutral-1));
     transition: 0.3s ease;
     z-index: 0;
 }
 
+.slide-options-btn:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.slide-options-btn:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 .slide-options-btn:hover {
-    box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
-    transform: scale(1.03);
     color: var(--text-clr, var(--clr-neutral-3));
 }
 
 .slide-option-btn--white {
-    --shadow-clr: var(--clr-neutral-1);
+    /* Custom properties */
+    --bg-color: var(--clr-neutral-8);
+    --text-clr: var(--clr-neutral-6);
     --border-clr: var(--clr-neutral-1);
 }
 
 .slide-option-btn--white:hover {
+    /* Custom properties */
     --shadow-clr: var(--clr-neutral-3);
     --text-clr: var(--clr-neutral-3);
     --border-clr: var(--clr-neutral-3);
@@ -189,12 +213,16 @@
 }
 
 .modal-content {
+    /* Fallbacks */
+    max-height: 90vh;
+    margin-top: 50vh;
+
     background: linear-gradient(90deg, var(--clr-neutral-5), transparent, transparent);
     width: var(--wrapper-width);
     max-width: var(--wrapper-max-width);
-    max-height: 90vh;
+    max-height: 90svh;
     margin-inline: auto;
-    margin-top: 50vh;
+    margin-top: 50svh;
     transform: translateY(-50%);
     padding: 2rem;
     overflow-y: scroll;
@@ -228,6 +256,7 @@
 }
 
 .drink-content {
+    /* Custom properties */
     --gap: 32px;
     --h-offset: 12px;
     --v-offset: 12px;
@@ -291,9 +320,9 @@
 /* ----------------------------------- */
 
 
-/* ------------ Showcase ------------- */
+/* ------------ Hero ------------- */
 
-.showcase {
+.hero {
     margin-top: 6.25rem;
 }
 
@@ -318,8 +347,11 @@
 }
 
 .drinks-content {
-    width: 100%;
+    /* Fallbacks */
     min-height: 75vh;
+
+    min-height: 75svh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -409,23 +441,27 @@
 }
 
 .special-one {
+    /* Custom properties */
     --text-clr: var(--clr-accent-1);
     --shadow-clr: var(--clr-accent-1);
     --border-clr: var(--clr-accent-1);
 }
 
 .special-two {
+    /* Custom properties */
     --text-clr: var(--clr-accent-2);
     --shadow-clr: var(--clr-accent-2);
 }
 
 .special-three {
+    /* Custom properties */
     --text-clr: var(--clr-accent-3);
     --shadow-clr: var(--clr-accent-3);
 }
 
 .special-indicators,
 .special-action-button {
+    /* Custom properties */
     --text-clr: var(--clr-accent-1);
     --shadow-clr: var(--clr-accent-1);
     --border-clr: var(--clr-accent-1);
@@ -469,7 +505,9 @@
 .plans-section__card {
     /* Fallbacks */
     font-size: 0.8125rem;
+    min-height: 50vh;
 
+    /* Custom properties */
     --h-offset: 8px;
     --v-offset: 8px;
     --b-radius: 16px;
@@ -479,7 +517,7 @@
     position: relative;
     border-radius: 16px;
     padding: 1rem;
-    min-height: 50vh;
+    min-height: 50svh;
     max-width: 300px;
     transition: var(--transition-time-2) ease;
     box-shadow: var(--h-offset) var(--v-offset) var(--b-radius) var(--s-radius) var(--box-shadow-clr, var(--clr-neutral-6));
@@ -487,6 +525,7 @@
 }
 
 .plans-section__card:hover {
+    /* Custom properties */
     --h-offset: 0;
     --v-offset: 0;
     --b-radius: 32px;
@@ -552,38 +591,50 @@
 }
 
 .plans-section__card--silver-plan {
+    /* Custom properties */
     --shadow-clr: var(--clr-accent-4);
     --border-clr: var(--clr-accent-4);
+
     grid-column: 1 / 3;
 }
 
 .plans-section__card--silver-plan:hover {
-    transform: translateX(-5rem) scale(1.15);
+    /* Custom properties */
     --box-shadow-clr: var(--clr-accent-4);
+
+    transform: translateX(-5rem) scale(1.15);
 }
 
 .plans-section__card--diamond-plan {
+    /* Custom properties */
     --shadow-clr: var(--clr-accent-6);
     --border-clr: var(--clr-accent-6);
+
     transform: scale(1.1);
     grid-column: 2 / 4;
     z-index: 2;
 }
 
 .plans-section__card--diamond-plan:hover {
-    transform: scale(1.13);
+    /* Custom properties */
     --box-shadow-clr: var(--clr-accent-6);
+
+    transform: scale(1.13);
 }
 
 .plans-section__card--gold-plan {
+    /* Custom properties */
     --shadow-clr: var(--clr-accent-5);
     --border-clr: var(--clr-accent-5);
+
     grid-column: 3 / 5;
 }
 
 .plans-section__card--gold-plan:hover {
-    transform: translateX(5rem) scale(1.15);
+    /* Custom properties */
     --box-shadow-clr: var(--clr-accent-5);
+
+    transform: translateX(5rem) scale(1.15);
 }
 
 .plans-section__card-btns {

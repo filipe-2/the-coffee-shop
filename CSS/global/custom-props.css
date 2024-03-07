@@ -6,6 +6,8 @@
     --clr-neutral-4: hsl(25, 100%, 64%);
     --clr-neutral-5: hsla(25, 100%, 50%, 0.165);
     --clr-neutral-6: hsl(0, 0%, 0%);
+    --clr-neutral-7: hsla(25, 88%, 38%, 0.75);
+    --clr-neutral-8: hsla(0, 0%, 100%, 0.75);
     /* ----------------------------------- */
 
     /* --------- Special colors ---------- */
@@ -41,7 +43,7 @@
     --border-thickness-2: 3px;
     --border-thickness-3: 1px;
 
-    --line-height: 24px;
+    --line-height: 1.5;
     --letter-spacing: 3px;
 
     --wrapper-width: 90%;

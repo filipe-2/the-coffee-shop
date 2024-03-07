@@ -15,7 +15,7 @@ import {
 } from './utils.js';
 
 // Gets the expand and close modal buttons
-const expandSlideBtns = [...document.querySelectorAll('.showcase .expand-slide-btn')];
+const expandSlideBtns = [...document.querySelectorAll('.hero .expand-slide-btn')];
 const closeModalBtn = document.querySelector('.close-modal-btn');
 
 window.addEventListener('scroll', toggleNavbarVisibility); // Toggles the navbar visibility when scrolling

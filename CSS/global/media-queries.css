@@ -4,6 +4,10 @@
     }
 
     .main-nav__list {
+        /* Fallbacks */
+        min-height: 100vh;
+
+        min-height: 100svh;
         position: absolute;
         z-index: 1;
         inset: 0;
@@ -12,7 +16,6 @@
         flex-direction: column;
         background: url('../../assets/imgs/coffee-beans.png');
         background-color: var(--bg-dark-1);
-        min-height: 100vh;
         justify-content: center;
         transition: var(--transition-time-1);
     }
