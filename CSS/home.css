@@ -57,75 +57,104 @@
     object-fit: cover;
 }
 
-.slide-description-container {
-    margin: clamp(10.9375rem, 9.482758620689655rem + 8.620689655172415vw, 15.625rem) auto 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-block: 48px 0;
-    backdrop-filter: blur(16px);
-    box-shadow: 8px 8px 16px var(--bg-dark-3);
-    border-radius: 20px;
-    position: relative;
-    width: min(var(--wrapper-width), var(--wrapper-max-width));
-}
+.slide-content {
+    /* Custom properties */
+    --gap: 15px;
 
-.slide-description-container::before {
-    content: '';
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    margin-inline: clamp(10%, 2rem, 3rem);
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent, transparent, var(--bg-dark-3));
-    border-radius: inherit;
-    pointer-events: none;
+    z-index: 5;
+}
+
+.slide-description-container {
+    position: relative;
+    width: min(500px, var(--wrapper-max-width));
+    border-left: var(--border-thickness-2) solid var(--clr-neutral-3);
+    border-right: var(--border-thickness-2) solid var(--clr-neutral-3);
+    border-radius: 10px;
+
+    padding: 15px 25px;
+    backdrop-filter: blur(7px);
+    transition: var(--transition-time-1);
+}
+
+.slide-description-container:hover {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.slide__btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.slide__btn {
+    /* Fallbacks */
+    font-size: 0.8125rem;
+
+    font-size: clamp(0.8125rem, 0.6767241379310345rem + 0.8045977011494253vw, 1rem);
+    font-weight: bold;
+    text-shadow: 3px 3px 5px var(--clr-neutral-6);
+    color: var(--clr-neutral-1);
+    background-color: var(--clr-neutral-3);
+    border: var(--border-thickness-4) solid var(--clr-neutral-3);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.slide__btn--secondary {
+    background-color: transparent;
 }
 
 .slide-title {
     /* Fallbacks */
     font-size: 1.5rem;
 
-    font-size: clamp(1.5rem, 1.1896551724137931rem + 1.839080459770115vw, 2.5rem);
-    text-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-2));
+    font-size: clamp(1.5rem, 0.9956896551724138rem + 2.9885057471264367vw, 3.125rem);
     font-family: var(--font-2);
-    margin-bottom: 20px;
+    text-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-2));
+    width: 100%;
+    margin-block: 0 20px;
 }
 
 .slide-description {
     /* Fallbacks */
     font-size: 0.75rem;
 
-    font-size: clamp(0.75rem, 0.6336206896551724rem + 0.6896551724137931vw, 1rem);
+    font-size: clamp(0.75rem, 0.7112068965517241rem + 0.22988505747126436vw, 0.875rem);
     text-align: justify;
     letter-spacing: var(--letter-spacing);
     line-height: var(--line-height);
     width: 100%;
     margin: 0;
-    padding-inline: 32px;
     max-height: clamp(8rem, 20rem - 10vw, 20rem);
     overflow: hidden;
 }
 
 .slider {
-    position: absolute;
-    inset: 0 auto auto 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    margin: clamp(6.25rem, 5.280172413793103rem + 5.747126436781609vw, 9.375rem) auto;
-    width: max-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: var(--gap);
+    margin-left: 10px;
 }
 
 .slide-indicators {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-dark-3);
     border: var(--border-thickness-1) solid var(--border-clr, var(--clr-neutral-3));
     border-radius: 20px;
     transition: var(--transition-time-1);
-    box-shadow: 0 0 10px var(--shadow-clr, var(--clr-neutral-2));
 }
 
 .slide-indicators:hover {
@@ -136,7 +165,7 @@
     width: 1.25rem;
     aspect-ratio: 1;
     margin: 0.25rem;
-    background-color: var(--clr-neutral-1);
+    background-color: transparent;
     border: var(--border-thickness-1) double var(--border-clr, var(--clr-neutral-2));
     border-radius: 50%;
     cursor: pointer;
@@ -324,6 +353,7 @@
 
 .hero {
     margin-top: 6.25rem;
+    position: relative;
 }
 
 /* ----------------------------------- */

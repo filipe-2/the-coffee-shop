@@ -27,29 +27,34 @@
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
-    background-color: var(--bg-dark-3);
+    background-color: transparent;
     border: var(--border-thickness-1) solid var(--border-clr, var(--clr-neutral-3));
+    border-top-color: transparent;
+    border-bottom-color: transparent;
     color: var(--clr-neutral-1);
     transition: var(--transition-time-1);
-    box-shadow: 0 0 10px var(--shadow-clr, var(--clr-neutral-2));
-    margin-inline: clamp(0.25rem, 3vw, 1.25rem)
 }
 
 .action-button:hover {
     color: var(--text-clr, var(--clr-neutral-3));
     box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
+    border-top-color: var(--clr-neutral-3);
+    border-bottom-color: var(--clr-neutral-3);
 }
 
 .controls {
-    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
     position: fixed;
     inset: auto 0 0 auto;
     z-index: 5;
+    background-color: var(--bg-dark-2);
 }
 
 .scroll-btn:first-child {
@@ -151,13 +156,23 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 16px;
 }
 
 .main-nav__list-item {
-    padding: 0.5em;
+    padding: 4px 0;
     transition: var(--transition-time-1);
     cursor: pointer;
+    border-bottom: var(--border-thickness-4) solid transparent;
+    transition: var(--transition-time-1);
+}
+
+.current {
+    border-bottom-color: var(--clr-neutral-3);
+}
+
+.main-nav__list-item:hover {
+    border-bottom-color: var(--clr-neutral-3);
 }
 
 .main-nav__link {

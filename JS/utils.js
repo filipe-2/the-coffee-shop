@@ -91,7 +91,7 @@ function slideThroughIndicators(event) {
 
 
 // Function to start the autoplay slideshow; sets up an interval to switch slides automatically; switches slides every 5 seconds
-const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 5000);
+const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 7000);
 
 
 // Function to start the slideshow
