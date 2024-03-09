@@ -17,21 +17,13 @@
     <!----------------------------------->
 
     <!------------- Icons --------------->
-    <script src="https://kit.fontawesome.com/1c689b6540.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../">
+    <link rel="stylesheet" href="./assets/misc/fontawesome-free-6.5.1-web/css/all.css">
     <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.png">
     <!----------------------------------->
 
-    <!------------- Fonts --------------->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
-        rel="stylesheet">
-    <!----------------------------------->
-
     <!------------- Styles -------------->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./CSS/global/fonts.css">
     <link rel="stylesheet" href="./CSS/global/boilerplate.css">
     <link rel="stylesheet" href="./CSS/global/styles.css">
     <link rel="stylesheet" href="./CSS/global/custom-props.css">
@@ -48,7 +40,7 @@
         <nav class="main-nav" aria-label="primary navigation">
             <!-------- Navigation wrapper --------->
             <div class="main-nav__wrapper" id="primary-navigation">
-                <!-------- Navigation title --------->
+                <!------- Navigation branding ------->
                 <ul class="main-nav__branding">
                     <!---------- Website logo ----------->
                     <img class="main-nav__img-logo" src="./assets/imgs/logo.png"
@@ -56,7 +48,7 @@
                     <!----------------------------------->
 
                     <!---------- Website title ---------->
-                    <h1><a href="./" class="main-nav__title">The Coffee Shop</a></h1>
+                    <h1><a href="#home" class="main-nav__title">The Coffee Shop</a></h1>
                     <!----------------------------------->
                 </ul>
                 <!----------------------------------->
@@ -70,26 +62,26 @@
 
                 <ul class="main-nav__list">
                     <li class="current main-nav__list-item">
-                        <a class="main-nav__link" href="./" aria-current="page" aria-label="Homepage">
+                        <a class="current main-nav__link" href="#home" aria-current="page" aria-label="Homepage">
                             <i class="main-nav__icon fa fa-home" aria-hidden="true"></i>Home
                         </a>
                     </li>
 
                     <li class="main-nav__list-item">
-                        <a class="main-nav__link" href="#" aria-label="Drinks menu page">
+                        <a class="main-nav__link" href="#menu" aria-label="Drinks menu page">
                             <i class="main-nav__icon fa fa-cutlery" aria-hidden="true"></i>Menu
                         </a>
                     </li>
 
                     <li class="main-nav__list-item">
                         <a class="main-nav__link" href="#" aria-label="About page">
-                            <i class="main-nav__icon fa fa-info-circle" aria-hidden="true"></i>About
+                            <i class="main-nav__icon fa fa-coffee" aria-hidden="true"></i>Special drinks
                         </a>
                     </li class="main-nav__list-item">
 
                     <li class="main-nav__list-item main-nav__list-item--plans">
                         <a class="main-nav__link main-nav__link--plans" href="#" aria-label="Plans page">
-                            <i class="main-nav__icon main-nav__icon--plans fa fa-diamond" aria-hidden="true"></i>Plans
+                            <i class="main-nav__icon main-nav__icon--plans fa fa-gem" aria-hidden="true"></i>Plans
                         </a>
                     </li>
                 </ul>
@@ -114,12 +106,8 @@
     <!--------- Main sections ----------->
     <main>
         <!-------- Hero section --------->
-        <section class="hero">
-            <div class="section-title-container">
-                <!--------- Hero title ---------->
-                <h2 class="section-title">Welcome to <span class="highlight-one">The Coffee Shop!</span></h2>
-                <!----------------------------------->
-            </div>
+        <section id="home" class="hero">
+
 
             <!-------- Hero slides ---------->
             <div class="slides">
@@ -135,7 +123,7 @@
                 <!------------- Slide --------------->
                 <div class="slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/affogato2.jpg"
+                    <img class="slide-img" src="./assets/imgs/affogato3.jpg"
                         alt="Slide one image: Delicious Affogato desert.">
                     <!----------------------------------->
                 </div>
@@ -144,7 +132,7 @@
                 <!------------- Slide --------------->
                 <div class="slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/mocha2.jpg"
+                    <img class="slide-img" src="./assets/imgs/coffee-machiatto2.png"
                         alt="Slide one image: Delicious Mocha with foam.">
                     <!----------------------------------->
                 </div>
@@ -153,7 +141,7 @@
                 <!------------- Slide --------------->
                 <div class="slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/doppio2.jpg"
+                    <img class="slide-img" src="./assets/imgs/americano2.png"
                         alt="Slide four image: Pouring a hot and delicious Doppio coffee into a cup.">
                     <!----------------------------------->
                 </div>
@@ -161,28 +149,8 @@
             </div>
             <!----------------------------------->
 
+            <!---------- Slide content ---------->
             <div class="slide-content">
-                <div class="slide-description-container">
-                    <!----------- Slide title ----------->
-                    <h3 class="slide-title"><i class="fa-solid fa-mug-hot"></i> Cappuccino</h3>
-                    <!----------------------------------->
-
-                    <!-------- Slide description -------->
-                    <p class="slide-description">Indulge in the timeless allure of the cappuccino, an iconic Italian
-                        masterpiece that tantalizes the senses with every sip. At <span class="highlight-two">The
-                            Coffee Shop</span>, we elevate this beloved classic to new heights, crafting cappuccinos
-                        that embody the essence of artisanal perfection.
-                    </p>
-                    <!----------------------------------->
-
-                    <!---------- Slide buttons ---------->
-                    <div class="slide__btns">
-                        <button class="slide__btn">See drink</button>
-                        <button class="slide__btn slide__btn--secondary">View in app</button>
-                    </div>
-                    <!----------------------------------->
-                </div>
-
                 <!------------- Slider -------------->
                 <div class="slider">
                     <!------ Previous slide button ------>
@@ -207,15 +175,36 @@
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
+
+                <div class="slide-description-container">
+                    <!----------- Slide title ----------->
+                    <h3 class="slide-title"><i class="fa-solid fa-mug-hot"></i> The Best Cappuccinos</h3>
+                    <!----------------------------------->
+
+                    <!-------- Slide description -------->
+                    <p class="slide-description">At <span class="highlight-two">The
+                            Coffee Shop</span>, we elevate this beloved classic to new heights, crafting cappuccinos
+                        that embody the essence of artisanal perfection.
+                    </p>
+                    <!----------------------------------->
+
+                    <!---------- Slide buttons ---------->
+                    <div class="slide__btns">
+                        <button class="slide__btn">See drink</button>
+                        <button class="slide__btn slide__btn--secondary">View in app</button>
+                    </div>
+                    <!----------------------------------->
+                </div>
             </div>
+            <!----------------------------------->
         </section>
         <!----------------------------------->
 
         <!--------- Drinks section ---------->
-        <section class="drinks">
+        <section id="menu" class="drinks">
             <div class="section-title-container">
                 <!---------- Drinks title ----------->
-                <h3 class="section-title">Wanna see some of our most <span class="highlight-three">delicious</span>
+                <h3 class="section-title">Wanna try our most <span class="highlight-three">delicious</span>
                     drinks?</h3>
                 <!----------------------------------->
             </div>
@@ -272,8 +261,9 @@
         <section class="special-drinks">
             <div class="section-title-container">
                 <!------- Special rinks title ------->
-                <h3 class="section-title">We also have <span class="highlight-three special-one">exclusive</span> drinks
-                    just <span class="highlight-three special-one">for you</span>!</h3>
+                <h3 class="section-title">These are <span class="highlight-three special-one">exclusively</span> for
+                    <span class="highlight-three special-one">you</span>!
+                </h3>
                 <!----------------------------------->
             </div>
 
@@ -415,7 +405,7 @@
         <section class="plans-section">
             <div class="section-title-container">
                 <!--------- Plans section title ---------->
-                <h2 class="section-title">Join us today and enjoy <span class="highlight-three">the best</span> coffee
+                <h2 class="section-title">Join us today to enjoy <span class="highlight-three">the best</span> coffee
                     experience!</span></h2>
                 <!----------------------------------->
             </div>
@@ -577,7 +567,7 @@
                 <ul class="footer-nav-list">
                     <li><a aria-current="page" href="./">Home</a></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#">Special drinks</a></li>
                     <li><a href="#">Plans</a></li>
                 </ul>
                 <!----------------------------------->

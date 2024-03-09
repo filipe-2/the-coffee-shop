@@ -1,0 +1,26 @@
+/* great-vibes-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Great Vibes';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../assets/fonts/great-vibes/great-vibes-v18-latin-regular.woff2') format('woff2');
+}
+
+/* cormorant-sc-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Cormorant SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../assets/fonts/cormorant-sc/cormorant-sc-v18-latin-regular.woff2') format('woff2');
+}
+
+/* cormorant-sc-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Cormorant SC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../assets/fonts/cormorant-sc/cormorant-sc-v18-latin-700.woff2') format('woff2');
+}

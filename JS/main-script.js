@@ -32,3 +32,4 @@ expandSlideBtns.forEach(btn => btn.addEventListener('click', openModal)); // Ope
 closeModalBtn.addEventListener('click', closeModal); // Closes modal when clicked
 
 modal.addEventListener('click', (event) => event.target === modal && closeModal()); // Closes modal when clicking outside of it
+

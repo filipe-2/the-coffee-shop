@@ -74,9 +74,7 @@
     position: relative;
     width: min(500px, var(--wrapper-max-width));
     border-left: var(--border-thickness-2) solid var(--clr-neutral-3);
-    border-right: var(--border-thickness-2) solid var(--clr-neutral-3);
     border-radius: 10px;
-
     padding: 15px 25px;
     backdrop-filter: blur(7px);
     transition: var(--transition-time-1);
@@ -117,7 +115,7 @@
     /* Fallbacks */
     font-size: 1.5rem;
 
-    font-size: clamp(1.5rem, 0.9956896551724138rem + 2.9885057471264367vw, 3.125rem);
+    font-size: clamp(1.5rem, 1.2375rem + 1.3125vw, 2.8125rem);
     font-family: var(--font-2);
     text-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-2));
     width: 100%;
@@ -129,13 +127,13 @@
     font-size: 0.75rem;
 
     font-size: clamp(0.75rem, 0.7112068965517241rem + 0.22988505747126436vw, 0.875rem);
-    text-align: justify;
+    text-shadow: 2px 2px 3px var(--bg-dark-1);
+    color: var(--clr-neutral-10);
     letter-spacing: var(--letter-spacing);
     line-height: var(--line-height);
     width: 100%;
     margin: 0;
     max-height: clamp(8rem, 20rem - 10vw, 20rem);
-    overflow: hidden;
 }
 
 .slider {
@@ -144,7 +142,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--gap);
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .slide-indicators {
@@ -352,7 +350,6 @@
 /* ------------ Hero ------------- */
 
 .hero {
-    margin-top: 6.25rem;
     position: relative;
 }
 
