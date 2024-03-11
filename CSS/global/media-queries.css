@@ -25,9 +25,8 @@
         z-index: 1;
         background: url('../../assets/imgs/coffee-beans.png');
         background-color: var(--bg-dark-1);
-        visibility: hidden;
-        opacity: 0;
-        transition: var(--transition-time-1);
+        transform: translateX(100vw);
+        transition: var(--transition-time-2);
     }
 
     .main-nav__list::after {
@@ -41,8 +40,7 @@
     .main-nav__list.visible {
         display: flex;
         left: 0;
-        visibility: visible;
-        opacity: 1;
+        transform: translateX(0);
     }
 
     .main-nav__list-item {
@@ -72,16 +70,16 @@
     }
 
     .main-nav__btns {
+        display: flex;
+        justify-content: center;
         position: absolute;
         z-index: 1;
-        visibility: hidden;
-        opacity: 0;
-        transition: var(--transition-time-1);
+        transform: translateX(100vw);
+        transition: var(--transition-time-2);
     }
 
     .main-nav__btns.visible {
-        visibility: visible;
-        opacity: 1;
+        transform: translateX(0);
     }
 }
 
