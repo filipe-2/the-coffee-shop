@@ -15,16 +15,19 @@
     .main-nav__list {
         /* Fallbacks */
         min-height: 100vh;
+        font-size: 0.8125rem;
 
         justify-content: center;
         flex-direction: column;
         gap: 0;
         min-height: 100svh;
         position: absolute;
-        inset: 0;
+        inset: 0 0 0 20%;
         z-index: 1;
-        background: url('../../assets/imgs/coffee-beans.png');
+        font-size: clamp(0.8125rem, 0.7169811320754716rem + 0.5660377358490567vw, 1rem);
+        background: url('../../assets/imgs/coffee-powder.jpg');
         background-color: var(--bg-dark-1);
+        box-shadow: -20px 0 25px var(--bg-dark-5);
         transform: translateX(100vw);
         transition: var(--transition-time-2);
     }
@@ -39,31 +42,35 @@
 
     .main-nav__list.visible {
         display: flex;
-
         transform: translateX(0);
     }
 
     .main-nav__list-item {
         width: min(75%, 21.875rem);
         text-align: center;
-        border-top: var(--border-thickness-3) solid var(--clr-neutral-4);
+        letter-spacing: 2px;
+        border-top: var(--border-thickness-3) solid var(--clr-neutral-10);
         padding: 10px 5px;
+        background-color: var(--bg-dark-5);
     }
 
-    .main-nav__list-item:hover {
-        border-top-color: var(--clr-neutral-3);
+    .main-nav__list-item:not(:last-child):hover {
+        background-color: var(--bg-dark-8);
         border-bottom-color: transparent;
-        background-color: var(--bg-dark-7);
+
     }
 
     .main-nav__list-item:last-child {
-        border-bottom: var(--border-thickness-3) solid var(--clr-neutral-4);
+        border-bottom-color: transparent;
+        padding: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
     .current {
-        border-top-color: var(--clr-neutral-3);
-        border-bottom-width: var(--border-thickness-3);
-        border-bottom-color: transparent;
+        border-color: transparent;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
 
     .main-nav__list-icon {
@@ -77,6 +84,25 @@
 
     .main-nav__btns.visible {
         transform: translateX(0);
+    }
+
+    .main-nav__btn {
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .main-nav__btn:hover {
+        border-bottom-color: transparent;
+        background-color: var(--bg-dark-8);
+    }
+
+    .main-nav__btn--login {
+        border-right: var(--border-thickness-3) solid var(--clr-neutral-10);
+        border-bottom-left-radius: 20px;
+    }
+
+    .main-nav__btn--cart {
+        border-bottom-right-radius: 20px;
     }
 }
 
@@ -100,10 +126,6 @@
     .plans-section__card--diamond-plan {
         transform: scale(1.1);
         grid-column: 2 / 4;
-    }
-
-    .plans-section__card--diamond-plan:hover {
-        transform: scale(1.15);
     }
 
     .plans-section__card--gold-plan {

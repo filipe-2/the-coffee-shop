@@ -127,7 +127,6 @@
     font-family: var(--font-2);
     text-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-2));
     width: 100%;
-    margin-block: 0 20px;
 }
 
 .slide-description {
@@ -141,6 +140,18 @@
     width: 100%;
     margin: 0;
     max-height: clamp(8rem, 20rem - 10vw, 20rem);
+}
+
+.ratings {
+    margin-block: 5px 7px;
+}
+
+.ratings .fa-star {
+    /* Fallbacks */
+    font-size: 0.625rem;
+
+    font-size: clamp(0.625rem, 0.5086206896551724rem + 0.6896551724137931vw, 1rem);
+    color: var(--clr-accent-7);
 }
 
 .slider {
@@ -648,7 +659,7 @@
     /* Custom properties */
     --box-shadow-clr: var(--clr-accent-6);
 
-    transform: scale(1.03);
+    transform: scale(1.15);
 }
 
 .plans-section__card--gold-plan {

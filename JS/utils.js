@@ -21,10 +21,14 @@ export function handleMediaQueryChange(mediaQuery) {
         btnListItem.classList.add('main-nav__list-item');
         btnListItem.appendChild(mainNavBtns);
         mainNavList.appendChild(btnListItem);
+        mainNavList.setAttribute('inert', '');
+        mainNavList.style.transition = 'none';
+
     } else {
         // If the screen size is greater than or equal to 50rem, move mainNavBtns back to its original position
         mainNavWrapper.appendChild(mainNavBtns);
         mainNavList.removeChild(mainNavList.lastChild);
+        mainNavList.removeAttribute('inert');
     }
 }
 
@@ -148,11 +152,15 @@ export function toggleHamburgerMenu() {
     hamburger.classList.toggle('open');
     hamburger.classList.toggle('closed');
 
+    mainNavList.removeAttribute('style');
+
     // Locks the scrollbar of the body when the menu is open
     if (hamburger.classList.contains('open') && mediaQuery.matches) {
         document.body.style.overflowY = "hidden";
+        mainNavList.removeAttribute('inert');
     } else {
         document.body.style.overflowY = "visible";
+        mainNavList.setAttribute('inert', '');
     }
 
     // Toggles the hamburger icons
