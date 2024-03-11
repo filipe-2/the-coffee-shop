@@ -100,15 +100,23 @@
     font-weight: bold;
     text-shadow: 3px 3px 5px var(--clr-neutral-6);
     color: var(--clr-neutral-1);
-    background-color: var(--clr-neutral-3);
+    background-color: var(--bg-clr, var(--clr-neutral-3));
     border: var(--border-thickness-4) solid var(--clr-neutral-3);
     padding: 5px 10px;
     border-radius: 5px;
+    transition: var(--transition-time-1);
+}
 
+.slide__btn--primary:hover {
+    --bg-clr: var(--clr-neutral-7);
 }
 
 .slide__btn--secondary {
-    background-color: transparent;
+    --bg-clr: transparent;
+}
+
+.slide__btn--secondary:hover {
+    --bg-clr: var(--clr-neutral-7);
 }
 
 .slide-title {

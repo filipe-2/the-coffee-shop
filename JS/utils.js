@@ -1,14 +1,32 @@
 let autoplayInterval; // Variable for the sliding interval
 
-// Selects hamburger menu and it's icon
+export const mediaQuery = window.matchMedia('(max-width: 50rem)');
 export const hamburger = document.querySelector('.main-nav__hamburger-menu');
 const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
-const mainNavList = document.querySelector('.main-nav__list');
-const mainNavBtns = document.querySelector('.main-nav__btns');
+const mainNavWrapper = document.querySelector('.main-nav__wrapper');
+const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
+const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 export const modal = document.getElementById('drinkModal'); // Selects the modal
 
 let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
+
+
+// Function to handle the media query change event
+export function handleMediaQueryChange(mediaQuery) {
+    const btnListItem = document.createElement('li');
+
+    if (mediaQuery.matches) {
+        // If the screen size is less than 50rem, append mainNavBtns inside an <li> to mainNavList
+        btnListItem.classList.add('main-nav__list-item');
+        btnListItem.appendChild(mainNavBtns);
+        mainNavList.appendChild(btnListItem);
+    } else {
+        // If the screen size is greater than or equal to 50rem, move mainNavBtns back to its original position
+        mainNavWrapper.appendChild(mainNavBtns);
+        mainNavList.removeChild(mainNavList.lastChild);
+    }
+}
 
 
 // Function to change slide classes
@@ -91,7 +109,7 @@ function slideThroughIndicators(event) {
 
 
 // Function to start the autoplay slideshow; sets up an interval to switch slides automatically; switches slides every 5 seconds
-const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 7000);
+const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 5000);
 
 
 // Function to start the slideshow
@@ -105,9 +123,7 @@ export function startSlideshow() {
     const slideIndicators = document.querySelectorAll('.hero .slide-indicator');
 
     // Binds manual sliding functions to slider indicators
-    slideIndicators.forEach(function (indicator) {
-        indicator.addEventListener('click', slideThroughIndicators);
-    })
+    slideIndicators.forEach(indicator => indicator.addEventListener('click', slideThroughIndicators));
 }
 
 
@@ -133,7 +149,7 @@ export function toggleHamburgerMenu() {
     hamburger.classList.toggle('closed');
 
     // Locks the scrollbar of the body when the menu is open
-    if (hamburger.classList.contains('open')) {
+    if (hamburger.classList.contains('open') && mediaQuery.matches) {
         document.body.style.overflowY = "hidden";
     } else {
         document.body.style.overflowY = "visible";
@@ -147,6 +163,10 @@ export function toggleHamburgerMenu() {
     mainNavList.classList.toggle('visible');
     mainNavBtns.classList.toggle('visible');
 }
+
+
+// Hides the hamburger menu when the viewport width doesn't match the 50rem media query
+export const hideMenuOnResize = () => (!mediaQuery.matches && hamburger.classList.contains('open')) && toggleHamburgerMenu();
 
 
 // Function to handle scroll button visibility and position

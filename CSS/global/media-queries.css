@@ -39,7 +39,7 @@
 
     .main-nav__list.visible {
         display: flex;
-        left: 0;
+
         transform: translateX(0);
     }
 
@@ -53,6 +53,7 @@
     .main-nav__list-item:hover {
         border-top-color: var(--clr-neutral-3);
         border-bottom-color: transparent;
+        background-color: var(--bg-dark-7);
     }
 
     .main-nav__list-item:last-child {
@@ -71,11 +72,7 @@
 
     .main-nav__btns {
         display: flex;
-        justify-content: center;
-        position: absolute;
-        z-index: 1;
-        transform: translateX(100vw);
-        transition: var(--transition-time-2);
+        justify-content: space-evenly;
     }
 
     .main-nav__btns.visible {

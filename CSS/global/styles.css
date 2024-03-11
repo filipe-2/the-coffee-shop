@@ -89,7 +89,6 @@ header:hover {
 
 .main-nav {
     margin: auto;
-
 }
 
 .main-nav__branding {
@@ -205,6 +204,7 @@ header:hover {
     color: var(--clr-neutral-4);
     border: none;
     transition: var(--transition-time-1);
+    font-size: 1rem;
 }
 
 .main-nav__btn:hover {

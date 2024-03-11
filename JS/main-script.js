@@ -1,5 +1,6 @@
 import {
     // Functions
+    handleMediaQueryChange,
     startSlideshow,
     goToTop,
     goToBottom,
@@ -8,15 +9,23 @@ import {
     handleScrollButtons,
     openModal,
     closeModal,
+    hideMenuOnResize,
 
     // Variables
     hamburger,
     modal,
+    mediaQuery,
 } from './utils.js';
 
 // Gets the expand and close modal buttons
 const expandSlideBtns = [...document.querySelectorAll('.hero .expand-slide-btn')];
 const closeModalBtn = document.querySelector('.close-modal-btn');
+
+handleMediaQueryChange(mediaQuery);
+
+window.addEventListener('resize', hideMenuOnResize); // Fires the hideMenuOnResize function
+
+mediaQuery.addEventListener('change', handleMediaQueryChange); // Adds an event listener to listen for changes in screen size
 
 window.addEventListener('scroll', toggleNavbarVisibility); // Toggles the navbar visibility when scrolling
 hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburger state when clicking
@@ -32,4 +41,3 @@ expandSlideBtns.forEach(btn => btn.addEventListener('click', openModal)); // Ope
 closeModalBtn.addEventListener('click', closeModal); // Closes modal when clicked
 
 modal.addEventListener('click', (event) => event.target === modal && closeModal()); // Closes modal when clicking outside of it
-
