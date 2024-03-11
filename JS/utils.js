@@ -4,9 +4,13 @@ export const mediaQuery = window.matchMedia('(max-width: 50rem)');
 export const hamburger = document.querySelector('.main-nav__hamburger-menu');
 const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
 const mainNavWrapper = document.querySelector('.main-nav__wrapper');
+const branding = mainNavWrapper.querySelector('.main-nav__branding');
 const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
 const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
+const main = document.querySelector('main'); // Selects the 'main' element
+const controls = document.querySelector('.controls'); // Selects the 'controls' section
+const footer = document.querySelector('footer'); // Selects the footer
 export const modal = document.getElementById('drinkModal'); // Selects the modal
 
 let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
@@ -152,15 +156,24 @@ export function toggleHamburgerMenu() {
     hamburger.classList.toggle('open');
     hamburger.classList.toggle('closed');
 
+    // Removes style attribute to transition from open to close state and vice-versa
     mainNavList.removeAttribute('style');
 
     // Locks the scrollbar of the body when the menu is open
     if (hamburger.classList.contains('open') && mediaQuery.matches) {
         document.body.style.overflowY = "hidden";
         mainNavList.removeAttribute('inert');
+        branding.setAttribute('inert', '');
+        main.setAttribute('inert', '');
+        controls.setAttribute('inert', '');
+        footer.setAttribute('inert', '');
     } else {
         document.body.style.overflowY = "visible";
         mainNavList.setAttribute('inert', '');
+        branding.removeAttribute('inert',);
+        main.removeAttribute('inert');
+        controls.removeAttribute('inert');
+        footer.removeAttribute('inert');
     }
 
     // Toggles the hamburger icons

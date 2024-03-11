@@ -4,7 +4,6 @@
         font-size: 1.5rem;
 
         font-size: clamp(1rem, 0.8448275862068966rem + 0.9195402298850575vw, 1.5rem);
-        visibility: visible;
         transform: translateX(0) scaleX(1);
     }
 
@@ -105,6 +104,19 @@
         border-bottom-right-radius: 20px;
     }
 }
+
+
+@media (max-width: 50rem) and (prefers-reduced-motion) {
+    .main-nav__list {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    .main-nav__list.visible {
+        opacity: 1;
+    }
+}
+
 
 @media (min-width: 33.75rem) {
     .plans-section__cards {
