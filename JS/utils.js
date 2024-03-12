@@ -11,7 +11,6 @@ const navbar = document.querySelector('.main-nav').parentElement; // Selects the
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
-export const modal = document.getElementById('drinkModal'); // Selects the modal
 
 let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
 
@@ -56,10 +55,10 @@ function updateSlideClasses(activeSlide, activeSlideIndicator, newSlide, newSlid
 // Function to switch slides
 function switchSlide() {
     // Gets the active and next slides and their indicators
-    const activeSlide = document.querySelector('.slide.active');
-    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+    const activeSlide = document.querySelector('.hero__slide.active');
+    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.hero__slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.hero__slide-indicator:first-child'); // If there's no next indicator, loops back to the first
 
     updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
 }
@@ -70,10 +69,10 @@ function prevSlide() {
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to previous slide
 
     // Gets the active and previous slides and their indicators
-    const activeSlide = document.querySelector('.slide.active');
-    const activeSlideIndicator = document.querySelector('.slide-indicator.checked');
-    const prevSlide = activeSlide.previousElementSibling || document.querySelector('.slide:last-child'); // If there's no previous slide, loops back to the last
-    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || document.querySelector('.slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
+    const activeSlide = document.querySelector('.hero__slide.active');
+    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
+    const prevSlide = activeSlide.previousElementSibling || document.querySelector('.hero__slide:last-child'); // If there's no previous slide, loops back to the last
+    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || document.querySelector('.hero__slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
 
     updateSlideClasses(activeSlide, activeSlideIndicator, prevSlide, prevSlideIndicator); // Updates classes to show the previous slide and its indicator; changes aria-current attribute to the previous slide item
 
@@ -86,10 +85,10 @@ function nextSlide() {
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to next slide
 
     // Gets the active next slides and their indicators
-    const activeSlide = document.querySelector('.hero .slide.active');
-    const activeSlideIndicator = document.querySelector('.hero .slide-indicator.checked');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.hero .slide:first-child'); // If there's no next slide, loops back to the first
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.hero .slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+    const activeSlide = document.querySelector('.hero__slide.active');
+    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
+    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.hero__slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.hero__slide-indicator:first-child'); // If there's no next indicator, loops back to the first
 
     updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
 
@@ -106,10 +105,10 @@ function slideThroughIndicators(event) {
     clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
 
     if (!indicator.classList.contains('checked')) {
-        document.querySelector('.hero .slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
+        document.querySelector('.hero__slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
         indicator.classList.add('checked'); // Checks the clicked indicator
-        document.querySelector('.hero .slide.active').classList.remove('active'); // Deactivates the currently active slide
-        document.querySelectorAll('.hero .slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
+        document.querySelector('.hero__slide.active').classList.remove('active'); // Deactivates the currently active slide
+        document.querySelectorAll('.hero__slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
     }
 
     startAutoplay(); // Restarts the autoplay after sliding manually
@@ -128,7 +127,7 @@ export function startSlideshow() {
     document.querySelector('.hero .action-button.prev').addEventListener('click', prevSlide);
     document.querySelector('.hero .action-button.next').addEventListener('click', nextSlide);
 
-    const slideIndicators = document.querySelectorAll('.hero .slide-indicator');
+    const slideIndicators = document.querySelectorAll('.hero__slide-indicator');
 
     // Binds manual sliding functions to slider indicators
     slideIndicators.forEach(indicator => indicator.addEventListener('click', slideThroughIndicators));
@@ -140,8 +139,8 @@ export function toggleNavbarVisibility() {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     // Toggles the visibility of the navbar based on the scrolling position
-    if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop >= 100) {
-        navbar.style.transform = 'translateY(-6.25rem)';
+    if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
+        navbar.style.transform = 'translateY(-5.5rem)';
     } else {
         navbar.style.transform = 'translateY(0)';
     }
@@ -213,17 +212,3 @@ export const goToTop = () => window.scrollTo({ top: 0, behavior: 'smooth', });
 
 // Function to go back to the bottom of the page
 export const goToBottom = () => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-
-
-// Function to open the modal
-export function openModal() {
-    modal.style.display = "block";
-    document.body.style.overflowY = "hidden";
-}
-
-
-// Function to close the modal
-export function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflowY = "visible";
-}

@@ -3,7 +3,7 @@
 
 <head>
     <!--------- Website title ----------->
-    <title>The Coffee Shop | Home</title>
+    <title>The Coffee Shop</title>
     <!----------------------------------->
 
     <!----------- Meta data ------------->
@@ -24,16 +24,23 @@
     <!------------- Styles -------------->
     <link rel="stylesheet" href="./CSS/global/fonts.css">
     <link rel="stylesheet" href="./CSS/global/boilerplate.css">
-    <link rel="stylesheet" href="./CSS/global/styles.css">
     <link rel="stylesheet" href="./CSS/global/custom-props.css">
-    <link rel="stylesheet" href="./CSS/global/media-queries.css">
     <link rel="stylesheet" href="./CSS/global/typography.css">
-    <link rel="stylesheet" href="./CSS/home.css">
+
+    <link rel="stylesheet" href="./CSS/sections/header.css">
+    <link rel="stylesheet" href="./CSS/sections/hero.css">
+    <link rel="stylesheet" href="./CSS/sections/menu.css">
+    <link rel="stylesheet" href="./CSS/sections/special-drinks.css">
+    <link rel="stylesheet" href="./CSS/sections/plans.css">
+    <link rel="stylesheet" href="./CSS/sections/controls.css">
+    <link rel="stylesheet" href="./CSS/sections/footer.css">
+
+    <link rel="stylesheet" href="./CSS/utils/utility-classes.css">
     <!----------------------------------->
 
     <!----------- JavaScript ------------>
     <script type="module" src="./JS/utils.js"></script>
-    <script type="module" src="./JS/main-script.js"></script>
+    <script type="module" src="./JS/main.js"></script>
     <!----------------------------------->
 </head>
 
@@ -64,6 +71,7 @@
                 </button>
                 <!----------------------------------->
 
+                <!--------- Navigation list --------->
                 <ul class="main-nav__list">
                     <li class="current main-nav__list-item">
                         <a class="current main-nav__link" href="#home" aria-current="page" aria-label="Homepage">
@@ -89,13 +97,16 @@
                         </a>
                     </li>
                 </ul>
+                <!----------------------------------->
 
+                <!---------- User options ----------->
                 <div class="main-nav__btns">
                     <button class="main-nav__btn main-nav__btn--login"><i class="fa fa-user"
                             aria-hidden="true"></i></button>
                     <button class="main-nav__btn main-nav__btn--cart"><i class="fa fa-shopping-cart"
                             aria-hidden="true"></i></button>
                 </div>
+                <!----------------------------------->
             </div>
             <!----------------------------------->
         </nav>
@@ -107,41 +118,39 @@
     <main>
         <!-------- Hero section --------->
         <section id="home" class="hero">
-
-
             <!-------- Hero slides ---------->
-            <div class="slides">
+            <div class="hero__slides">
                 <!------------- Slide --------------->
-                <div class="slide active">
+                <div class="hero__slide active">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/cappuccino2.png"
+                    <img class="hero__slide-img" src="./assets/imgs/cappuccino2.png"
                         alt="Slide one image: Delicious creamy Cappuccino.">
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="slide">
+                <div class="hero__slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/affogato3.jpg"
+                    <img class="hero__slide-img" src="./assets/imgs/affogato3.jpg"
                         alt="Slide one image: Delicious Affogato desert.">
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="slide">
+                <div class="hero__slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/coffee-machiatto2.png"
+                    <img class="hero__slide-img" src="./assets/imgs/coffee-machiatto2.png"
                         alt="Slide one image: Delicious Mocha with foam.">
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="slide">
+                <div class="hero__slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/americano2.png"
+                    <img class="hero__slide-img" src="./assets/imgs/americano2.png"
                         alt="Slide four image: Pouring a hot and delicious Doppio coffee into a cup.">
                     <!----------------------------------->
                 </div>
@@ -150,9 +159,9 @@
             <!----------------------------------->
 
             <!---------- Slide content ---------->
-            <div class="slide-content">
+            <div class="hero__slide-content">
                 <!------------- Slider -------------->
-                <div class="slider">
+                <div class="hero__slider">
                     <!------ Previous slide button ------>
                     <button class="action-button prev" aria-label="previous slide">
                         <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -160,11 +169,11 @@
                     <!----------------------------------->
 
                     <!-------- Slider indicators -------->
-                    <div class="slide-indicators">
-                        <button class="slide-indicator checked" aria-current="step"></button>
-                        <button class="slide-indicator"></button>
-                        <button class="slide-indicator"></button>
-                        <button class="slide-indicator"></button>
+                    <div class="hero__slide-indicators">
+                        <button class="hero__slide-indicator checked" aria-current="step"></button>
+                        <button class="hero__slide-indicator"></button>
+                        <button class="hero__slide-indicator"></button>
+                        <button class="hero__slide-indicator"></button>
                     </div>
                     <!----------------------------------->
 
@@ -176,13 +185,13 @@
                 </div>
                 <!----------------------------------->
 
-                <div class="slide-description-container">
+                <div class="hero__slide-description-wrapper">
                     <!----------- Slide title ----------->
-                    <h3 class="slide-title"><i class="fa-solid fa-mug-hot"></i> The Best Cappuccinos</h3>
+                    <h3 class="hero__slide-title"><i class="fa-solid fa-mug-hot"></i> The Best Cappuccinos</h3>
                     <!----------------------------------->
 
                     <!------------- Ratings ------------->
-                    <div class="ratings">
+                    <div class="hero__ratings">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -192,16 +201,16 @@
                     <!----------------------------------->
 
                     <!-------- Slide description -------->
-                    <p class="slide-description">At <span class="highlight-two">The
+                    <p class="hero__slide-description">At <span class="highlight-two">The
                             Coffee Shop</span>, we elevate this beloved classic to new heights, crafting cappuccinos
                         that embody the essence of artisanal perfection.
                     </p>
                     <!----------------------------------->
 
                     <!---------- Slide buttons ---------->
-                    <div class="slide__btns">
-                        <button class="slide__btn slide__btn--primary">See drink</button>
-                        <button class="slide__btn slide__btn--secondary">View in app</button>
+                    <div class="hero__slide-btns">
+                        <button class="hero__slide-btn hero__slide-btn--primary">See drink</button>
+                        <button class="hero__slide-btn hero__slide-btn--secondary">View in app</button>
                     </div>
                     <!----------------------------------->
                 </div>
@@ -210,7 +219,7 @@
         </section>
         <!----------------------------------->
 
-        <!--------- Drinks section ---------->
+        <!--------- Menu section ---------->
         <section id="menu" class="drinks">
             <div class="section-title-container">
                 <!---------- Drinks title ----------->
@@ -614,106 +623,6 @@
             <!----------------------------------->
         </nav>
     </footer>
-    <!----------------------------------->
-
-    <!------------- Modal --------------->
-    <!-- Pressing ESCAPE should close the modal as well. -->
-    <div id="drinkModal" class="modal">
-        <!--------- Modal content ----------->
-        <div class="modal-content">
-            <!------- Close modal button -------->
-            <button class="close-modal-btn"><i class="fa fa-close"></i></button>
-            <!----------------------------------->
-
-            <!---------- Drink title ------------>
-            <h2 class="modal-title"><i class="fa fa-coffee"></i> Cappuccino</h2>
-            <!----------------------------------->
-
-            <div class="drink-content">
-                <div class="drink-description">
-                    <p>
-                        Indulge in the timeless allure of the cappuccino, an iconic Italian masterpiece that tantalizes
-                        the
-                        senses with every sip. At <span class="highlight-two">The Coffee Shop</span>, we elevate this
-                        beloved classic to new heights, crafting
-                        cappuccinos that embody the essence of artisanal perfection.
-                    </p>
-
-                    <p>
-                        Prepare to embark on a sensory journey as you immerse yourself in the rich depths of our
-                        meticulously
-                        brewed espresso. Each velvety shot, sourced from the finest Arabica beans, delivers a symphony
-                        of
-                        bold flavors that dance across your palate with unrivaled intensity.
-                    </p>
-                </div>
-
-                <div class="drink-video">
-                    <video controls>
-                        <source src="./assets/videos/cappuccino.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-
-                <div class="drink-description">
-                    <p>
-                        But the magic doesn't stop there. Our skilled baristas expertly steam the freshest milk to silky
-                        perfection, infusing it with a delicate sweetness that complements the espresso's robust
-                        character.
-                        With precision and care, we pour this creamy elixir into the waiting embrace of the espresso,
-                        creating a harmonious union of coffee and milk that is nothing short of divine.
-                    </p>
-                </div>
-
-                <!--------- Drink images ------------>
-                <div class="drink-images">
-                    <ul class="minimized-imgs">
-                        <li class="minimized-img">
-                            <img src="./assets/imgs/cappuccino.png" alt="cappuccino photo one">
-                        </li>
-
-                        <li class="minimized-img">
-                            <img src="./assets/imgs/cappuccino-2.jpg" alt="cappuccino photo two">
-                        </li>
-
-                        <li class="minimized-img">
-                            <img src="./assets/imgs/cappuccino-3.jpg" alt="cappuccino photo three">
-                        </li>
-
-                        <li class="minimized-img">
-                            <img src="./assets/imgs/cappuccino-4.jpg" alt="cappuccino photo four">
-                        </li>
-                    </ul>
-
-                    <div class="expanded-img">
-                        <img src="./assets/imgs/cappuccino.png" alt="cappuccino photo one">
-                    </div>
-                </div>
-                <!----------------------------------->
-
-                <!------- Drink description --------->
-                <div class="drink-description">
-                    <p>
-                        As the final flourish, we crown your cappuccino with a luxurious layer of frothy milk foam,
-                        artfully
-                        sculpted to perfection. This luscious blanket of foam adds a tantalizing textural contrast,
-                        enveloping your senses in a velvety embrace that lingers long after your last sip.
-                    </p>
-
-                    <p>
-                        Whether you're seeking a morning pick-me-up or a luxurious afternoon indulgence, our cappuccinos
-                        offer a sublime balance of boldness and decadence. With each sip, you'll discover why the
-                        cappuccino
-                        has earned its place as a timeless classic, cherished by coffee aficionados around the world.
-                        Experience the magic of the cappuccino at <span class="highlight-two">The Coffee Shop</span>
-                        today.
-                    </p>
-                </div>
-                <!----------------------------------->
-            </div>
-        </div>
-        <!----------------------------------->
-    </div>
     <!----------------------------------->
 </body>
 

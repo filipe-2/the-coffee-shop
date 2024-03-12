@@ -1,0 +1,250 @@
+/* ---------- Plans styles ----------- */
+
+.plans-section {
+    /* Fallbacks */
+    min-height: 100vh;
+
+    min-height: 100svh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/imgs/coffee-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top: var(--border-thickness-2) double var(--clr-neutral-2);
+}
+
+.plans-section__cards {
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: var(--wrapper-max-width);
+    backdrop-filter: blur(16px);
+    padding-block: 3rem;
+    margin-top: 5.3125rem;
+    box-shadow: 0 0 32px var(--clr-neutral-6);
+    border-radius: 20px;
+    overflow: visible;
+}
+
+.plans-section__card {
+    /* Fallbacks */
+    font-size: 0.75rem;
+
+    /* Custom properties */
+    --h-offset: 8px;
+    --v-offset: 8px;
+    --b-radius: 16px;
+    --s-radius: 0;
+
+    font-size: clamp(0.75rem, 0.6724137931034483rem + 0.45977011494252873vw, 1rem);
+    position: relative;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: clamp(15rem, 10.685344827586206rem + 11.494252873563218vw, 21.875rem);
+    transition: var(--transition-time-2) ease;
+    box-shadow: var(--h-offset) var(--v-offset) var(--b-radius) var(--s-radius) var(--box-shadow-clr, var(--clr-neutral-6));
+}
+
+.plans-section__card:hover {
+    /* Custom properties */
+    --h-offset: 0;
+    --v-offset: 0;
+    --b-radius: 32px;
+}
+
+.plans-section__card:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--bg-dark-5);
+}
+
+.plans-section__card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.plans-section__card .fa-check {
+    color: var(--clr-check);
+}
+
+.plans-section__card .fa-times {
+    color: var(--clr-deny)
+}
+
+.plans-section__card-title {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: var(--border-thickness-2) solid var(--border-clr);
+    padding: 1rem 0;
+    font-family: var(--font-2);
+    font-size: 2rem;
+    text-shadow: 0 0 16px var(--shadow-clr);
+}
+
+.plans-section__card-list {
+    position: relative;
+    z-index: 1;
+    margin: 1rem;
+}
+
+.plans-section__card-list-item {
+    margin: 0.5rem 0;
+}
+
+.plans-section__card-list--silver-plan {
+    list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="silver" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>');
+}
+
+.plans-section__card-list--gold-plan {
+    list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="gold" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>');
+}
+
+.plans-section__card-list--diamond-plan {
+    list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="cyan" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>');
+}
+
+.plans-section__card--silver-plan {
+    /* Custom properties */
+    --shadow-clr: var(--clr-accent-4);
+    --border-clr: var(--clr-accent-4);
+}
+
+.plans-section__card--silver-plan:hover {
+    /* Custom properties */
+    --box-shadow-clr: var(--clr-accent-4);
+
+    z-index: 3;
+    transform: scale(1.03);
+}
+
+.plans-section__card--diamond-plan {
+    /* Custom properties */
+    --shadow-clr: var(--clr-accent-6);
+    --border-clr: var(--clr-accent-6);
+
+    z-index: 2;
+}
+
+.plans-section__card--diamond-plan:hover {
+    /* Custom properties */
+    --box-shadow-clr: var(--clr-accent-6);
+
+    transform: scale(1.15);
+}
+
+.plans-section__card--gold-plan {
+    /* Custom properties */
+    --shadow-clr: var(--clr-accent-5);
+    --border-clr: var(--clr-accent-5);
+}
+
+.plans-section__card--gold-plan:hover {
+    /* Custom properties */
+    --box-shadow-clr: var(--clr-accent-5);
+
+    z-index: 3;
+    transform: scale(1.03);
+}
+
+.plans-section__card-btns {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2rem;
+}
+
+.plans-section__card-btn {
+    /* Fallbacks */
+    font-size: 0.75rem;
+
+    font-size: clamp(0.75rem, 0.6724137931034483rem + 0.45977011494252873vw, 1rem);
+    padding: 0.25em 0.5em;
+    border: none;
+    font-weight: bold;
+    transition: var(--transition-time-1);
+}
+
+.plans-section__card-btn--dropdown {
+    border-radius: 16px 0 0 16px;
+}
+
+.plans-section__card-btn--add-cart {
+    border-radius: 0 16px 16px 0;
+}
+
+.plans-section__card-btn--silver-plan {
+    background-color: var(--clr-accent-4);
+}
+
+.plans-section__card-btn--silver-plan:hover {
+    box-shadow: 0 0 8px var(--clr-accent-4);
+}
+
+.plans-section__card-btn--diamond-plan {
+    background-color: var(--clr-accent-6);
+}
+
+.plans-section__card-btn--diamond-plan:hover {
+    box-shadow: 0 0 8px var(--clr-accent-6);
+}
+
+.plans-section__card-btn--gold-plan {
+    background-color: var(--clr-accent-5);
+}
+
+.plans-section__card-btn--gold-plan:hover {
+    box-shadow: 0 0 8px var(--clr-accent-5);
+}
+
+/* ----------------------------------- */
+
+
+/* ---------- Media queries ---------- */
+
+@media (min-width: 33.75rem) {
+    .plans-section__cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .plans-section__card {
+        grid-row: 1 / 2;
+    }
+
+    .plans-section__card--silver-plan {
+        grid-column: 1 / 3;
+    }
+
+    .plans-section__card--silver-plan:hover {
+        transform: scale(1.15) translateX(2rem);
+    }
+
+    .plans-section__card--diamond-plan {
+        transform: scale(1.1);
+        grid-column: 2 / 4;
+    }
+
+    .plans-section__card--gold-plan {
+        grid-column: 3 / 5;
+    }
+
+    .plans-section__card--gold-plan:hover {
+        transform: scale(1.15) translateX(-2rem);
+    }
+}
+
+/* ----------------------------------- */

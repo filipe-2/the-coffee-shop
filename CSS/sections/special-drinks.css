@@ -1,0 +1,34 @@
+.special-drinks {
+    border-top: var(--border-thickness-2) double var(--clr-accent-1);
+}
+
+.special-slide:not(.active) {
+    position: absolute;
+}
+
+.special-one {
+    /* Custom properties */
+    --text-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
+}
+
+.special-two {
+    /* Custom properties */
+    --text-clr: var(--clr-accent-2);
+    --shadow-clr: var(--clr-accent-2);
+}
+
+.special-three {
+    /* Custom properties */
+    --text-clr: var(--clr-accent-3);
+    --shadow-clr: var(--clr-accent-3);
+}
+
+.special-indicators,
+.special-action-button {
+    /* Custom properties */
+    --text-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
+}

@@ -1,0 +1,61 @@
+/* --------------- Text -------------- */
+
+.highlight-one {
+    font-family: var(--font-2);
+    font-weight: bold;
+    color: var(--clr-neutral-2)
+}
+
+.highlight-two {
+    font-family: var(--font-2);
+    font-weight: bold;
+    text-shadow: 0 0 16px var(--clr-neutral-2);
+}
+
+.highlight-three {
+    color: var(--text-clr, var(--clr-neutral-2));
+}
+
+/* ----------------------------------- */
+
+
+/* ------------- Buttons ------------- */
+
+.action-button {
+    font-weight: bold;
+    font-size: 1.125rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--bg-dark-3);
+    border: var(--border-thickness-1) solid var(--border-clr, var(--clr-neutral-3));
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    color: var(--clr-neutral-1);
+    transition: var(--transition-time-1);
+}
+
+.action-button:hover {
+    color: var(--text-clr, var(--clr-neutral-3));
+    box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
+    border-top-color: var(--clr-neutral-3);
+    border-bottom-color: var(--clr-neutral-3);
+}
+
+.section-title-container {
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto;
+    background-color: var(--bg-dark-3);
+}
+
+.section-title {
+    /* Fallbacks */
+    font-size: 1rem;
+
+    font-size: clamp(1rem, 0.7672413793103449rem + 1.3793103448275863vw, 1.75rem);
+    padding-block: 1.5rem;
+    text-align: center;
+}
+
+/* ----------------------------------- */

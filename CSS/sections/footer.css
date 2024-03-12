@@ -1,0 +1,118 @@
+footer {
+    background: url('../../assets/imgs/coffee-beans.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    min-height: 6.25rem;
+    position: relative;
+    box-shadow: 0 0 48px var(--clr-neutral-2);
+    z-index: 1;
+    transition: var(--transition-time-1);
+}
+
+footer:hover {
+    box-shadow: 0 0 55px var(--clr-neutral-3);
+}
+
+.footer-nav {
+    position: relative;
+    padding: 0.25rem;
+}
+
+.footer-nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-dark-3);
+    z-index: 1;
+    border-top: var(--border-thickness-2) double var(--clr-neutral-2);
+}
+
+.footer-nav:hover::before {
+    border-top-style: solid;
+    border-top-color: var(--clr-neutral-3);
+}
+
+.footer-nav-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 4px;
+    margin: 10px 0 0;
+}
+
+.footer-nav-list {
+    /* Fallbacks */
+    font-size: 0.75rem;
+
+    font-size: clamp(0.75rem, 0.6724137931034483rem + 0.45977011494252873vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 clamp(4px, -4.689655172413794px + 3.218390804597701vw, 32px) 10px;
+}
+
+.footer-nav-list a {
+    transition: var(--transition-time-1);
+}
+
+.footer-nav-list a:hover {
+    /* Fallbacks */
+    font-size: 0.8125rem;
+
+    font-size: clamp(0.8125rem, 0.7155172413793104rem + 0.5747126436781609vw, 1.125rem);
+    color: var(--clr-neutral-2);
+    text-shadow: 0 0 10px var(--clr-neutral-2);
+    font-weight: bold;
+}
+
+.social {
+    /* Fallbacks */
+    font-size: 0.875rem;
+
+    font-size: clamp(0.875rem, 0.7974137931034483rem + 0.45977011494252873vw, 1.125rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-inline: 1rem;
+}
+
+.footer-nav-list li,
+.social li {
+    padding: 0.25rem;
+}
+
+.social a {
+    color: var(--clr-neutral-2);
+    padding: 0.25rem;
+    border-radius: 10px;
+    transition: text-shadow 0.3s;
+}
+
+.social a:hover {
+    text-shadow: 0 0 16px var(--clr-neutral-2);
+}
+
+.social li:nth-child(3) {
+    border-right: var(--border-thickness-4) solid var(--clr-neutral-2);
+    padding-right: 0.625rem;
+    margin-right: 0.25rem;
+}
+
+.copy-message {
+    /* Fallbacks */
+    font-size: 0.8125rem;
+
+    font-size: clamp(0.8125rem, 0.7543103448275862rem + 0.3448275862068966vw, 1rem);
+    display: inline-block;
+    padding: 0.625rem;
+    margin: 0.625rem;
+    border-radius: 20px;
+    background-color: var(--bg-dark-3);
+    position: relative;
+    z-index: 1;
+}
