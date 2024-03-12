@@ -1,4 +1,4 @@
-.drinks {
+.menu {
     background: url('../../assets/imgs/coffee-background.jpg');
     background-size: cover;
     background-position: center;
@@ -6,14 +6,14 @@
     border-top: var(--border-thickness-2) double var(--clr-neutral-2);
 }
 
-.drinks::before {
+.menu::before {
     content: '';
     position: absolute;
     inset: 0;
     background-color: var(--bg-dark-3);
 }
 
-.drinks-content {
+.menu__content {
     /* Fallbacks */
     min-height: 75vh;
 
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.drinks-list {
+.menu__list {
     display: flex;
     gap: 25px;
     padding: 1rem 1.5rem;
@@ -34,7 +34,7 @@
     left: 0;
 }
 
-.drink {
+.menu__card {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@
     cursor: pointer;
 }
 
-.drink::before {
+.menu__card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -66,7 +66,7 @@
     backdrop-filter: blur(10px);
 }
 
-.drinks .drink-title {
+.menu__card-title {
     font-family: var(--font-2);
     font-size: 2rem;
     text-shadow: 0 0 10px var(--clr-neutral-3);
@@ -77,15 +77,15 @@
     border-radius: inherit;
 }
 
-.drink:hover {
+.menu__card:hover {
     transform: scale(1.04) rotate(-5deg);
 }
 
-.drink:hover::before {
+.menu__card:hover::before {
     opacity: 1;
 }
 
-.drink img {
+.menu__card img {
     position: absolute;
     inset: 0;
     width: 100%;

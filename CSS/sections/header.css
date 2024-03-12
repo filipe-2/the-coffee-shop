@@ -106,7 +106,9 @@ header:hover {
 }
 
 .main-nav__list-item:hover,
-.main-nav__list-item:focus-within {
+.main-nav__list-item:focus-within,
+.main-nav__btn:hover,
+.main-nav__btn:focus {
     border-bottom-color: var(--clr-neutral-3);
 }
 
@@ -118,8 +120,8 @@ header:hover {
 
 .main-nav__icon {
     float: left;
+    margin-right: 4px;
     color: var(--clr-neutral-4);
-    margin-right: 0.25rem;
     transition: var(--transition-time-1);
 }
 
@@ -132,16 +134,11 @@ header:hover {
 
 .main-nav__btn {
     background-color: transparent;
-    color: var(--clr-neutral-4);
+    font-weight: bold;
+    color: var(--clr-neutral-1);
     border-color: transparent;
     transition: var(--transition-time-1);
     font-size: 1rem;
-}
-
-.main-nav__btn:hover,
-.main-nav__btn:focus {
-    color: var(--clr-neutral-3);
-    /* border-bottom-color: var(--clr-neutral-3); */
 }
 
 .main-nav__hamburger-menu {
@@ -153,7 +150,7 @@ header:hover {
     cursor: pointer;
     z-index: 2;
     transition: var(--transition-time-1);
-    padding: 0.25rem 0.5rem;
+    padding: 4px 8px;
 }
 
 .main-nav__hamburger-menu:hover {
@@ -213,9 +210,11 @@ header:hover {
     }
 
     .main-nav__list-item {
+        --letter-spacing: 2px;
+
         width: min(75%, 21.875rem);
         text-align: center;
-        letter-spacing: 2px;
+        letter-spacing: var(--letter-spacing);
         border-top: var(--border-thickness-3) solid var(--clr-neutral-10);
         padding: 10px 5px;
         background-color: var(--bg-dark-5);
@@ -227,7 +226,6 @@ header:hover {
     }
 
     .main-nav__list-item:last-child {
-        border-bottom-color: transparent;
         padding: 0;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -239,7 +237,7 @@ header:hover {
         border-top-right-radius: 20px;
     }
 
-    .main-nav__list-icon {
+    .main-nav__icon {
         margin-right: 0;
     }
 
@@ -253,6 +251,11 @@ header:hover {
     }
 
     .main-nav__btn {
+        /* Fallbacks */
+        font-size: 0.8125rem;
+
+        font-size: clamp(0.8125rem, 0.7169811320754716rem + 0.5660377358490567vw, 1rem);
+        letter-spacing: var(--letter-spacing);
         width: 100%;
         padding: 10px 5px;
     }
@@ -260,11 +263,12 @@ header:hover {
     .main-nav__btn:hover,
     .main-nav__btn:focus {
         background-color: var(--bg-dark-8);
+        border-bottom-color: transparent;
     }
 
     .main-nav__btn--login {
-        border-right: var(--border-thickness-3) solid var(--clr-neutral-10);
         border-bottom-left-radius: 20px;
+        border-right: var(--border-thickness-4) solid var(--clr-neutral-10);
     }
 
     .main-nav__btn--cart {

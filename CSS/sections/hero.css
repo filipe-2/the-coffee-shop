@@ -174,14 +174,14 @@
 }
 
 .hero__slide-indicator.checked {
-    border-style: solid;
-    border-color: var(--border-clr, var(--clr-neutral-3));
-    background-color: var(--bg-dark-1);
+    border-color: var(--border-clr);
+    background-color: var(--clr-neutral-3);
 }
 
-.hero__slide-indicator:hover {
-    border-style: solid;
-    background-color: var(--bg-dark-1);
+.hero__slide-indicator:hover,
+.hero__slide-indicator:focus {
+    border-color: var(--border-clr);
+    background-color: var(--clr-neutral-11);
 }
 
 .hero__slide-options {
