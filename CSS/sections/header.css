@@ -58,9 +58,9 @@ header:hover {
 .main-nav__branding:hover .main-nav__title,
 .main-nav__branding:focus-within .main-nav__title {
     /* Fallbacks */
-    font-size: 1.5rem;
+    font-size: 1rem;
 
-    font-size: clamp(1rem, 0.8448275862068966rem + 0.9195402298850575vw, 1.5rem);
+    font-size: clamp(1rem, 0.8836206896551724rem + 0.6896551724137931vw, 1.375rem);
     visibility: visible;
     transform: translateX(0) scaleX(1);
 }
@@ -117,10 +117,14 @@ header:hover {
     transition: var(--transition-time-1);
 }
 
-.main-nav__list-item:hover .main-nav__link,
-.main-nav__list-item:hover .main-nav__icon,
-.main-nav__list-item:focus-within .main-nav__link,
-.main-nav__list-item:focus-within .main-nav__icon {
+.main-nav__list-item:not(:last-child):hover .main-nav__link,
+.main-nav__list-item:not(:last-child):hover .main-nav__icon,
+.main-nav__list-item:not(:last-child):focus-within .main-nav__link,
+.main-nav__list-item:not(:last-child):focus-within .main-nav__icon,
+.main-nav__btn:hover,
+.main-nav__btn:hover .main-nav__icon,
+.main-nav__btn:focus,
+.main-nav__btn:focus .main-nav__icon {''
     color: var(--clr-neutral-3);
 }
 
