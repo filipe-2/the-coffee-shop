@@ -31,7 +31,6 @@ header:hover {
 .main-nav__img-logo {
     width: clamp(2.5rem, 2.3448275862068964rem + 0.9195402298850575vw, 3rem);
     height: clamp(2.5rem, 2.3448275862068964rem + 0.9195402298850575vw, 3rem);
-    padding: 0.25rem;
     border: var(--border-thickness-1) solid var(--clr-neutral-3);
     border-radius: 50%;
     pointer-events: none;
@@ -56,7 +55,8 @@ header:hover {
     transition: var(--transition-time-2) ease;
 }
 
-.main-nav__branding:hover .main-nav__title {
+.main-nav__branding:hover .main-nav__title,
+.main-nav__branding:focus-within .main-nav__title {
     /* Fallbacks */
     font-size: 1.5rem;
 
@@ -65,7 +65,8 @@ header:hover {
     transform: translateX(0) scaleX(1);
 }
 
-.main-nav__title:hover {
+.main-nav__title:hover,
+.main-nav__title:focus {
     border-style: solid;
     border-left: none;
     box-shadow: 0 0 16px var(--clr-neutral-3);
@@ -94,15 +95,6 @@ header:hover {
     cursor: pointer;
     border-bottom: var(--border-thickness-4) solid transparent;
     transition: var(--transition-time-1);
-}
-
-.current {
-    border-bottom-color: var(--clr-neutral-3);
-}
-
-.current a,
-.current i {
-    color: var(--clr-neutral-3);
 }
 
 .main-nav__list-item:hover,
@@ -153,7 +145,8 @@ header:hover {
     padding: 4px 8px;
 }
 
-.main-nav__hamburger-menu:hover {
+.main-nav__hamburger-menu:hover,
+.main-nav__hamburger-menu:focus {
     background-color: var(--bg-dark-4);
     border-radius: 50%;
 }

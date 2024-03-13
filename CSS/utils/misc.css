@@ -1,0 +1,40 @@
+.highlight-one {
+    font-family: var(--font-2);
+    font-weight: bold;
+    color: var(--clr-neutral-2)
+}
+
+.highlight-two {
+    font-family: var(--font-2);
+    font-weight: bold;
+    text-shadow: 0 0 16px var(--clr-neutral-2);
+}
+
+.highlight-three {
+    color: var(--text-clr, var(--clr-neutral-2));
+}
+
+.current {
+    border-bottom-color: var(--clr-neutral-3);
+}
+
+.current a,
+.current i {
+    color: var(--clr-neutral-3);
+}
+
+.section-title-wrapper {
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto;
+    background-color: var(--bg-dark-3);
+}
+
+.section-title {
+    /* Fallbacks */
+    font-size: 1rem;
+
+    font-size: clamp(1rem, 0.7672413793103449rem + 1.3793103448275863vw, 1.75rem);
+    padding-block: 1.5rem;
+    text-align: center;
+}
