@@ -124,7 +124,7 @@ header:hover {
 .main-nav__btn:hover,
 .main-nav__btn:hover .main-nav__icon,
 .main-nav__btn:focus,
-.main-nav__btn:focus .main-nav__icon {''
+.main-nav__btn:focus .main-nav__icon {
     color: var(--clr-neutral-3);
 }
 
