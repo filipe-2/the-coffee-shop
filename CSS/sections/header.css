@@ -117,10 +117,10 @@ header:hover {
     transition: var(--transition-time-1);
 }
 
-.main-nav__list-item:not(:last-child):hover .main-nav__link,
-.main-nav__list-item:not(:last-child):hover .main-nav__icon,
-.main-nav__list-item:not(:last-child):focus-within .main-nav__link,
-.main-nav__list-item:not(:last-child):focus-within .main-nav__icon,
+.main-nav__list-item:hover .main-nav__link,
+.main-nav__list-item:hover .main-nav__icon,
+.main-nav__list-item:focus-within .main-nav__link,
+.main-nav__list-item:focus-within .main-nav__icon,
 .main-nav__btn:hover,
 .main-nav__btn:hover .main-nav__icon,
 .main-nav__btn:focus,
@@ -217,6 +217,12 @@ header:hover {
         background-color: var(--bg-dark-5);
     }
 
+    .main-nav__list-item:first-child {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+    }
+
     .main-nav__list-item:not(:last-child):hover,
     .main-nav__list-item:not(:last-child):focus-within {
         background-color: var(--bg-dark-8);
@@ -226,12 +232,6 @@ header:hover {
         padding: 0;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-    }
-
-    .current {
-        border-color: transparent;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
     }
 
     .main-nav__icon {

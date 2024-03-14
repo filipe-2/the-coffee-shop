@@ -8,6 +8,7 @@ import {
     toggleHamburgerMenu,
     handleScrollButtons,
     hideMenuOnResize,
+    updateCurrentSection,
 
     // Variables
     hamburger,
@@ -22,6 +23,8 @@ mediaQuery.addEventListener('change', handleMediaQueryChange); // Adds an event 
 
 window.addEventListener('scroll', toggleNavbarVisibility); // Toggles the navbar visibility when scrolling
 hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburger state when clicking
+
+document.querySelectorAll('.main-nav__list-item').forEach(listItem => listItem.addEventListener('click', updateCurrentSection)); // Fires the updateCurrentSection function when the user clicks a nav item
 
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
 

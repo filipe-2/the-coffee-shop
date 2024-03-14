@@ -1,17 +1,16 @@
-let autoplayInterval; // Variable for the sliding interval
-
 export const mediaQuery = window.matchMedia('(max-width: 50rem)');
 export const hamburger = document.querySelector('.main-nav__hamburger-menu');
 const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
 const mainNavWrapper = document.querySelector('.main-nav__wrapper');
+export const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
 const branding = mainNavWrapper.querySelector('.main-nav__branding');
-const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
 const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
 
+let autoplayInterval; // Variable for the sliding interval
 let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
 
 
@@ -141,11 +140,43 @@ export function toggleNavbarVisibility() {
     // Toggles the visibility of the navbar based on the scrolling position
     if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
         navbar.style.transform = 'translateY(-5.5rem)';
-    } else {
-        navbar.style.transform = 'translateY(0)';
     }
+    else navbar.style.transform = 'translateY(0)';
 
     lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
+}
+
+
+// Function to update the current class of the main navigation items and anchors
+function updateCurrentClass(anchor) {
+    const currentListItem = mainNavList.querySelector('.current');
+    const currentAnchor = currentListItem.querySelector('.current');
+
+    currentListItem.classList.remove('current');
+    currentAnchor.classList.remove('current');
+    anchor.classList.add('current');
+    anchor.parentElement.classList.add('current');
+}
+
+
+// Function to scroll to a specific section
+export function updateCurrentSection(event) {
+    // Gets the target anchor, target id, and target section
+    const targetAnchor = this.querySelector('.main-nav__link');
+    const targetId = targetAnchor.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    // Prevents the default behavior of the anchor elements
+    event.preventDefault();
+
+    // Scrolls to the clicked section
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+
+    // Updates the current class of list items and anchors
+    updateCurrentClass(targetAnchor);
+
+    // Closes the hamburger menu
+    if (mediaQuery.matches) toggleHamburgerMenu();
 }
 
 
@@ -207,8 +238,21 @@ export function handleScrollButtons() {
 
 
 // Function to go back to the top of the page
-export const goToTop = () => window.scrollTo({ top: 0, behavior: 'smooth', });
+export function goToTop() {
+    // Scrolls to the top with a smooth effect
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const homeAnchor = mainNavList.querySelector('a[href="#home"]');
 
+    // Updates the current class of list items and anchors
+    updateCurrentClass(homeAnchor);
+}
 
 // Function to go back to the bottom of the page
-export const goToBottom = () => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+export function goToBottom() {
+    // Scrolls to the bottom with a smooth effect
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    const lastAnchor = mainNavList.querySelector('a[href="#plans-section"]');
+
+    // Updates the current class of list items and anchors
+    updateCurrentClass(lastAnchor);
+}
