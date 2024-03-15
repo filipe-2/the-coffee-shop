@@ -5,7 +5,7 @@ header {
     z-index: 10;
     width: 100%;
     backdrop-filter: blur(10px);
-    background-color: var(--bg-dark-6);
+    background-color: var(--bg-dark-5);
     box-shadow: 0 0 50px 30px var(--bg-dark-2);
     border-bottom: var(--border-thickness-3) solid var(--clr-neutral-10);
     transition: var(--transition-time-1);

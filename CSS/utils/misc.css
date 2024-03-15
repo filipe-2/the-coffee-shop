@@ -24,9 +24,6 @@
 }
 
 .section-title-wrapper {
-    position: absolute;
-    z-index: 2;
-    inset: 0 0 auto;
     background-color: var(--bg-dark-3);
 }
 
@@ -37,4 +34,32 @@
     font-size: clamp(1rem, 0.7672413793103449rem + 1.3793103448275863vw, 1.75rem);
     padding-block: 1.5rem;
     text-align: center;
+}
+
+.search-label {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--clr-neutral-1);
+    font-weight: bold;
+    padding: 5px;
+}
+
+.search-input {
+    background-color: var(--bg-dark-5);
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 10px 35px 10px 10px;
+    color: var(--clr-neutral-1);
+    border: var(--border-thickness-4) solid var(--clr-neutral-3);
+}
+
+.search-btn {
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--clr-neutral-1);
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
 }

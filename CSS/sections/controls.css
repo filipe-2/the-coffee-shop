@@ -13,16 +13,16 @@
     background-color: var(--bg-dark-2);
 }
 
-.scroll-btn {
+.controls__scroll-btn {
     opacity: 0;
     visibility: hidden;
 }
 
-.scroll-btn:first-child {
+.controls__scroll-btn:first-child {
     margin-bottom: -3.5rem;
 }
 
-.scroll-btn.active {
+.controls__scroll-btn.active {
     opacity: 1;
     visibility: visible;
 }

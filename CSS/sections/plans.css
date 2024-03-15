@@ -5,10 +5,6 @@
     min-height: 100vh;
 
     min-height: 100svh;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: url('../../assets/imgs/coffee-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -16,6 +12,7 @@
 }
 
 .plans-section__cards {
+    margin: 0 auto;
     display: grid;
     gap: 1rem;
     justify-items: center;

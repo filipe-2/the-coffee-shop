@@ -222,7 +222,7 @@ export const hideMenuOnResize = () => (!mediaQuery.matches && hamburger.classLis
 
 // Function to handle scroll button visibility and position
 export function handleScrollButtons() {
-    const scrollButtons = document.querySelectorAll('.scroll-btn'); // Selects the scroll buttons
+    const scrollButtons = document.querySelectorAll('.controls__scroll-btn'); // Selects the scroll buttons
     const isOnBottom = (window.innerHeight + window.scrollY + 50) >= document.documentElement.offsetHeight; // Stores true or false depending on whether the user is at the bottom or not
 
     [...scrollButtons].forEach(function (button) {

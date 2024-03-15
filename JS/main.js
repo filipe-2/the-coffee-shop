@@ -29,5 +29,5 @@ document.querySelectorAll('.main-nav__list-item').forEach(listItem => listItem.a
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
 
 window.addEventListener('scroll', handleScrollButtons) // Handles position and visibility of scroll buttons
-document.querySelector('.scroll-btn[data-action="top"]').addEventListener('click', goToTop); // Goes to the top of the page when clicking
-document.querySelector('.scroll-btn[data-action="bottom"]').addEventListener('click', goToBottom); // Goes to the bottom of the page when clicking
+document.querySelector('.controls__scroll-btn[data-action="top"]').addEventListener('click', goToTop); // Goes to the top of the page when clicking
+document.querySelector('.controls__scroll-btn[data-action="bottom"]').addEventListener('click', goToBottom); // Goes to the bottom of the page when clicking

@@ -3,7 +3,6 @@ footer {
     background-size: cover;
     background-position: center;
     text-align: center;
-    min-height: 6.25rem;
     position: relative;
     box-shadow: 0 0 48px var(--clr-neutral-2);
     z-index: 1;
@@ -16,7 +15,7 @@ footer:hover {
 
 .footer-nav {
     position: relative;
-    padding: 0.25rem;
+    padding: 4px;
 }
 
 .footer-nav::before {
@@ -33,7 +32,7 @@ footer:hover {
     border-top-color: var(--clr-neutral-3);
 }
 
-.footer-nav-lists {
+.footer-nav__lists {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +42,7 @@ footer:hover {
     margin: 10px 0 0;
 }
 
-.footer-nav-list {
+.footer-nav__list {
     /* Fallbacks */
     font-size: 0.75rem;
 
@@ -51,14 +50,14 @@ footer:hover {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin: 0 clamp(4px, -4.689655172413794px + 3.218390804597701vw, 32px) 10px;
+    margin-inline: clamp(16px, 11.0344827586206896px + 1.839080459770115vw, 32px);
 }
 
-.footer-nav-list a {
+.footer-nav__list a {
     transition: var(--transition-time-1);
 }
 
-.footer-nav-list a:hover {
+.footer-nav__list a:hover {
     /* Fallbacks */
     font-size: 0.8125rem;
 
@@ -68,7 +67,7 @@ footer:hover {
     font-weight: bold;
 }
 
-.social {
+.footer-nav__social {
     /* Fallbacks */
     font-size: 0.875rem;
 
@@ -78,39 +77,39 @@ footer:hover {
     align-items: center;
     position: relative;
     z-index: 1;
-    margin-inline: 1rem;
+    margin: 16px;
 }
 
-.footer-nav-list li,
-.social li {
-    padding: 0.25rem;
+.footer-nav__list li,
+.footer-nav__social li {
+    padding: 4px;
 }
 
-.social a {
+.footer-nav__social a {
     color: var(--clr-neutral-2);
-    padding: 0.25rem;
+    padding: 4px;
     border-radius: 10px;
     transition: text-shadow 0.3s;
 }
 
-.social a:hover {
+.footer-nav__social a:hover {
     text-shadow: 0 0 16px var(--clr-neutral-2);
 }
 
-.social li:nth-child(3) {
+.footer-nav__social li:nth-child(3) {
     border-right: var(--border-thickness-4) solid var(--clr-neutral-2);
-    padding-right: 0.625rem;
-    margin-right: 0.25rem;
+    padding-right: 10px;
+    margin-right: 4px;
 }
 
-.copy-message {
+.footer-nav__copy-message {
     /* Fallbacks */
     font-size: 0.8125rem;
 
     font-size: clamp(0.8125rem, 0.7543103448275862rem + 0.3448275862068966vw, 1rem);
     display: inline-block;
-    padding: 0.625rem;
-    margin: 0.625rem;
+    padding: 10px;
+    margin: 10px;
     border-radius: 20px;
     background-color: var(--bg-dark-3);
     position: relative;

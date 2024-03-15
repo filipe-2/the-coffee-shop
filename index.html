@@ -21,7 +21,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.png">
     <!----------------------------------->
 
-    <!------------- Styles -------------->
+    <!---------- Stylesheets ------------>
     <link rel="stylesheet" href="./CSS/global/fonts.css">
     <link rel="stylesheet" href="./CSS/global/boilerplate.css">
     <link rel="stylesheet" href="./CSS/global/custom-props.css">
@@ -90,7 +90,7 @@
                     <li class="main-nav__list-item">
                         <a class="main-nav__link" href="#special-drinks"
                             aria-label="link to scroll to the special drinks section">
-                            <i class="main-nav__icon fa fa-coffee" aria-hidden="true"></i>Special drinks
+                            <i class="main-nav__icon fa fa-coffee" aria-hidden="true"></i>Special
                         </a>
                     </li class="main-nav__list-item">
 
@@ -105,10 +105,9 @@
 
                 <!---------- User options ----------->
                 <div class="main-nav__btns">
-                    <button class="main-nav__btn main-nav__btn--login"><i class="main-nav__icon fa fa-user"
-                            aria-hidden="true"></i>
+                    <button class="highlited-btn primary"><i class="main-nav__icon fa fa-user" aria-hidden="true"></i>
                         Login</button>
-                    <button class="main-nav__btn main-nav__btn--cart"><i class="main-nav__icon fa fa-shopping-cart"
+                    <button class="highlited-btn secondary"><i class="main-nav__icon fa fa-shopping-cart"
                             aria-hidden="true"></i> Cart</button>
                 </div>
                 <!----------------------------------->
@@ -214,8 +213,8 @@
 
                     <!---------- Slide buttons ---------->
                     <div class="hero__slide-btns">
-                        <button class="hero__slide-btn hero__slide-btn--primary">See drink</button>
-                        <button class="hero__slide-btn hero__slide-btn--secondary">View in app</button>
+                        <button class="highlited-btn primary">See drink</button>
+                        <button class="highlited-btn secondary">View in app</button>
                     </div>
                     <!----------------------------------->
                 </div>
@@ -226,7 +225,7 @@
 
         <!--------- Menu section ---------->
         <section id="menu" class="menu">
-            <div class="section-title-wrapper">
+            <div class="menu__title-wrapper section-title-wrapper">
                 <!---------- Drinks title ----------->
                 <h3 class="section-title">Wanna try our most <span class="highlight-three">delicious</span>
                     drinks?</h3>
@@ -235,48 +234,42 @@
 
             <div class="menu__content">
                 <!---------- Drinks list ------------>
-                <ul class="menu__list">
+                <ul class="menu__card-list">
                     <li class="menu__card">
-                        <img src="./assets/imgs/americano.png" alt="Americano coffee drink.">
-                        <h3 class="menu__card-title">Americano</h3>
+                        <img class="menu__card-img" src="./assets/imgs/cappuccino2.jpg" alt="cappuccino">
+                        <h4 class="menu__card-title">Cappuccino</h4>
                     </li>
-
                     <li class="menu__card">
-                        <img src="./assets/imgs/latte.png" alt="Latte coffee drink.">
-                        <h3 class="menu__card-title">Latte</h3>
+                        <img class="menu__card-img" src="./assets/imgs/doppio.jpg" alt="doppio">
+                        <h4 class="menu__card-title">Doppio</h4>
                     </li>
-
                     <li class="menu__card">
-                        <img src="./assets/imgs/coffee-machiatto.png" alt="Macchiato coffee drink.">
-                        <h3 class="menu__card-title">Macchiato</h3>
+                        <img class="menu__card-img" src="./assets/imgs/latte2.png" alt="latte">
+                        <h4 class="menu__card-title">Latte</h4>
                     </li>
-
                     <li class="menu__card">
-                        <img src="./assets/imgs/lungo.png" alt="Lungo coffee drink.">
-                        <h3 class="menu__card-title">Lungo</h3>
+                        <img class="menu__card-img" src="./assets/imgs/coffee-machiatto2.png" alt="machiatto">
+                        <h4 class="menu__card-title">Machiatto</h4>
                     </li>
-
                     <li class="menu__card">
-                        <img src="./assets/imgs/doppio.jpg" alt="Doppio coffee drink.">
-                        <h3 class="menu__card-title">Doppio</h3>
+                        <img class="menu__card-img" src="./assets/imgs/lungo2.png" alt="cappuccino">
+                        <h4 class="menu__card-title">Lungo</h4>
                     </li>
-
                     <li class="menu__card">
-                        <img src="./assets/imgs/mocha.jpg" alt="Mocha coffee drink.">
-                        <h3 class="menu__card-title">Mocha</h3>
-                    </li>
-
-                    <li class="menu__card">
-                        <img src="./assets/imgs/cappuccino.png" alt="Cappuccino coffee drink.">
-                        <h3 class="menu__card-title">Cappuccino</h3>
-                    </li>
-
-                    <li class="menu__card">
-                        <img src="./assets/imgs/affogato.jpg" alt="Cappuccino coffee drink.">
-                        <h3 class="menu__card-title">Affogato</h3>
+                        <img class="menu__card-img" src="./assets/imgs/affogato2.jpg" alt="affogato">
+                        <h4 class="menu__card-title">Affogato</h4>
                     </li>
                 </ul>
                 <!----------------------------------->
+
+                <form class="menu__search-form">
+                    <label class="search-label" for="coffee-search">Didn't find what you want?</label>
+                    <div class="menu__search-bar">
+                        <input placeholder="Try searching here..." class="search-input" id="coffee-search"
+                            name="coffee-search" type="text">
+                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
             </div>
         </section>
         <!----------------------------------->
@@ -565,17 +558,17 @@
     </main>
     <!----------------------------------->
 
-    <!---- Scrolling control buttons ---->
+    <!---- Scrolling control section ---->
     <section class="controls">
         <!-------- Scroll top button -------->
-        <button data-action="top" class="action-button scroll-btn" title="Go to top"
+        <button data-action="top" class="controls__scroll-btn action-button" title="Go to top"
             aria-label="Go to the top of the page">
             <i class="fa fa-chevron-up" aria-hidden="true"></i>
         </button>
         <!----------------------------------->
 
         <!------- Scroll bottom button ------>
-        <button data-action="bottom" class="action-button scroll-btn active" title="Go to bottom"
+        <button data-action="bottom" class="controls__scroll-btn action-button active" title="Go to bottom"
             aria-label="Go to the bottom of the page">
             <i class="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
@@ -586,25 +579,16 @@
     <!------------- Footer -------------->
     <footer>
         <nav class="footer-nav">
-            <div class="footer-nav-lists">
-                <!------ Main navigation links ------>
-                <ul class="footer-nav-list">
-                    <li><a aria-current="page" href="./">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Special drinks</a></li>
-                    <li><a href="#">Plans</a></li>
-                </ul>
-                <!----------------------------------->
-
-                <!----- Other navigation links ------>
-                <ul class="footer-nav-list">
+            <div class="footer-nav__lists">
+                <!---------- Footer links ----------->
+                <ul class="footer-nav__list">
                     <li><a href="#">App</a></li>
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
 
-                <ul class="footer-nav-list">
+                <ul class="footer-nav__list">
                     <li><a href="#">Daily drinks</a></li>
                     <li><a href="#">Promos</a></li>
                     <li><a href="#">Stores</a></li>
@@ -614,7 +598,7 @@
             </div>
 
             <!------- Social media links -------->
-            <ul class="social">
+            <ul class="footer-nav__social">
                 <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
@@ -624,7 +608,7 @@
             <!----------------------------------->
 
             <!------- Copyright message --------->
-            <h4 class="copy-message">&copy; 2024 | <span class="highlight-one">The Coffee Shop</span></h4>
+            <h4 class="footer-nav__copy-message">&copy; 2024 | <span class="highlight-one">The Coffee Shop</span></h4>
             <!----------------------------------->
         </nav>
     </footer>
