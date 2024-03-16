@@ -6,6 +6,7 @@ export const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
 const branding = mainNavWrapper.querySelector('.main-nav__branding');
 const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns');
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
+export const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
@@ -16,6 +17,7 @@ let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by d
 
 // Function to handle the media query change event
 export function handleMediaQueryChange(mediaQuery) {
+    // Creates a list item
     const btnListItem = document.createElement('li');
 
     if (mediaQuery.matches) {
@@ -133,15 +135,42 @@ export function startSlideshow() {
 }
 
 
+// Function to toggle navbar visibility when clicking
+export function toggleNavbarOnClick() {
+    if (navbar.classList.contains('expanded')) {
+        navbar.style.transform = 'translateY(-5.5rem)';
+        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('expanded');
+        expandNavbarBtn.classList.remove('collapse');
+        expandNavbarBtn.classList.add('expand');
+    } else {
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
+        navbar.classList.add('expanded');
+        expandNavbarBtn.classList.remove('expand');
+        expandNavbarBtn.classList.add('collapse');
+    }
+}
+
+
 // Function to toggle navbar visibility when scrolling
-export function toggleNavbarVisibility() {
+export function toggleNavbarOnScroll() {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     // Toggles the visibility of the navbar based on the scrolling position
     if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
         navbar.style.transform = 'translateY(-5.5rem)';
+        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('expanded');
+        expandNavbarBtn.classList.remove('collapse');
+        expandNavbarBtn.classList.add('expand');
+    } else {
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
+        navbar.classList.add('expanded');
+        expandNavbarBtn.classList.remove('expand');
+        expandNavbarBtn.classList.add('collapse');
     }
-    else navbar.style.transform = 'translateY(0)';
 
     lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
 }

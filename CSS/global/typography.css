@@ -21,7 +21,3 @@ a:active {
 ul {
     list-style: none;
 }
-
-button {
-    font-family: var(--font-1);
-}

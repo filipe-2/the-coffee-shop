@@ -32,5 +32,10 @@ ul {
 }
 
 button {
+    font-family: var(--font-1);
     cursor: pointer;
+}
+
+input {
+    font-family: var(--font-1);
 }

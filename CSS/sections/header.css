@@ -20,6 +20,42 @@ header:hover {
     margin: auto;
 }
 
+.expand-navbar {
+    position: absolute;
+    left: 50%;
+    bottom: -1rem;
+    transform: translateX(-50%);
+    color: var(--clr-neutral-11);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 4px;
+    width: 2rem;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    background-color: transparent;
+    transition: var(--transition-time-1);
+}
+
+.expand-navbar.expand {
+    transform: translateX(-50%) translateY(calc(50% + var(--border-thickness-4)));
+    background-color: var(--bg-dark-1);
+}
+
+.expand-navbar.expand i {
+    transform: rotate(180deg);
+}
+
+.expand-navbar.collapse {
+    transform: translateX(-50%) translateY(0);
+    background-color: 'transparent';
+}
+
+.expand-navbar.collapse i {
+    transform: rotate(0deg);
+}
+
 .main-nav__branding {
     display: flex;
     justify-content: center;
