@@ -180,6 +180,29 @@ export function updateCurrentSection(event) {
 }
 
 
+// Function to update the current section when scrolling manually
+export function updateCurrentSectionOnScroll() {
+    // Gets all sections in the document except controls;
+    const sections = [...document.querySelectorAll('section')];
+
+    // Iterates over each section to find the one currently in view
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const scrollPosition = window.scrollY;
+
+        // Checks if the section is in the viewport
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // Gets the corresponding nav item and updates its class
+            const navItem = document.querySelector(`.main-nav__list-item a[href="#${section.id}"]`);
+
+            // Updates current class of the nav item
+            if (navItem) updateCurrentClass(navItem);
+        }
+    });
+}
+
+
 // Function to handle clicks on hamburger menu
 export function toggleHamburgerMenu() {
     // Toggles the 'open' and 'closed' classes of the hamburger
