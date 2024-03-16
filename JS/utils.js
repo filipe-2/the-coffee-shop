@@ -192,12 +192,12 @@ export function lockNavbar() {
     // Toggles the 'locked' class of the lock navbar button and changes its icon accordingly
     if (!lockNavbarBtn.classList.contains('locked')) {
         lockNavbarBtn.classList.add('locked');
-        lockNavbarBtnIcon.classList.remove('fa-unlock');
+        lockNavbarBtnIcon.classList.remove('fa-lock-open');
         lockNavbarBtnIcon.classList.add('fa-lock');
     } else {
         lockNavbarBtn.classList.remove('locked');
         lockNavbarBtnIcon.classList.remove('fa-lock');
-        lockNavbarBtnIcon.classList.add('fa-unlock');
+        lockNavbarBtnIcon.classList.add('fa-lock-open');
     }
 }
 
