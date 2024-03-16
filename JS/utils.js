@@ -1,12 +1,13 @@
 export const mediaQuery = window.matchMedia('(max-width: 50rem)');
-export const hamburger = document.querySelector('.main-nav__hamburger-menu');
-const hamburgerIcon = document.querySelector('.main-nav__hamburger-menu i');
-const mainNavWrapper = document.querySelector('.main-nav__wrapper');
-export const mainNavList = mainNavWrapper.querySelector('.main-nav__list');
-const branding = mainNavWrapper.querySelector('.main-nav__branding');
-const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns');
+export const hamburger = document.querySelector('.main-nav__hamburger-menu'); // Selects the hamburger menu
+const hamburgerIcon = hamburger.querySelector('i'); // Selects the hamburger menu icon
+const mainNavWrapper = document.querySelector('.main-nav__wrapper'); // Selects the navbar wrapper
+export const mainNavList = mainNavWrapper.querySelector('.main-nav__list'); // Selects the nav list of anchors
+const branding = mainNavWrapper.querySelector('.main-nav__branding'); // Selects the nav branding
+const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns'); // Selects the navbar form buttons
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 export const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
+export const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
@@ -137,18 +138,23 @@ export function startSlideshow() {
 
 // Function to toggle navbar visibility when clicking
 export function toggleNavbarOnClick() {
-    if (navbar.classList.contains('expanded')) {
-        navbar.style.transform = 'translateY(-5.5rem)';
-        navbar.style.boxShadow = 'none';
-        navbar.classList.remove('expanded');
-        expandNavbarBtn.classList.remove('collapse');
-        expandNavbarBtn.classList.add('expand');
-    } else {
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
-        navbar.classList.add('expanded');
-        expandNavbarBtn.classList.remove('expand');
-        expandNavbarBtn.classList.add('collapse');
+
+    // Checks if the current state of the navbar is locked
+    if (!lockNavbarBtn.classList.contains('locked')) {
+        // Toggles the visibility of the navbar based on the 'expanded' class
+        if (navbar.classList.contains('expanded')) {
+            navbar.style.transform = 'translateY(-5.5rem)';
+            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('expanded');
+            expandNavbarBtn.classList.remove('collapse');
+            expandNavbarBtn.classList.add('expand');
+        } else {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
+            navbar.classList.add('expanded');
+            expandNavbarBtn.classList.remove('expand');
+            expandNavbarBtn.classList.add('collapse');
+        }
     }
 }
 
@@ -157,22 +163,42 @@ export function toggleNavbarOnClick() {
 export function toggleNavbarOnScroll() {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Toggles the visibility of the navbar based on the scrolling position
-    if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
-        navbar.style.transform = 'translateY(-5.5rem)';
-        navbar.style.boxShadow = 'none';
-        navbar.classList.remove('expanded');
-        expandNavbarBtn.classList.remove('collapse');
-        expandNavbarBtn.classList.add('expand');
-    } else {
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
-        navbar.classList.add('expanded');
-        expandNavbarBtn.classList.remove('expand');
-        expandNavbarBtn.classList.add('collapse');
+    // Checks if the current state of the navbar is locked
+    if (!lockNavbarBtn.classList.contains('locked')) {
+        // Toggles the visibility of the navbar based on the scrolling position
+        if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
+            navbar.style.transform = 'translateY(-5.5rem)';
+            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('expanded');
+            expandNavbarBtn.classList.remove('collapse');
+            expandNavbarBtn.classList.add('expand');
+        } else {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
+            navbar.classList.add('expanded');
+            expandNavbarBtn.classList.remove('expand');
+            expandNavbarBtn.classList.add('collapse');
+        }
     }
 
     lastScrollTop = currentScrollTop; // Sets the last scrolling position to the current one
+}
+
+
+// Function to lock/unlock the current state of the navbar
+export function lockNavbar() {
+    const lockNavbarBtnIcon = lockNavbarBtn.firstElementChild;
+
+    // Toggles the 'locked' class of the lock navbar button and changes its icon accordingly
+    if (!lockNavbarBtn.classList.contains('locked')) {
+        lockNavbarBtn.classList.add('locked');
+        lockNavbarBtnIcon.classList.remove('fa-unlock');
+        lockNavbarBtnIcon.classList.add('fa-lock');
+    } else {
+        lockNavbarBtn.classList.remove('locked');
+        lockNavbarBtnIcon.classList.remove('fa-lock');
+        lockNavbarBtnIcon.classList.add('fa-unlock');
+    }
 }
 
 

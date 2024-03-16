@@ -20,39 +20,38 @@ header:hover {
     margin: auto;
 }
 
-.expand-navbar {
+.main-nav-controls {
     position: absolute;
     left: 50%;
-    bottom: -1rem;
+    top: calc(100% + var(--border-thickness-4) + 5px);
     transform: translateX(-50%);
+}
+
+.main-nav-controls__btn {
     color: var(--clr-neutral-11);
     font-weight: bold;
     font-size: 1rem;
     padding: 4px;
     width: 2rem;
     aspect-ratio: 1;
-    border: none;
+    border: var(--border-thickness-4) solid var(--clr-neutral-10);
     border-radius: 50%;
     backdrop-filter: blur(10px);
-    background-color: transparent;
+    background-color: var(--bg-dark-1);
     transition: var(--transition-time-1);
 }
 
-.expand-navbar.expand {
-    transform: translateX(-50%) translateY(calc(50% + var(--border-thickness-4)));
-    background-color: var(--bg-dark-1);
+.main-nav-controls__btn:hover,
+.main-nav-controls__btn:focus {
+    color: var(--clr-neutral-3);
+    border-color: var(--clr-neutral-3);
 }
 
-.expand-navbar.expand i {
+.main-nav-controls__btn.expand i {
     transform: rotate(180deg);
 }
 
-.expand-navbar.collapse {
-    transform: translateX(-50%) translateY(0);
-    background-color: 'transparent';
-}
-
-.expand-navbar.collapse i {
+.main-nav-controls__btn.collapse i {
     transform: rotate(0deg);
 }
 
