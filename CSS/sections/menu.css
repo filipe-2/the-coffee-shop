@@ -34,6 +34,11 @@
     gap: 20px;
 }
 
+.menu__card-list:has(:hover)>.menu__card:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
 .menu__card {
     position: relative;
     border-radius: 10px;
@@ -41,10 +46,6 @@
     cursor: pointer;
     transition: var(--transition-time-1);
     box-shadow: 10px 10px 10px var(--bg-dark-3);
-}
-
-.menu__card:hover {
-    transform: scale(1.05);
 }
 
 .menu__card-title {

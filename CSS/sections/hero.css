@@ -50,8 +50,10 @@
 
     display: flex;
     align-items: center;
+    width: min(var(--wrapper-width), var(--wrapper-max-width));
     gap: var(--gap);
     margin-inline: clamp(0.625rem, -0.11206896551724133rem + 4.3678160919540225vw, 3rem);
+    margin: 0 auto;
     position: absolute;
     inset: 0;
     z-index: 5;
