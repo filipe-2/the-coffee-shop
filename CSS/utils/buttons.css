@@ -59,3 +59,11 @@
 .highlited-btn.secondary:focus {
     --bg-clr: var(--clr-neutral-7);
 }
+
+.locked {
+    border-color: var(--clr-neutral-3);
+}
+
+.locked i {
+    color: var(--clr-neutral-3);
+}

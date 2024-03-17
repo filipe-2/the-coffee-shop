@@ -187,7 +187,7 @@ export function toggleNavbarOnScroll() {
 
 // Function to lock/unlock the current state of the navbar
 export function lockNavbar() {
-    const lockNavbarBtnIcon = lockNavbarBtn.firstElementChild;
+    const lockNavbarBtnIcon = lockNavbarBtn.firstElementChild; // Gets the icon of the lock navbar button
 
     // Toggles the 'locked' class of the lock navbar button and changes its icon accordingly
     if (!lockNavbarBtn.classList.contains('locked')) {

@@ -275,14 +275,16 @@
                 </ul>
                 <!----------------------------------->
 
+                <!------- Search drink form --------->
                 <form class="menu__search-form">
-                    <label class="search-label" for="coffee-search">Didn't find what you want?</label>
+                    <label class="menu__search-label" for="coffee-search">What's your desire?</label>
                     <div class="menu__search-bar">
-                        <input placeholder="Try searching here..." class="search-input" id="coffee-search"
+                        <input placeholder="Search a drink here..." class="menu__search-input" id="coffee-search"
                             name="coffee-search" type="text">
-                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                        <button class="menu__search-btn"><i class="fa fa-search"></i></button>
                     </div>
                 </form>
+                <!----------------------------------->
             </div>
         </section>
         <!----------------------------------->
@@ -298,136 +300,96 @@
             </div>
 
             <!------ Special drinks slides ------>
-            <div class="slides">
+            <div class="special-drinks__slides">
                 <!------------- Slide --------------->
-                <div class="slide special-slide active">
+                <div class="special-drinks__slide active">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/blueberry-bliss-3.jpg"
+                    <img class="special-drinks__slide-img" src="./assets/imgs/blueberry-bliss-4.jpg"
                         alt="Slide one image: Delicious creamy Cappuccino.">
                     <!----------------------------------->
-
-                    <div class="slide-description-container">
-                        <!---------- Slide title ------------>
-                        <h3 class="slide-title special-one"><i class="fa fa-gem"></i> Blueberry Bliss</h3>
-                        <!----------------------------------->
-
-                        <!------- Slide description --------->
-                        <p class="slide-description">
-                            Indulge in the delightful symphony of flavors with our signature
-                            "Blueberry Bliss" drink, an enchanting concoction crafted to tantalize your taste buds and
-                            uplift your spirits. At <span class="highlight-two">The Coffee
-                                Shop</span>, we've reimagined the classic coffee experience by
-                            infusing it with the essence of freshly picked blueberries, creating a beverage that
-                            transcends the ordinary and transports you to a realm of pure bliss.
-
-                            <br><br>
-
-                            The first sip of Blueberry Bliss is a revelation—a burst of fruity freshness that awakens
-                            the senses and invigorates the soul. As you continue to savor each sip, you'll discover
-                            layers of complexity unfolding, with hints of tartness giving way to a lingering sweetness
-                            that dances on the palate.
-
-                            <br><br>
-
-                            Pair your Blueberry Bliss drink with a freshly baked pastry or a slice of creamy cheesecake
-                            for the ultimate indulgence. The interplay of flavors between the blueberries and the
-                            buttery richness of the pastry creates a symphony of taste sensations that will leave you
-                            craving for more.
-
-                            <br><br>
-
-                            Whether you're seeking a moment of quiet contemplation or a burst of inspiration to fuel
-                            your day, our Blueberry Bliss drink promises to be your perfect companion. Visit <span
-                                class="highlight-two">The Coffee
-                                Shop</span> today and embark on a journey of flavor discovery with our exquisite
-                            Blueberry Bliss
-                            creation. Let every sip transport you to a realm of pure joy and culinary delight.
-                        </p>
-                        <!----------------------------------->
-                    </div>
                 </div>
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="slide special-slide">
+                <div class="special-drinks__slide special-slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/twilight-elixir-3.jpg"
+                    <img class="special-drinks__slide-img" src="./assets/imgs/twilight-elixir-3.jpg"
                         alt="Slide one image: Delicious Affogato desert.">
                     <!----------------------------------->
-
-                    <div class="slide-description-container">
-                        <!---------- Slide title ------------>
-                        <h3 class="slide-title special-two"><i class="fa-solid fa-mug-hot"></i> Twilight Elixir</h3>
-                        <!----------------------------------->
-
-                        <!------- Slide description --------->
-                        <p class="slide-description">Is a decadent
-                            Italian delight that marries the rich flavors of espresso with the creamy indulgence of
-                            gelato. At <span class=highlight-two>The Coffee
-                                Shop</span>, we invite you to experience the exquisite harmony of contrasting
-                            textures and temperatures in this unforgettable dessert.
-                        </p>
-                        <!----------------------------------->
-                    </div>
-
-                    <!------- Expand slide button ------->
-                    <button class="slide-options-btn special-two">See drink</button>
-                    <!----------------------------------->
                 </div>
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="slide special-slide">
+                <div class="special-drinks__slide">
                     <!---------- Slide image ------------>
-                    <img class="slide-img" src="./assets/imgs/sweet-love.jpg"
+                    <img class="special-drinks__slide-img" src="./assets/imgs/sweet-love.jpg"
                         alt="Slide one image: Delicious Mocha with foam.">
                     <!----------------------------------->
+                </div>
+                <!----------------------------------->
+            </div>
+            <!----------------------------------->
 
-                    <div class="slide-description-container">
-                        <!---------- Slide title ------------>
-                        <h3 class="slide-title special-three"><i class="fa-solid fa-mug-hot"></i> Sweet Love</h3>
-                        <!----------------------------------->
+            <!---------- Slide content ---------->
+            <div class="special-drinks__slide-content">
+                <!------------- Slider -------------->
+                <div class="special-drinks__slider">
+                    <!------ Previous slide button ------>
+                    <button class="action-button prev" aria-label="previous slide">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <!----------------------------------->
 
-                        <!------- Slide description --------->
-                        <p class="slide-description">
-                            Each sip of our Mocha unveils a symphony of sensations, from the bold
-                            intensity of freshly brewed espresso to the luscious sweetness of premium chocolate,
-                            harmoniously balanced by the silky smoothness of expertly steamed milk.
-                        </p>
-                        <!----------------------------------->
+                    <!-------- Slider indicators -------->
+                    <div class="special-drinks__slide-indicators">
+                        <button class="special-drinks__slide-indicator checked" aria-current="step"></button>
+                        <button class="special-drinks__slide-indicator"></button>
+                        <button class="special-drinks__slide-indicator"></button>
+                        <button class="special-drinks__slide-indicator"></button>
                     </div>
+                    <!----------------------------------->
 
-                    <!------- Expand slide button ------->
-                    <button class="slide-options-btn special-three">See drink</button>
+                    <!-------- Next slide button -------->
+                    <button class="action-button next" aria-label="next slide">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
-            </div>
-            <!----------------------------------->
 
-            <!------------- Slider -------------->
-            <div class="slider">
-                <!------ Previous slide button ------>
-                <button class="action-button special-action-button prev" aria-label="previous slide">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </button>
-                <!----------------------------------->
+                <div class="special-drinks__slide-description-wrapper">
+                    <!----------- Slide title ----------->
+                    <h3 class="special-drinks__slide-title"><i class="fa-solid fa-mug-hot"></i> Blueberry Bliss
+                    </h3>
+                    <!----------------------------------->
 
-                <!-------- Slide indicators --------->
-                <div class="slide-indicators special-indicators">
-                    <button class="slide-indicator checked" aria-current="step"></button>
-                    <button class="slide-indicator"></button>
-                    <button class="slide-indicator"></button>
+                    <!------------- Ratings ------------->
+                    <div class="special-drinks__ratings">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <!-------- Slide description -------->
+                    <p class="special-drinks__slide-description">Crafted with the finest blueberries, this enchanting
+                        concoction offers a burst of fruity sweetness harmonized with the smooth richness of our
+                        signature coffee blend.
+                    </p>
+                    <!----------------------------------->
+
+                    <!---------- Slide buttons ---------->
+                    <div class="special-drinks__slide-btns">
+                        <button class="highlited-btn primary">See drink</button>
+                        <button class="highlited-btn secondary">View in app</button>
+                    </div>
+                    <!----------------------------------->
                 </div>
-                <!----------------------------------->
-
-                <!-------- Next slide button -------->
-                <button class="action-button special-action-button next" aria-label="next slide">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </button>
-                <!----------------------------------->
             </div>
             <!----------------------------------->
+
+
         </section>
         <!----------------------------------->
 

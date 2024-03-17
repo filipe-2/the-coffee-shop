@@ -28,6 +28,34 @@
     box-shadow: 10px 10px 10px var(--bg-dark-3);
 }
 
+.menu__search-label {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--clr-neutral-1);
+    font-weight: bold;
+    padding: 5px;
+}
+
+.menu__search-input {
+    background-color: var(--bg-dark-5);
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 10px 35px 10px 10px;
+    color: var(--clr-neutral-1);
+    border: var(--border-thickness-4) solid var(--clr-neutral-3);
+}
+
+.menu__search-btn {
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--clr-neutral-3);
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .menu__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

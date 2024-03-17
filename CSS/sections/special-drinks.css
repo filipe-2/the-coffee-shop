@@ -2,33 +2,166 @@
     border-top: var(--border-thickness-2) double var(--clr-accent-1);
 }
 
-.special-slide:not(.active) {
+.special-drinks__slides {
+    /* Fallbacks */
+    min-height: 100vh;
+
+    min-height: 100svh;
+    position: relative;
+}
+
+.special-drinks__slide {
+    display: flex;
+    flex-direction: column;
+    min-height: inherit;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-time-2) ease;
+    position: relative;
+}
+
+.special-drinks__slide::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: var(--bg-dark-3);
+}
+
+.special-drinks__slide.active {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+.special-drinks__slide:not(.active) {
     position: absolute;
 }
 
-.special-one {
-    /* Custom properties */
-    --text-clr: var(--clr-accent-1);
-    --shadow-clr: var(--clr-accent-1);
-    --border-clr: var(--clr-accent-1);
+.special-drinks__slide-img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
 }
 
-.special-two {
+.special-drinks__slide-content {
+    /* Fallbacks */
+    margin-inline: 0.625rem;
+
     /* Custom properties */
-    --text-clr: var(--clr-accent-2);
-    --shadow-clr: var(--clr-accent-2);
+    --gap: 15px;
+
+    display: flex;
+    align-items: center;
+    width: min(var(--wrapper-width), var(--wrapper-max-width));
+    gap: var(--gap);
+    margin-inline: clamp(0.625rem, -0.11206896551724133rem + 4.3678160919540225vw, 3rem);
+    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
 }
 
-.special-three {
-    /* Custom properties */
-    --text-clr: var(--clr-accent-3);
-    --shadow-clr: var(--clr-accent-3);
+.special-drinks__slide-description-wrapper {
+    position: relative;
+    width: min(500px, var(--wrapper-max-width));
+    border-left: var(--border-thickness-2) solid var(--clr-accent-1);
+    border-radius: 10px;
+    padding: 15px 25px;
+    backdrop-filter: blur(7px);
+    transition: var(--transition-time-1);
 }
 
-.special-indicators,
-.special-action-button {
-    /* Custom properties */
-    --text-clr: var(--clr-accent-1);
-    --shadow-clr: var(--clr-accent-1);
-    --border-clr: var(--clr-accent-1);
+.special-drinks__slide-description-wrapper:hover {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.special-drinks__slide-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.special-drinks__slide-title {
+    /* Fallbacks */
+    font-size: 1.5rem;
+
+    font-size: clamp(1.5rem, 1.2375rem + 1.3125vw, 2.8125rem);
+    font-family: var(--font-2);
+    text-shadow: 0 0 16px var(--shadow-clr, var(--clr-accent-1));
+    width: 100%;
+}
+
+.special-drinks__slide-description {
+    /* Fallbacks */
+    font-size: 0.75rem;
+
+    font-size: clamp(0.75rem, 0.7112068965517241rem + 0.22988505747126436vw, 0.875rem);
+    text-shadow: 2px 2px 3px var(--bg-dark-1);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
+    width: 100%;
+    margin: 0;
+    max-height: clamp(8rem, 20rem - 10vw, 20rem);
+}
+
+.special-drinks__ratings {
+    margin-block: 5px 7px;
+}
+
+.special-drinks__ratings .fa-star {
+    /* Fallbacks */
+    font-size: 0.625rem;
+
+    font-size: clamp(0.625rem, 0.5086206896551724rem + 0.6896551724137931vw, 1rem);
+    color: var(--clr-accent-1);
+}
+
+.special-drinks__slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    margin-right: 10px;
+}
+
+.special-drinks__slide-indicators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--border-thickness-1) solid var(--border-clr, var(--clr-accent-1));
+    border-radius: 20px;
+    background-color: var(--bg-dark-3);
+    transition: var(--transition-time-1);
+}
+
+.special-drinks__slide-indicators:hover {
+    box-shadow: 0 0 16px var(--shadow-clr, var(--clr-accent-1));
+}
+
+.special-drinks__slide-indicator {
+    width: 1.25rem;
+    aspect-ratio: 1;
+    margin: 0.25rem;
+    background-color: transparent;
+    border: var(--border-thickness-1) double var(--border-clr, var(--clr-accent-1));
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-time-1);
+}
+
+.special-drinks__slide-indicator.checked {
+    border-color: var(--border-clr);
+    background-color: var(--clr-accent-1);
+}
+
+.special-drinks__slide-indicator:hover,
+.special-drinks__slide-indicator:focus {
+    border-color: var(--border-clr);
+    background-color: var(--clr-neutral-11);
 }

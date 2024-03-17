@@ -42,7 +42,7 @@ header:hover {
 }
 
 .main-nav-controls__btn:hover,
-.main-nav-controls__btn:focus {
+.main-nav-controls__btn:focus-visible {
     color: var(--clr-neutral-3);
     border-color: var(--clr-neutral-3);
 }
