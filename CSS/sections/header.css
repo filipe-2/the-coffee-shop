@@ -55,6 +55,12 @@ header:hover {
     transform: rotate(0deg);
 }
 
+.main-nav-controls__btn.disabled:hover {
+    border-color: var(--clr-neutral-10);
+    color: var(--clr-neutral-11);
+    cursor: not-allowed;
+}
+
 .main-nav__branding {
     display: flex;
     justify-content: center;

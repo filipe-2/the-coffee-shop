@@ -138,7 +138,6 @@ export function startSlideshow() {
 
 // Function to toggle navbar visibility when clicking
 export function toggleNavbarOnClick() {
-
     // Checks if the current state of the navbar is locked
     if (!lockNavbarBtn.classList.contains('locked')) {
         // Toggles the visibility of the navbar based on the 'expanded' class
@@ -194,11 +193,14 @@ export function lockNavbar() {
         lockNavbarBtn.classList.add('locked');
         lockNavbarBtnIcon.classList.remove('fa-lock-open');
         lockNavbarBtnIcon.classList.add('fa-lock');
+        expandNavbarBtn.classList.add('disabled');
         console.log('navbar is locked');
+
     } else {
         lockNavbarBtn.classList.remove('locked');
         lockNavbarBtnIcon.classList.remove('fa-lock');
         lockNavbarBtnIcon.classList.add('fa-lock-open');
+        expandNavbarBtn.classList.remove('disabled');
         console.log('navbar is unlocked');
     }
 }
