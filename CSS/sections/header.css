@@ -16,6 +16,16 @@ header:hover {
     backdrop-filter: blur(15px);
 }
 
+header.expanded {
+    transform: translateY(0);
+    box-shadow: 0 0 50px 30px var(--bg-dark-2);
+}
+
+header.collapsed {
+    transform: translateY(-5.5rem);
+    box-shadow: none;
+}
+
 .main-nav {
     margin: auto;
 }
@@ -55,7 +65,8 @@ header:hover {
     transform: rotate(0deg);
 }
 
-.main-nav-controls__btn.disabled:hover {
+.main-nav-controls__btn.disabled:hover,
+.main-nav-controls__btn.disabled:focus-visible {
     border-color: var(--clr-neutral-10);
     color: var(--clr-neutral-11);
     cursor: not-allowed;
@@ -77,7 +88,7 @@ header:hover {
     pointer-events: none;
     position: relative;
     z-index: 1;
-    background-color: black;
+    background-color: var(--bg-dark-1);
 }
 
 .main-nav__title {

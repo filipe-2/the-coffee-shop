@@ -142,15 +142,13 @@ export function toggleNavbarOnClick() {
     if (!lockNavbarBtn.classList.contains('locked')) {
         // Toggles the visibility of the navbar based on the 'expanded' class
         if (navbar.classList.contains('expanded')) {
-            navbar.style.transform = 'translateY(-5.5rem)';
-            navbar.style.boxShadow = 'none';
             navbar.classList.remove('expanded');
+            navbar.classList.add('collapsed');
             expandNavbarBtn.classList.remove('collapse');
             expandNavbarBtn.classList.add('expand');
         } else {
-            navbar.style.transform = 'translateY(0)';
-            navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
             navbar.classList.add('expanded');
+            navbar.classList.remove('collapsed');
             expandNavbarBtn.classList.remove('expand');
             expandNavbarBtn.classList.add('collapse');
         }
@@ -166,14 +164,12 @@ export function toggleNavbarOnScroll() {
     if (!lockNavbarBtn.classList.contains('locked')) {
         // Toggles the visibility of the navbar based on the scrolling position
         if (hamburger.classList.contains('closed') && currentScrollTop > lastScrollTop && currentScrollTop > 0) {
-            navbar.style.transform = 'translateY(-5.5rem)';
-            navbar.style.boxShadow = 'none';
             navbar.classList.remove('expanded');
+            navbar.classList.add('collapsed');
             expandNavbarBtn.classList.remove('collapse');
             expandNavbarBtn.classList.add('expand');
         } else {
-            navbar.style.transform = 'translateY(0)';
-            navbar.style.boxShadow = '0 0 50px 30px var(--bg-dark-2)';
+            navbar.classList.remove('collapsed');
             navbar.classList.add('expanded');
             expandNavbarBtn.classList.remove('expand');
             expandNavbarBtn.classList.add('collapse');

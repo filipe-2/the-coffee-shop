@@ -29,7 +29,7 @@ window.addEventListener('scroll', updateCurrentSectionOnScroll); // Updates the 
 window.addEventListener('scroll', handleScrollButtons) // Handles position and visibility of scroll buttons
 
 // Click events
-hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburger state on clickg
+hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburger state on click
 expandNavbarBtn.addEventListener('click', toggleNavbarOnClick); // 
 lockNavbarBtn.addEventListener('click', lockNavbar); // Locks the navbar current state on click
 document.querySelectorAll('.main-nav__list-item').forEach(listItem => listItem.addEventListener('click', updateCurrentSection)); // Updates the current section when navigating through nav or buttons
