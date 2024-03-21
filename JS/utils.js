@@ -231,7 +231,7 @@ export function updateCurrentSection(event) {
     updateCurrentClass(targetAnchor);
 
     // Closes the hamburger menu
-    if (mediaQuery.matches) toggleHamburgerMenu();
+    if (mediaQuery.matches) toggleHamburgerMenu(event);
 }
 
 
@@ -306,7 +306,7 @@ export const closeHamburgerPressEsc = e => hamburger.classList.contains('open') 
 
 
 // Hides the hamburger menu when the viewport width doesn't match the 50rem media query
-export const hideMenuOnResize = () => (!mediaQuery.matches && hamburger.classList.contains('open')) && toggleHamburgerMenu();
+export const hideMenuOnResize = e => !mediaQuery.matches && hamburger.classList.contains('open') && toggleHamburgerMenu(e);
 
 
 // Function to handle scroll button visibility and position
