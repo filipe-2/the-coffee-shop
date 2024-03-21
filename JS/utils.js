@@ -259,7 +259,10 @@ export function updateCurrentSectionOnScroll() {
 
 
 // Function to handle clicks on hamburger menu
-export function toggleHamburgerMenu() {
+export function toggleHamburgerMenu(event) {
+    // Prevents event propagation
+    event.stopPropagation();
+
     // Toggles the 'open' and 'closed' classes of the hamburger
     hamburger.classList.toggle('open');
     hamburger.classList.toggle('closed');
@@ -292,6 +295,14 @@ export function toggleHamburgerMenu() {
     mainNavList.classList.toggle('visible');
     mainNavBtns.classList.toggle('visible');
 }
+
+
+// Function to close the hamburger menu when clicking outside
+export const closeHamburgerClickOutside = e => hamburger.classList.contains('open') && !mainNavList.contains(e.target) && toggleHamburgerMenu(e);
+
+
+// Function to close the hamburger menu when pressing ESCAPE
+export const closeHamburgerPressEsc = e => hamburger.classList.contains('open') && e.key === 'Escape' && toggleHamburgerMenu(e);
 
 
 // Hides the hamburger menu when the viewport width doesn't match the 50rem media query

@@ -136,7 +136,8 @@
     transition: var(--transition-time-1);
 }
 
-.hero__slide-indicators:hover {
+.hero__slide-indicators:hover,
+.hero__slide-indicators:focus-within {
     box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
 }
 
@@ -157,7 +158,7 @@
 }
 
 .hero__slide-indicator:hover,
-.hero__slide-indicator:focus {
+.hero__slide-indicator:focus-visible {
     border-color: var(--border-clr);
     background-color: var(--clr-neutral-11);
 }

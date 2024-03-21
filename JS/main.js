@@ -13,6 +13,8 @@ import {
     toggleNavbarOnClick,
     toggleNavbarOnScroll,
     lockNavbar,
+    closeHamburgerClickOutside,
+    closeHamburgerPressEsc,
 
     // Variables
     hamburger,
@@ -30,6 +32,7 @@ window.addEventListener('scroll', handleScrollButtons) // Handles position and v
 
 // Click events
 hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburger state on click
+document.body.addEventListener('click', closeHamburgerClickOutside); // Closes the menu when clicking outside
 expandNavbarBtn.addEventListener('click', toggleNavbarOnClick); // 
 lockNavbarBtn.addEventListener('click', lockNavbar); // Locks the navbar current state on click
 document.querySelectorAll('.main-nav__list-item').forEach(listItem => listItem.addEventListener('click', updateCurrentSection)); // Updates the current section when navigating through nav or buttons
@@ -38,5 +41,6 @@ document.querySelector('.controls__scroll-btn[data-action="bottom"]').addEventLi
 
 // Other events
 window.addEventListener('resize', hideMenuOnResize); // Fires the hideMenuOnResize function
+document.body.addEventListener('keydown', closeHamburgerPressEsc); // Closes the menu when pressing ESCAPE
 mediaQuery.addEventListener('change', handleMediaQueryChange); // Listens for changes in screen size
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads

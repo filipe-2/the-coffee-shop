@@ -152,7 +152,7 @@ header.collapsed {
 .main-nav__list-item:hover,
 .main-nav__list-item:focus-within,
 .main-nav__btn:hover,
-.main-nav__btn:focus {
+.main-nav__btn:focus-visible {
     border-bottom-color: var(--clr-neutral-3);
 }
 
@@ -172,7 +172,6 @@ header.collapsed {
 }
 
 .main-nav__list-item:hover .main-nav__link,
-.main-nav__list-item:hover .main-nav__icon,
 .main-nav__list-item:focus-within .main-nav__link,
 .main-nav__list-item:focus-within .main-nav__icon,
 .main-nav__btn:hover,
@@ -202,7 +201,7 @@ header.collapsed {
 }
 
 .main-nav__hamburger-menu:hover,
-.main-nav__hamburger-menu:focus {
+.main-nav__hamburger-menu:focus-visible {
     background-color: var(--bg-dark-4);
     border-radius: 50%;
 }
