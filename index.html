@@ -187,10 +187,10 @@
 
                     <!-------- Slider indicators -------->
                     <div class="hero__slide-indicators">
-                        <button class="hero__slide-indicator checked" aria-current="step"></button>
-                        <button class="hero__slide-indicator"></button>
-                        <button class="hero__slide-indicator"></button>
-                        <button class="hero__slide-indicator"></button>
+                        <button class="hero__slide-indicator checked" aria-label="slide 1" aria-current="step"></button>
+                        <button class="hero__slide-indicator" aria-label="slide 2"></button>
+                        <button class="hero__slide-indicator" aria-label="slide 3"></button>
+                        <button class="hero__slide-indicator" aria-label="slide 4"></button>
                     </div>
                     <!----------------------------------->
 
@@ -246,33 +246,62 @@
             </div>
 
             <div class="menu__content">
-                <!---------- Drinks list ------------>
-                <ul class="menu__card-list">
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/cappuccino2.jpg" alt="cappuccino">
-                        <h4 class="menu__card-title">Cappuccino</h4>
-                    </li>
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/doppio.jpg" alt="doppio">
-                        <h4 class="menu__card-title">Doppio</h4>
-                    </li>
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/latte2.png" alt="latte">
-                        <h4 class="menu__card-title">Latte</h4>
-                    </li>
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/coffee-machiatto2.png" alt="machiatto">
-                        <h4 class="menu__card-title">Machiatto</h4>
-                    </li>
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/lungo2.png" alt="cappuccino">
-                        <h4 class="menu__card-title">Lungo</h4>
-                    </li>
-                    <li class="menu__card">
-                        <img class="menu__card-img" src="./assets/imgs/affogato2.jpg" alt="affogato">
-                        <h4 class="menu__card-title">Affogato</h4>
-                    </li>
-                </ul>
+                <!---------- Drinks ------------>
+                <div class="menu__drinks">
+                    <ul class="menu__card-list">
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/cappuccino2.jpg" alt="cappuccino">
+                            <h4 class="menu__card-title">Cappuccino</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/doppio.jpg" alt="doppio">
+                            <h4 class="menu__card-title">Doppio</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/latte2.png" alt="latte">
+                            <h4 class="menu__card-title">Latte</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/coffee-machiatto2.png" alt="machiatto">
+                            <h4 class="menu__card-title">Machiatto</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/lungo2.png" alt="cappuccino">
+                            <h4 class="menu__card-title">Lungo</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/affogato2.jpg" alt="affogato">
+                            <h4 class="menu__card-title">Affogato</h4>
+                        </li>
+                    </ul>
+
+                    <ul class="menu__card-list">
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/mocha2.jpg" alt="mocha">
+                            <h4 class="menu__card-title">Mocha</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/americano2.png" alt="americano">
+                            <h4 class="menu__card-title">Americano</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/cortado2.jpg" alt="cortado">
+                            <h4 class="menu__card-title">Cortado</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/ristretto2.jpg" alt="Ristretto">
+                            <h4 class="menu__card-title">Ristretto</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/frappe2.jpg" alt=" frappé">
+                            <h4 class="menu__card-title">Frappé</h4>
+                        </li>
+                        <li class="menu__card">
+                            <img class="menu__card-img" src="./assets/imgs/flat-white.jpg" alt="flat white">
+                            <h4 class="menu__card-title">Flat white</h4>
+                        </li>
+                    </ul>
+                </div>
                 <!----------------------------------->
 
                 <!------- Search drink form --------->
@@ -342,10 +371,11 @@
 
                     <!-------- Slider indicators -------->
                     <div class="special-drinks__slide-indicators">
-                        <button class="special-drinks__slide-indicator checked" aria-current="step"></button>
-                        <button class="special-drinks__slide-indicator"></button>
-                        <button class="special-drinks__slide-indicator"></button>
-                        <button class="special-drinks__slide-indicator"></button>
+                        <button class="special-drinks__slide-indicator checked" aria-current="step"
+                            aria-label="slide 1"></button>
+                        <button class="special-drinks__slide-indicator" aria-label="slide 2"></button>
+                        <button class="special-drinks__slide-indicator" aria-label="slide 3"></button>
+                        <button class="special-drinks__slide-indicator" aria-label="slide 4"></button>
                     </div>
                     <!----------------------------------->
 
@@ -572,11 +602,17 @@
 
             <!------- Social media links -------->
             <ul class="footer-nav__social">
-                <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-apple" aria-hidden="true"></i></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-google-play" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="link to facebook page"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" aria-label="link to twitter/x page"><i class="fa-brands fa-x-twitter"
+                            aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="link to instragram page"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="link to our app on app store"><i class="fa-brands fa-apple"
+                            aria-hidden="true"></i></i></a></li>
+                <li><a href="#" aria-label="link to our app on play store"><i class="fa-brands fa-google-play"
+                            aria-hidden="true"></i></a></li>
             </ul>
             <!----------------------------------->
 

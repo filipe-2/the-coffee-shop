@@ -5,7 +5,6 @@ import {
     startSlideshow,
     goToTop,
     goToBottom,
-    toggleHamburgerMenu,
     handleScrollButtons,
     hideMenuOnResize,
     updateCurrentSection,
@@ -13,6 +12,7 @@ import {
     toggleNavbarOnClick,
     toggleNavbarOnScroll,
     lockNavbar,
+    toggleHamburgerMenu,
     closeHamburgerClickOutside,
     closeHamburgerPressEsc,
 

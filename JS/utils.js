@@ -259,6 +259,7 @@ export function updateCurrentSectionOnScroll() {
 
 
 // Function to handle clicks on hamburger menu
+// BREAK DOWN INTO SMALLER FUNCTIONS
 export function toggleHamburgerMenu(event) {
     // Prevents event propagation
     event.stopPropagation();
@@ -272,6 +273,7 @@ export function toggleHamburgerMenu(event) {
 
     // Locks the scrollbar of the body when the menu is open
     if (hamburger.classList.contains('open') && mediaQuery.matches) {
+        // DON'T MODIFY STYLES DIRECTLY. USE A CLASS INSTEAD.
         document.body.style.overflowY = "hidden";
         mainNavList.removeAttribute('inert');
         branding.setAttribute('inert', '');
@@ -279,6 +281,7 @@ export function toggleHamburgerMenu(event) {
         controls.setAttribute('inert', '');
         footer.setAttribute('inert', '');
     } else {
+        // DON'T MODIFY STYLES DIRECTLY. USE A CLASS INSTEAD.
         document.body.style.overflowY = "visible";
         mainNavList.setAttribute('inert', '');
         branding.removeAttribute('inert',);

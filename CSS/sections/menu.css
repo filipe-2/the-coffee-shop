@@ -9,8 +9,67 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    width: min(var(--wrapper-width), var(--wrapper-max-width));
     margin: 50px auto;
+}
+
+.menu__drinks,
+.menu__card-list {
+    --gap: 10px;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--gap);
+}
+
+.menu__drinks {
+    grid-auto-columns: 100%;
+    padding: 0 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.menu__card-list {
+    grid-auto-columns: 1fr;
+    gap: var(--gap);
+    /* border: 3px solid limegreen; */
+}
+
+.menu__card-list:has(:hover)>.menu__card:not(:hover),
+.menu__card-list:has(:hover)~.menu__card-list>.menu__card:not(:hover),
+.menu__card-list:has(~ .menu__card-list:hover)>.menu__card:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.menu__card {
+    position: relative;
+    border-radius: 10px;
+    min-height: 250px;
+    cursor: pointer;
+    transition: var(--transition-time-1);
+    box-shadow: 10px 10px 10px var(--bg-dark-3);
+}
+
+.menu__card-title {
+    font-family: var(--font-2);
+    font-size: 2rem;
+    text-shadow: 0 0 10px var(--clr-neutral-3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 1;
+    padding: 10px 16px;
+    background-color: var(--bg-dark-3);
+    border-radius: inherit;
+
+}
+
+.menu__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 .menu__search-bar {
@@ -54,46 +113,4 @@
     right: 5px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.menu__card-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.menu__card-list:has(:hover)>.menu__card:not(:hover) {
-    transform: scale(0.9);
-    opacity: 0.8;
-}
-
-.menu__card {
-    position: relative;
-    border-radius: 10px;
-    min-height: 250px;
-    cursor: pointer;
-    transition: var(--transition-time-1);
-    box-shadow: 10px 10px 10px var(--bg-dark-3);
-}
-
-.menu__card-title {
-    font-family: var(--font-2);
-    font-size: 2rem;
-    text-shadow: 0 0 10px var(--clr-neutral-3);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: 1;
-    padding: 10px 16px;
-    background-color: var(--bg-dark-3);
-    border-radius: inherit;
-
-}
-
-.menu__card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
 }
