@@ -28,7 +28,6 @@ export function handleMediaQueryChange(mediaQuery) {
         mainNavList.appendChild(btnListItem);
         mainNavList.setAttribute('inert', '');
         mainNavList.style.transition = 'none';
-
     } else {
         // If the screen size is greater than or equal to 50rem, move mainNavBtns back to its original position
         mainNavWrapper.appendChild(mainNavBtns);
@@ -204,13 +203,16 @@ export function lockNavbar() {
 
 // Function to update the current class of the main navigation items and anchors
 function updateCurrentClass(anchor) {
-    const currentListItem = mainNavList.querySelector('.current');
+/*     console.log(anchor);
+ */    const currentListItem = mainNavList.querySelector('.current');
+    /* console.log(currentListItem); */
     const currentAnchor = currentListItem.querySelector('.current');
+    /* console.log(currentAnchor); */
 
     currentListItem.classList.remove('current');
     currentAnchor.classList.remove('current');
     anchor.classList.add('current');
-    anchor.parentElement.classList.add('current');
+    anchor.parentElement.parentElement.classList.add('current');
 }
 
 

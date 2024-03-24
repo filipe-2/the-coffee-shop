@@ -1,11 +1,11 @@
 .highlight-one {
-    font-family: var(--font-2);
+    font-family: var(--font-2), 'Times New Roman', Times, serif;
     font-weight: bold;
     color: var(--clr-neutral-2)
 }
 
 .highlight-two {
-    font-family: var(--font-2);
+    font-family: var(--font-2), 'Times New Roman', Times, serif;
     font-weight: bold;
     text-shadow: 0 0 16px var(--clr-neutral-2);
 }

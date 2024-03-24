@@ -35,7 +35,7 @@ hamburger.addEventListener('click', toggleHamburgerMenu); // Toggles the hamburg
 document.body.addEventListener('click', closeHamburgerClickOutside); // Closes the menu when clicking outside
 expandNavbarBtn.addEventListener('click', toggleNavbarOnClick); // 
 lockNavbarBtn.addEventListener('click', lockNavbar); // Locks the navbar current state on click
-document.querySelectorAll('.main-nav__list-item').forEach(listItem => listItem.addEventListener('click', updateCurrentSection)); // Updates the current section when navigating through nav or buttons
+document.querySelectorAll('.main-nav__list-item button').forEach(listItem => listItem.addEventListener('click', updateCurrentSection)); // Updates the current section when navigating through nav or buttons
 document.querySelector('.controls__scroll-btn[data-action="top"]').addEventListener('click', goToTop); // Goes to the top of the page on click
 document.querySelector('.controls__scroll-btn[data-action="bottom"]').addEventListener('click', goToBottom); // Goes to the bottom of the page on click
 

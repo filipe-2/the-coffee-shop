@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: var(--font-1);
+    font-family: var(--font-1), 'Times New Roman', Times, serif;
     color: var(--clr-neutral-1);
     background-color: var(--bg-dark-1);
 }
@@ -32,10 +32,10 @@ ul {
 }
 
 button {
-    font-family: var(--font-1);
+    font-family: var(--font-1), 'Times New Roman', Times, serif;
     cursor: pointer;
 }
 
 input {
-    font-family: var(--font-1);
+    font-family: var(--font-1), 'Times New Roman', Times, serif;
 }

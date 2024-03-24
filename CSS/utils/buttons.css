@@ -67,3 +67,14 @@
 .locked i {
     color: var(--clr-neutral-3);
 }
+
+
+/* ---------- Media queries ---------- */
+
+@media (max-width: 50rem) {
+    .highlited-btn.primary {
+        --icon-clr: var(--clr-neutral-3);
+    }
+}
+
+/* ----------------------------------- */

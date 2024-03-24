@@ -90,7 +90,7 @@
     font-size: 1.5rem;
 
     font-size: clamp(1.5rem, 1.2375rem + 1.3125vw, 2.8125rem);
-    font-family: var(--font-2);
+    font-family: var(--font-2), 'Times New Roman', Times, serif;
     text-shadow: 0 0 16px var(--shadow-clr, var(--clr-accent-1));
     width: 100%;
 }

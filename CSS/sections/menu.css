@@ -51,7 +51,7 @@
 }
 
 .menu__card-title {
-    font-family: var(--font-2);
+    font-family: var(--font-2), 'Times New Roman', Times, serif;
     font-size: 2rem;
     text-shadow: 0 0 10px var(--clr-neutral-3);
     position: absolute;
