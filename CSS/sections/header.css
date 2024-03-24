@@ -148,7 +148,7 @@ header.collapsed {
     transition: var(--transition-time-1);
 }
 
-.main-nav__list-item button {
+.main-nav__list-item > button {
     font-size: inherit;
     background-color: transparent;
     width: 100%;
@@ -273,7 +273,7 @@ header.collapsed {
         backdrop-filter: blur(15px);
     }
 
-    .main-nav__list-item button {
+    .main-nav__list-item > button {
         padding: 10px 5px;
     }
 
