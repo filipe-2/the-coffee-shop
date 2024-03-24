@@ -22,14 +22,14 @@ export function handleMediaQueryChange(mediaQuery) {
     const btnListItem = document.createElement('li');
 
     if (mediaQuery.matches) {
-        // If the screen size is less than 50rem, append mainNavBtns inside an <li> to mainNavList
+        // If the viewport width is less than 50rem, append mainNavBtns inside an <li> to mainNavList
         btnListItem.classList.add('main-nav__list-item');
         btnListItem.appendChild(mainNavBtns);
         mainNavList.appendChild(btnListItem);
         mainNavList.setAttribute('inert', '');
-        mainNavList.style.transition = 'none';
+        mainNavList.classList.add('transition-off');
     } else {
-        // If the screen size is greater than or equal to 50rem, move mainNavBtns back to its original position
+        // If the viewport width is greater than or equal to 50rem, move mainNavBtns back to its original position
         mainNavWrapper.appendChild(mainNavBtns);
         mainNavList.removeChild(mainNavList.lastChild);
         mainNavList.removeAttribute('inert');
@@ -260,18 +260,28 @@ export function updateCurrentSectionOnScroll() {
 }
 
 
-// Function to handle clicks on hamburger menu
-// BREAK DOWN INTO SMALLER FUNCTIONS
-export function toggleHamburgerMenu(event) {
-    // Prevents event propagation
-    event.stopPropagation();
-
+// Function to toggle menu classes
+function toggleMenuClasses() {
     // Toggles the 'open' and 'closed' classes of the hamburger
     hamburger.classList.toggle('open');
     hamburger.classList.toggle('closed');
 
-    // Removes style attribute to transition from open to close state and vice-versa
-    mainNavList.removeAttribute('style');
+    // Toggles the hamburger icons
+    hamburgerIcon.classList.toggle('fa-bars-staggered');
+    hamburgerIcon.classList.toggle('fa-bars');
+
+    // Toggles the visibility of the nav list and nav buttons
+    mainNavList.classList.toggle('visible');
+    mainNavBtns.classList.toggle('visible');
+}
+
+
+// Function to handle clicks on hamburger menu
+export function toggleHamburgerMenu(event) {
+    event.stopPropagation(); // Prevents event propagation
+    toggleMenuClasses(); // Toggles menu classes
+
+    mainNavList.classList.remove('transition-off'); // Removes style attribute to transition from open to close state and vice-versa
 
     // Locks the scrollbar of the body when the menu is open
     if (hamburger.classList.contains('open') && mediaQuery.matches) {
@@ -289,14 +299,6 @@ export function toggleHamburgerMenu(event) {
         controls.removeAttribute('inert');
         footer.removeAttribute('inert');
     }
-
-    // Toggles the hamburger icons
-    hamburgerIcon.classList.toggle('fa-bars-staggered');
-    hamburgerIcon.classList.toggle('fa-bars');
-
-    // Toggles the visibility of the nav list and nav buttons
-    mainNavList.classList.toggle('visible');
-    mainNavBtns.classList.toggle('visible');
 }
 
 

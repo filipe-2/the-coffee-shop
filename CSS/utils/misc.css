@@ -15,7 +15,6 @@
 }
 
 .current {
-    background-color: var(--bg-dark-9);
     border-bottom-color: var(--clr-neutral-3);
 }
 
@@ -26,6 +25,10 @@
 
 .scroll-locked {
     overflow-y: hidden;
+}
+
+.transition-off {
+    transition: none;
 }
 
 .section-title-wrapper {
@@ -40,3 +43,14 @@
     padding-block: 1.5rem;
     text-align: center;
 }
+
+
+/* ---------- Media queries ---------- */
+
+@media (max-width: 50rem) {
+    .current {
+        background-color: var(--bg-dark-9);
+    }
+}
+
+/* ----------------------------------- */

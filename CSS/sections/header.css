@@ -103,7 +103,8 @@ header.collapsed {
     padding: 5px 8px;
     margin-bottom: clamp(0, 2px - 0.5vw, 2px);
     margin-left: -5px;
-    transform: translateX(-60%) scaleY(0.75) scaleX(0.1);
+    transform: translateX(-60%) scaleY(0.75) scaleX(0.1) rotate(-90deg);
+    transform-origin: top left;
     transition: var(--transition-time-2) ease;
 }
 
@@ -114,7 +115,7 @@ header.collapsed {
 
     font-size: clamp(1rem, 0.8836206896551724rem + 0.6896551724137931vw, 1.375rem);
     visibility: visible;
-    transform: translateX(0) scaleX(1);
+    transform: translateX(0) scaleX(1) rotate(0);
 }
 
 .main-nav__title:hover,

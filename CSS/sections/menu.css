@@ -1,7 +1,11 @@
 .menu {
+    /* Fallbacks */
+    min-height: 100vh;
+
+    min-height: 100svh;
     box-shadow: 0 0 48px var(--clr-neutral-2);
     border-top: var(--border-thickness-2) double var(--clr-neutral-2);
-    background: linear-gradient(90deg, black, var(--clr-neutral-5), black);
+    background: linear-gradient(90deg, var(--bg-dark-1), var(--clr-neutral-5), var(--bg-dark-1));
 }
 
 .menu__content {
@@ -12,6 +16,43 @@
     margin: 50px auto;
 }
 
+.menu__carousel {
+    position: relative;
+}
+
+.menu__drinks {
+    grid-auto-columns: 100%;
+    padding: 25px 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 var(--gap);
+}
+
+.menu__slider-btn {
+    background-color: var(--bg-dark-3);
+    backdrop-filter: blur(10px);
+    color: var(--clr-neutral-1);
+    font-size: 20px;
+    padding: 0 16px;
+    border: none;
+    position: absolute;
+    z-index: 5;
+}
+
+.menu__slider-btn.prev {
+    inset: 0 auto 0 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 15px 0 25px 25px var(--bg-dark-2);
+}
+
+.menu__slider-btn.next {
+    inset: 0 0 0 auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -15px 0 25px 25px var(--bg-dark-2);
+}
+
 .menu__drinks,
 .menu__card-list {
     --gap: 10px;
@@ -19,13 +60,6 @@
     display: grid;
     grid-auto-flow: column;
     gap: var(--gap);
-}
-
-.menu__drinks {
-    grid-auto-columns: 100%;
-    padding: 0 50px;
-    overflow-x: scroll;
-    overflow-y: hidden;
 }
 
 .menu__card-list {
@@ -51,8 +85,10 @@
 }
 
 .menu__card-title {
+    font-size: 1rem;
+
+    font-size: clamp(1rem, 0.6896551724137931rem + 1.839080459770115vw, 2rem);
     font-family: var(--font-2), 'Times New Roman', Times, serif;
-    font-size: 2rem;
     text-shadow: 0 0 10px var(--clr-neutral-3);
     position: absolute;
     top: 50%;
@@ -62,7 +98,6 @@
     padding: 10px 16px;
     background-color: var(--bg-dark-3);
     border-radius: inherit;
-
 }
 
 .menu__card-img {
@@ -70,10 +105,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
-}
-
-.menu__search-bar {
-    position: relative;
 }
 
 .menu__search-form {
@@ -85,6 +116,10 @@
     border-radius: 25px;
     width: 100%;
     box-shadow: 10px 10px 10px var(--bg-dark-3);
+}
+
+.menu__search-bar {
+    position: relative;
 }
 
 .menu__search-label {

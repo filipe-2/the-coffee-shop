@@ -255,74 +255,87 @@
             </div>
 
             <div class="menu__content">
-                <!---------- Drinks ------------>
-                <div class="menu__drinks">
-                    <ul class="menu__card-list">
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/cappuccino2.jpg" alt="cappuccino">
-                            <h4 class="menu__card-title">Cappuccino</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/doppio.jpg" alt="doppio">
-                            <h4 class="menu__card-title">Doppio</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/latte2.png" alt="latte">
-                            <h4 class="menu__card-title">Latte</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/coffee-machiatto2.png" alt="machiatto">
-                            <h4 class="menu__card-title">Machiatto</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/lungo2.png" alt="cappuccino">
-                            <h4 class="menu__card-title">Lungo</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/affogato2.jpg" alt="affogato">
-                            <h4 class="menu__card-title">Affogato</h4>
-                        </li>
-                    </ul>
+                <!---------- Drinks carousel ------------>
+                <div class="menu__carousel">
+                    <button class="menu__slider-btn prev"><i class="fa fa-chevron-left"></i></button>
 
-                    <ul class="menu__card-list">
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/mocha2.jpg" alt="mocha">
-                            <h4 class="menu__card-title">Mocha</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/americano2.png" alt="americano">
-                            <h4 class="menu__card-title">Americano</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/cortado2.jpg" alt="cortado">
-                            <h4 class="menu__card-title">Cortado</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/ristretto2.jpg" alt="Ristretto">
-                            <h4 class="menu__card-title">Ristretto</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/frappe2.jpg" alt=" frappé">
-                            <h4 class="menu__card-title">Frappé</h4>
-                        </li>
-                        <li class="menu__card">
-                            <img class="menu__card-img" src="./assets/imgs/flat-white2.jpg" alt="flat white">
-                            <h4 class="menu__card-title">Flat white</h4>
-                        </li>
-                    </ul>
-                </div>
-                <!----------------------------------->
+                    <div class="menu__drinks">
+                        <ul class="menu__card-list">
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Cappuccino</h4>
+                                <img class="menu__card-img" src="./assets/imgs/cappuccino2.jpg" alt="cappuccino">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Doppio</h4>
+                                <img class="menu__card-img" src="./assets/imgs/doppio.jpg" alt="doppio">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Latte</h4>
+                                <img class="menu__card-img" src="./assets/imgs/latte2.png" alt="latte">
+                            </li>
+                        </ul>
 
-                <!------- Search drink form --------->
-                <form class="menu__search-form">
-                    <label class="menu__search-label" for="coffee-search">What's your desire?</label>
-                    <div class="menu__search-bar">
-                        <input placeholder="Search a drink here..." class="menu__search-input" id="coffee-search"
-                            name="coffee-search" type="text">
-                        <button class="menu__search-btn"><i class="fa fa-search"></i></button>
+                        <ul class="menu__card-list">
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Mocha</h4>
+                                <img class="menu__card-img" src="./assets/imgs/mocha2.jpg" alt="mocha">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Americano</h4>
+                                <img class="menu__card-img" src="./assets/imgs/americano2.png" alt="americano">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Cortado</h4>
+                                <img class="menu__card-img" src="./assets/imgs/cortado2.jpg" alt="cortado">
+                            </li>
+                        </ul>
+
+                        <ul class="menu__card-list">
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Lungo</h4>
+                                <img class="menu__card-img" src="./assets/imgs/lungo2.png" alt="cappuccino">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Affogato</h4>
+                                <img class="menu__card-img" src="./assets/imgs/affogato2.jpg" alt="affogato">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Frappé</h4>
+                                <img class="menu__card-img" src="./assets/imgs/frappe2.jpg" alt=" frappé">
+                            </li>
+                        </ul>
+
+                        <ul class="menu__card-list">
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Machiatto</h4>
+                                <img class="menu__card-img" src="./assets/imgs/coffee-machiatto2.png" alt="machiatto">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Ristretto</h4>
+                                <img class="menu__card-img" src="./assets/imgs/ristretto2.jpg" alt="Ristretto">
+                            </li>
+                            <li class="menu__card">
+                                <h4 class="menu__card-title">Flat white</h4>
+                                <img class="menu__card-img" src="./assets/imgs/flat-white2.jpg" alt="flat white">
+                            </li>
+                        </ul>
                     </div>
-                </form>
-                <!----------------------------------->
+
+                    <button class="menu__slider-btn next"><i class="fa fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <!----------------------------------->
+
+            <!------- Search drink form --------->
+            <form class="menu__search-form">
+                <label class="menu__search-label" for="coffee-search">What's your desire?</label>
+                <div class="menu__search-bar">
+                    <input placeholder="Search a drink here..." class="menu__search-input" id="coffee-search"
+                        name="coffee-search" type="text">
+                    <button class="menu__search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+            <!----------------------------------->
             </div>
         </section>
         <!----------------------------------->
