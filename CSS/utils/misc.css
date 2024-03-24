@@ -15,6 +15,7 @@
 }
 
 .current {
+    background-color: var(--bg-dark-9);
     border-bottom-color: var(--clr-neutral-3);
 }
 

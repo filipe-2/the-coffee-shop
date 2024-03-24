@@ -163,52 +163,6 @@
     background-color: var(--clr-neutral-11);
 }
 
-.hero__slide-options {
-    margin-inline: auto;
-    display: flex;
-    margin: 2rem auto 2rem;
-    border-radius: 20px;
-    box-shadow: 10px 10px 20px var(--shadow-clr, var(--clr-neutral-6));
-}
-
-.hero__slide-options-btn {
-    /* Fallbacks */
-    font-size: 0.9375rem;
-
-    font-size: clamp(0.9375rem, 0.8405172413793104rem + 0.5747126436781609vw, 1.25rem);
-    padding: 0.5em 1em;
-    border: none;
-    background-color: var(--bg-color, var(--clr-neutral-7));
-    font-weight: bold;
-    color: var(--text-clr, var(--clr-neutral-1));
-    transition: 0.3s ease;
-    z-index: 0;
-}
-
-.hero__slide-options-btn:first-child {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.hero__slide-options-btn:last-child {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.hero__slide-options-btn:hover {
-    color: var(--text-clr, var(--clr-neutral-3));
-}
-
-.hero__slide-option-btn--white {
-    /* Custom properties */
-    --bg-color: var(--clr-neutral-8);
-    --text-clr: var(--clr-neutral-6);
-    --border-clr: var(--clr-neutral-1);
-}
-
-.hero__slide-option-btn--white:hover {
-    /* Custom properties */
-    --shadow-clr: var(--clr-neutral-3);
-    --text-clr: var(--clr-neutral-3);
-    --border-clr: var(--clr-neutral-3);
+.hero__slide-btn.secondary:not(:hover) {
+    background-color: var(--bg-dark-3);
 }
