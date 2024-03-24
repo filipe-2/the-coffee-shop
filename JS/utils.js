@@ -275,16 +275,14 @@ export function toggleHamburgerMenu(event) {
 
     // Locks the scrollbar of the body when the menu is open
     if (hamburger.classList.contains('open') && mediaQuery.matches) {
-        // DON'T MODIFY STYLES DIRECTLY. USE A CLASS INSTEAD.
-        document.body.style.overflowY = "hidden";
+        document.body.classList.add('scroll-locked');
         mainNavList.removeAttribute('inert');
         branding.setAttribute('inert', '');
         main.setAttribute('inert', '');
         controls.setAttribute('inert', '');
         footer.setAttribute('inert', '');
     } else {
-        // DON'T MODIFY STYLES DIRECTLY. USE A CLASS INSTEAD.
-        document.body.style.overflowY = "visible";
+        document.body.classList.remove('scroll-locked');
         mainNavList.setAttribute('inert', '');
         branding.removeAttribute('inert',);
         main.removeAttribute('inert');

@@ -23,6 +23,10 @@
     color: var(--clr-neutral-3);
 }
 
+.scroll-locked {
+    overflow-y: hidden;
+}
+
 .section-title-wrapper {
     background-color: var(--bg-dark-3);
 }

@@ -277,10 +277,6 @@ header.collapsed {
         padding: 10px 5px;
     }
 
-    .main-nav__list-item:not(:last-child) .main-nav__icon {
-        float: left;
-    }
-
     .main-nav__list-item:first-child {
         border-top-color: transparent;
         border-top-left-radius: 20px;
