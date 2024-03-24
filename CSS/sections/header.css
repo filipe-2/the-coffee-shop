@@ -172,6 +172,7 @@ header.collapsed {
 }
 
 .main-nav__icon {
+    /* Custom properties */
     --shadow-clr: transparent;
 
     float: left;
@@ -265,6 +266,7 @@ header.collapsed {
     }
 
     .main-nav__list-item {
+        /* Custom properties */
         --letter-spacing: 2px;
 
         width: min(75%, 21.875rem);
