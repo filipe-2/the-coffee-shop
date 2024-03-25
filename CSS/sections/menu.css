@@ -58,7 +58,7 @@
     grid-auto-columns: calc(100% / var(--num-cards) - 25px);
     gap: var(--gap);
     padding: 25px calc(50px + var(--gap));
-    overflow-x: scroll;
+    overflow-x: hidden;
     cursor: grab;
 }
 
