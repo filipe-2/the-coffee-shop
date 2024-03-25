@@ -58,7 +58,7 @@
     grid-auto-columns: calc(100% / var(--num-cards) - 25px);
     gap: var(--gap);
     padding: 25px calc(50px + var(--gap));
-    overflow: scroll;
+    overflow-x: scroll;
     cursor: grab;
 }
 
@@ -67,11 +67,9 @@
     user-select: none;
 }
 
-.menu__card-list:has(:hover)>.menu__card:not(:hover),
-.menu__card-list:has(:hover)~.menu__card-list>.menu__card:not(:hover),
-.menu__card-list:has(~ .menu__card-list:hover)>.menu__card:not(:hover) {
+.menu__card-list:has(:hover)>.menu__card:not(:hover) {
     transform: scale(0.9);
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .menu__card {
