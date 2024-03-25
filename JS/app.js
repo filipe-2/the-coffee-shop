@@ -25,6 +25,7 @@ import {
     expandNavbarBtn,
     lockNavbarBtn,
     menuCarousels,
+    menuCarouselBtns,
 } from './utils.js';
 
 handleMediaQueryChange(mediaQuery); // Fires the handleMediaQueryChange function from the start
@@ -50,8 +51,27 @@ mediaQuery.addEventListener('change', handleMediaQueryChange); // Listens for ch
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
 
 menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on each menu carousel
-    carousel.addEventListener('mousedown', event => handleMouseDown(event, carousel));
+    carousel.addEventListener('mousedown', (event) => handleMouseDown(event, carousel));
     carousel.addEventListener('mousemove', event => handleMouseMove(event, carousel));
     carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
+})
+
+
+
+
+
+const menuContent = document.querySelector('.menu__content');
+
+const cardOffset = document.querySelector('.menu__card').offsetWidth;
+const gapOffset = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap'));
+const offsetWidth = cardOffset + gapOffset;
+const carouselCards = document.querySelectorAll('.menu__card');
+console.log(offsetWidth);
+
+menuCarouselBtns.forEach(btn => { // Adds a click to each button of each menu carousel
+    btn.addEventListener('click', () => {
+        console.log('button clicked');
+        btn.parentElement.querySelector('.menu__card-list').scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth;
+    })
 })

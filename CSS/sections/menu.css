@@ -58,8 +58,15 @@
     grid-auto-columns: calc(100% / var(--num-cards) - 25px);
     gap: var(--gap);
     padding: 25px calc(50px + var(--gap));
-    overflow-x: hidden;
+    overflow-x: scroll;
     cursor: grab;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.menu__card-list::-webkit-scrollbar {
+    display: none;
 }
 
 .menu__card-list.dragging {
@@ -67,7 +74,11 @@
     user-select: none;
 }
 
-.menu__card-list:has(:hover)>.menu__card:not(:hover) {
+.menu__carousel:has(.menu__card-list.dragging) .menu__slider-btn {
+    pointer-events: none;
+}
+
+.menu__card-list.dragging .menu__card-list:has(:hover)>.menu__card:not(:hover) {
     transform: scale(0.9);
     opacity: 0.85;
 }
@@ -80,6 +91,7 @@
     cursor: pointer;
     transition: var(--transition-time-1);
     box-shadow: 10px 10px 10px var(--bg-dark-3);
+    scroll-snap-align: center;
 }
 
 .menu__card-title {

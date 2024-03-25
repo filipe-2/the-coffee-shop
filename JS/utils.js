@@ -8,7 +8,8 @@ const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns'); // Selects 
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
 const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
 const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
-const menuCarousels = document.querySelectorAll('.menu__card-list'); // Selects the first carousel of the menu
+const menuCarousels = document.querySelectorAll('.menu__card-list'); // Selects the menu carousels
+const menuCarouselBtns = document.querySelectorAll('.menu__slider-btn'); // Selects the control buttons of each menu carousel
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
@@ -412,4 +413,5 @@ export {
     expandNavbarBtn,
     lockNavbarBtn,
     menuCarousels,
+    menuCarouselBtns,
 };
