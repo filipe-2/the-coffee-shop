@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
-    margin: 50px auto;
+    margin: 25px auto;
 }
 
 .menu__carousel {
@@ -58,7 +58,13 @@
     grid-auto-columns: calc(100% / var(--num-cards) - 25px);
     gap: var(--gap);
     padding: 25px calc(50px + var(--gap));
-    overflow-x: scroll;
+    overflow: scroll;
+    cursor: grab;
+}
+
+.menu__card-list.dragging {
+    cursor: grab;
+    user-select: none;
 }
 
 .menu__card-list:has(:hover)>.menu__card:not(:hover),
@@ -72,6 +78,7 @@
     position: relative;
     border-radius: 10px;
     min-height: 250px;
+    text-align: center;
     cursor: pointer;
     transition: var(--transition-time-1);
     box-shadow: 10px 10px 10px var(--bg-dark-3);
@@ -107,7 +114,7 @@
     align-items: center;
     background-color: var(--clr-neutral-9);
     padding: 10px 0;
-    margin: 25px 0;
+    margin: 0;
     border-radius: 25px;
     width: 100%;
     box-shadow: 10px 10px 10px var(--bg-dark-3);

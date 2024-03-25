@@ -15,12 +15,16 @@ import {
     toggleHamburgerMenu,
     closeHamburgerClickOutside,
     closeHamburgerPressEsc,
+    handleMouseDown,
+    handleMouseMove,
+    handleMouseUp,
 
     // Variables
     hamburger,
     mediaQuery,
     expandNavbarBtn,
     lockNavbarBtn,
+    menuCarousels,
 } from './utils.js';
 
 handleMediaQueryChange(mediaQuery); // Fires the handleMediaQueryChange function from the start
@@ -44,3 +48,10 @@ window.addEventListener('resize', hideMenuOnResize); // Fires the hideMenuOnResi
 document.body.addEventListener('keydown', closeHamburgerPressEsc); // Closes the menu when pressing ESCAPE
 mediaQuery.addEventListener('change', handleMediaQueryChange); // Listens for changes in screen size
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
+
+menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on each menu carousel
+    carousel.addEventListener('mousedown', event => handleMouseDown(event, carousel));
+    carousel.addEventListener('mousemove', event => handleMouseMove(event, carousel));
+    carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
+    carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
+})

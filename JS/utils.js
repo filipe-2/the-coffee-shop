@@ -1,23 +1,27 @@
-export const mediaQuery = window.matchMedia('(max-width: 50rem)');
-export const hamburger = document.querySelector('.main-nav__hamburger-menu'); // Selects the hamburger menu
+const mediaQuery = window.matchMedia('(max-width: 50rem)');
+const hamburger = document.querySelector('.main-nav__hamburger-menu'); // Selects the hamburger menu
 const hamburgerIcon = hamburger.querySelector('i'); // Selects the hamburger menu icon
 const mainNavWrapper = document.querySelector('.main-nav__wrapper'); // Selects the navbar wrapper
-export const mainNavList = mainNavWrapper.querySelector('.main-nav__list'); // Selects the nav list of anchors
+const mainNavList = mainNavWrapper.querySelector('.main-nav__list'); // Selects the nav list of anchors
 const branding = mainNavWrapper.querySelector('.main-nav__branding'); // Selects the nav branding
 const mainNavBtns = mainNavWrapper.querySelector('.main-nav__btns'); // Selects the navbar form buttons
 const navbar = document.querySelector('.main-nav').parentElement; // Selects the header of the page
-export const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
-export const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
+const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
+const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
+const menuCarousels = document.querySelectorAll('.menu__card-list'); // Selects the first carousel of the menu
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
 
-let autoplayInterval; // Variable for the sliding interval
-let lastScrollTop = 0; // Stores the last vertical scrolling position; zero by default
+let autoplayInterval, // Variable for the sliding interval
+    lastScrollTop = 0, // Stores the last vertical scrolling position; zero by default
+    isDragging = false, // Stores whether the menu is being dragged
+    startX, // Stores initial mouse position for menu carousel
+    initialScrollLeft; // Stores initial scrollLeft value for menu carousel
 
 
 // Function to handle the media query change event
-export function handleMediaQueryChange(mediaQuery) {
+function handleMediaQueryChange(mediaQuery) {
     // Creates a list item
     const btnListItem = document.createElement('li');
 
@@ -121,7 +125,7 @@ const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 
 
 
 // Function to start the slideshow
-export function startSlideshow() {
+function startSlideshow() {
     startAutoplay(); // Starts autoplay
 
     // Binds manual sliding functions to slider buttons
@@ -136,7 +140,7 @@ export function startSlideshow() {
 
 
 // Function to toggle navbar visibility when clicking
-export function toggleNavbarOnClick() {
+function toggleNavbarOnClick() {
     // Checks if the current state of the navbar is locked
     if (!lockNavbarBtn.classList.contains('locked')) {
         // Toggles the visibility of the navbar based on the 'expanded' class
@@ -156,7 +160,7 @@ export function toggleNavbarOnClick() {
 
 
 // Function to toggle navbar visibility when scrolling
-export function toggleNavbarOnScroll() {
+function toggleNavbarOnScroll() {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     // Checks if the current state of the navbar is locked
@@ -180,7 +184,7 @@ export function toggleNavbarOnScroll() {
 
 
 // Function to lock/unlock the current state of the navbar
-export function lockNavbar() {
+function lockNavbar() {
     const lockNavbarBtnIcon = lockNavbarBtn.firstElementChild; // Gets the icon of the lock navbar button
 
     // Toggles the 'locked' class of the lock navbar button and changes its icon accordingly
@@ -217,7 +221,7 @@ function updateCurrentClass(anchor) {
 
 
 // Function to scroll to a specific section
-export function updateCurrentSection(event) {
+function updateCurrentSection(event) {
     // Gets the target anchor, target id, and target section
     const targetAnchor = this.querySelector('.main-nav__link');
     const targetId = targetAnchor.getAttribute('href');
@@ -238,7 +242,7 @@ export function updateCurrentSection(event) {
 
 
 // Function to update the current section when scrolling manually
-export function updateCurrentSectionOnScroll() {
+function updateCurrentSectionOnScroll() {
     // Gets all sections in the document except controls;
     const sections = [...document.querySelectorAll('section')];
 
@@ -277,7 +281,7 @@ function toggleMenuClasses() {
 
 
 // Function to handle clicks on hamburger menu
-export function toggleHamburgerMenu(event) {
+function toggleHamburgerMenu(event) {
     event.stopPropagation(); // Prevents event propagation
     toggleMenuClasses(); // Toggles menu classes
 
@@ -303,19 +307,46 @@ export function toggleHamburgerMenu(event) {
 
 
 // Function to close the hamburger menu when clicking outside
-export const closeHamburgerClickOutside = e => hamburger.classList.contains('open') && !mainNavList.contains(e.target) && toggleHamburgerMenu(e);
+const closeHamburgerClickOutside = e => hamburger.classList.contains('open') && !mainNavList.contains(e.target) && toggleHamburgerMenu(e);
 
 
 // Function to close the hamburger menu when pressing ESCAPE
-export const closeHamburgerPressEsc = e => hamburger.classList.contains('open') && e.key === 'Escape' && toggleHamburgerMenu(e);
+const closeHamburgerPressEsc = e => hamburger.classList.contains('open') && e.key === 'Escape' && toggleHamburgerMenu(e);
 
 
 // Hides the hamburger menu when the viewport width doesn't match the 50rem media query
-export const hideMenuOnResize = e => !mediaQuery.matches && hamburger.classList.contains('open') && toggleHamburgerMenu(e);
+const hideMenuOnResize = e => !mediaQuery.matches && hamburger.classList.contains('open') && toggleHamburgerMenu(e);
+
+
+// Function to handle mouse down event on the menu
+function handleMouseDown(event, carousel) {
+    isDragging = true; // Sets isDragging to true to indicate that menu dragging has started
+    carousel.classList.add('dragging'); // Adds 'dragging' class to the menu carousel
+
+    // Stores the initial mouse position and scrollLeft value
+    startX = event.pageX;
+    initialScrollLeft = carousel.scrollLeft;
+}
+
+
+// Function to handle mouse move event on the menu
+function handleMouseMove(event, carousel) {
+    if (!isDragging) return; // If menu dragging is not in progress, exit the function
+
+    // Calculates the new scrollLeft value based on mouse movement and sets it to the carousel
+    carousel.scrollLeft = initialScrollLeft - (event.pageX - startX);
+}
+
+
+// Function to handle mouse up event on the menu
+function handleMouseUp(carousel) {
+    isDragging = false; // Resets the isDragging flag to indicate that menu dragging has ended
+    carousel.classList.remove('dragging'); // Removes the 'dragging' class from the menu carousel
+}
 
 
 // Function to handle scroll button visibility and position
-export function handleScrollButtons() {
+function handleScrollButtons() {
     const scrollButtons = document.querySelectorAll('.controls__scroll-btn'); // Selects the scroll buttons
     const isOnBottom = (window.innerHeight + window.scrollY + 50) >= document.documentElement.offsetHeight; // Stores true or false depending on whether the user is at the bottom or not
 
@@ -332,7 +363,7 @@ export function handleScrollButtons() {
 
 
 // Function to go back to the top of the page
-export function goToTop() {
+function goToTop() {
     // Scrolls to the top with a smooth effect
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const homeAnchor = mainNavList.querySelector('a[href="#home"]');
@@ -341,8 +372,9 @@ export function goToTop() {
     updateCurrentClass(homeAnchor);
 }
 
+
 // Function to go back to the bottom of the page
-export function goToBottom() {
+function goToBottom() {
     // Scrolls to the bottom with a smooth effect
     window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     const lastAnchor = mainNavList.querySelector('a[href="#plans-section"]');
@@ -350,3 +382,34 @@ export function goToBottom() {
     // Updates the current class of list items and anchors
     updateCurrentClass(lastAnchor);
 }
+
+
+// Exports
+export {
+    // Functions
+    handleMediaQueryChange,
+    startSlideshow,
+    toggleNavbarOnClick,
+    toggleNavbarOnScroll,
+    lockNavbar,
+    updateCurrentSection,
+    updateCurrentSectionOnScroll,
+    toggleHamburgerMenu,
+    closeHamburgerClickOutside,
+    closeHamburgerPressEsc,
+    hideMenuOnResize,
+    handleScrollButtons,
+    goToTop,
+    goToBottom,
+    handleMouseDown,
+    handleMouseMove,
+    handleMouseUp,
+
+    // Variables
+    mediaQuery,
+    hamburger,
+    mainNavList,
+    expandNavbarBtn,
+    lockNavbarBtn,
+    menuCarousels,
+};
