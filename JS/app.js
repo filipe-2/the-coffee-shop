@@ -50,15 +50,6 @@ document.body.addEventListener('keydown', closeHamburgerPressEsc); // Closes the
 mediaQuery.addEventListener('change', handleMediaQueryChange); // Listens for changes in screen size
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
 
-menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on each menu carousel
-    carousel.addEventListener('mousedown', (event) => handleMouseDown(event, carousel));
-    carousel.addEventListener('mousemove', event => handleMouseMove(event, carousel));
-    carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
-    carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
-})
-
-
-
 
 
 const menuContent = document.querySelector('.menu__content');
@@ -66,12 +57,27 @@ const menuContent = document.querySelector('.menu__content');
 const cardOffset = document.querySelector('.menu__card').offsetWidth;
 const gapOffset = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap'));
 const offsetWidth = cardOffset + gapOffset;
-const carouselCards = document.querySelectorAll('.menu__card');
-console.log(offsetWidth);
 
-menuCarouselBtns.forEach(btn => { // Adds a click to each button of each menu carousel
-    btn.addEventListener('click', () => {
-        console.log('button clicked');
-        btn.parentElement.querySelector('.menu__card-list').scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth;
-    })
+
+// Function to move menu carousel cards on click
+function moveCarouselCards(btn) {
+    const carousel = btn.parentElement.querySelector('.menu__card-list');
+    carousel.scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth;
+
+    if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
+        carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
+    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth && btn.classList.contains('next')) {
+        carousel.scrollLeft = 0;
+    }
+}
+
+
+menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on each menu carousel
+    carousel.addEventListener('mousedown', (event) => handleMouseDown(event, carousel));
+    carousel.addEventListener('mousemove', event => handleMouseMove(event, carousel));
+    carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
+    carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
+
+// Adds a click to each button of each menu carousel
+menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn)));

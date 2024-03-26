@@ -74,13 +74,13 @@
     user-select: none;
 }
 
-.menu__carousel:has(.menu__card-list.dragging) .menu__slider-btn {
-    pointer-events: none;
+.menu__card-list:has(:hover)>.menu__card:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.8;
 }
 
-.menu__card-list.dragging .menu__card-list:has(:hover)>.menu__card:not(:hover) {
-    transform: scale(0.9);
-    opacity: 0.85;
+.menu__carousel:has(.menu__card-list.dragging) .menu__slider-btn {
+    pointer-events: none;
 }
 
 .menu__card {
