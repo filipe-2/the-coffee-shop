@@ -18,6 +18,7 @@ import {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
+    moveCarouselCards,
 
     // Variables
     hamburger,
@@ -49,35 +50,10 @@ window.addEventListener('resize', hideMenuOnResize); // Fires the hideMenuOnResi
 document.body.addEventListener('keydown', closeHamburgerPressEsc); // Closes the menu when pressing ESCAPE
 mediaQuery.addEventListener('change', handleMediaQueryChange); // Listens for changes in screen size
 window.addEventListener('load', startSlideshow); // Starts the slideshow when the page loads
-
-
-
-const menuContent = document.querySelector('.menu__content');
-
-const cardOffset = document.querySelector('.menu__card').offsetWidth;
-const gapOffset = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap'));
-const offsetWidth = cardOffset + gapOffset;
-
-
-// Function to move menu carousel cards on click
-function moveCarouselCards(btn) {
-    const carousel = btn.parentElement.querySelector('.menu__card-list');
-    carousel.scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth;
-
-    if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
-        carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
-    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth && btn.classList.contains('next')) {
-        carousel.scrollLeft = 0;
-    }
-}
-
-
 menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on each menu carousel
     carousel.addEventListener('mousedown', (event) => handleMouseDown(event, carousel));
     carousel.addEventListener('mousemove', event => handleMouseMove(event, carousel));
     carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
-
-// Adds a click to each button of each menu carousel
-menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn)));
+menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn))); // Adds a click event to each button of each menu carousel to change carousel cards

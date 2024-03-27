@@ -10,6 +10,10 @@ const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects 
 const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
 const menuCarousels = document.querySelectorAll('.menu__card-list'); // Selects the menu carousels
 const menuCarouselBtns = document.querySelectorAll('.menu__slider-btn'); // Selects the control buttons of each menu carousel
+const menuContent = document.querySelector('.menu__content'); // Selects the menu content
+const cardOffset = document.querySelector('.menu__card').offsetWidth; // Stores the offset width of menu carousel cards
+const gapOffset = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap')); // Stores the offset gap of each menu carousel card
+const offsetWidth = cardOffset + gapOffset; // Stores the offset plus the gap offset of each menu carousel card
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
@@ -208,11 +212,8 @@ function lockNavbar() {
 
 // Function to update the current class of the main navigation items and anchors
 function updateCurrentClass(anchor) {
-/*     console.log(anchor);
- */    const currentListItem = mainNavList.querySelector('.current');
-    /* console.log(currentListItem); */
+    const currentListItem = mainNavList.querySelector('.current');
     const currentAnchor = currentListItem.querySelector('.current');
-    /* console.log(currentAnchor); */
 
     currentListItem.classList.remove('current');
     currentAnchor.classList.remove('current');
@@ -346,6 +347,20 @@ function handleMouseUp(carousel) {
 }
 
 
+// Function to move menu carousel cards on click
+function moveCarouselCards(btn) {
+    const carousel = btn.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
+    carousel.scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth; // Offsets the carousel based on the 'prev' class
+
+    // Checks for the scroll position and classes of buttons, updating the carousel accordingly
+    if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
+        carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
+    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth && btn.classList.contains('next')) {
+        carousel.scrollLeft = 0;
+    }
+}
+
+
 // Function to handle scroll button visibility and position
 function handleScrollButtons() {
     const scrollButtons = document.querySelectorAll('.controls__scroll-btn'); // Selects the scroll buttons
@@ -405,6 +420,7 @@ export {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
+    moveCarouselCards,
 
     // Variables
     mediaQuery,
