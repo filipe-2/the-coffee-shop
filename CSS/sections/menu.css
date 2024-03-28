@@ -1,13 +1,9 @@
 /* ----------- Menu styles ----------- */
 
 .menu {
-    /* Fallbacks */
-    min-height: 100vh;
-
-    min-height: 100svh;
-    box-shadow: 0 0 48px var(--clr-neutral-2);
     border-top: var(--border-thickness-2) double var(--clr-neutral-2);
     background: linear-gradient(90deg, var(--bg-dark-1), var(--clr-neutral-5), var(--bg-dark-1));
+    box-shadow: 0 0 48px var(--clr-neutral-2);
 }
 
 .menu__content {
@@ -17,8 +13,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--gap);
-    margin: 25px auto;
+    margin: 0 auto;
+    margin-top: 6.25rem;
 }
 
 .menu__carousel {

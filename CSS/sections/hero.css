@@ -1,9 +1,8 @@
-.hero__slides {
-    /* Fallbacks */
-    min-height: 100vh;
+/* ----------- Hero styles ----------- */
 
-    min-height: 100svh;
-    position: relative;
+.hero__slides {
+    position: absolute;
+    inset: 0;
 }
 
 .hero__slide {
@@ -13,12 +12,13 @@
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-time-2) ease;
-    position: relative;
+    position: absolute;
+    inset: 0;
 }
 
 .hero__slide::before {
-    position: absolute;
     content: '';
+    position: absolute;
     inset: 0;
     background: var(--bg-dark-3);
 }
@@ -29,12 +29,9 @@
     visibility: visible;
 }
 
-.hero__slide:not(.active) {
-    position: absolute;
-}
-
 .hero__slide-img {
     position: absolute;
+    inset: 0;
     z-index: -1;
     width: 100%;
     min-height: 100%;
@@ -50,18 +47,15 @@
 
     display: flex;
     align-items: center;
-    width: min(var(--wrapper-width), var(--wrapper-max-width));
     gap: var(--gap);
-    margin-inline: clamp(0.625rem, -0.11206896551724133rem + 4.3678160919540225vw, 3rem);
-    margin: 0 auto;
-    position: absolute;
-    inset: 0;
+    margin: 1rem auto;
+    position: relative;
     z-index: 5;
 }
 
 .hero__slide-description-wrapper {
     position: relative;
-    width: min(500px, var(--wrapper-max-width));
+    width: min(var(--wrapper-max-width) / 2.28, var(--wrapper-width));
     border-left: var(--border-thickness-2) solid var(--clr-neutral-3);
     border-radius: 10px;
     padding: 15px 25px;
@@ -79,6 +73,20 @@
     gap: 10px;
     margin-top: 25px;
     flex-wrap: wrap;
+}
+
+.hero__slide-btn:hover,
+.hero__slide-btn:focus-visible {
+    --bg-clr: var(--clr-neutral-3);
+    --border-clr: var(--clr-neutral-3);
+}
+
+.hero__slide-btn.secondary:hover,
+.hero__slide-btn.secondary:focus-visible {
+    --text-clr: var(--clr-neutral-6);
+    --icon-clr: var(--clr-neutral-6);
+    --bg-clr: var(--clr-neutral-3);
+    --border-clr: var(--clr-neutral-3);
 }
 
 .hero__slide-title {
@@ -163,6 +171,4 @@
     background-color: var(--clr-neutral-11);
 }
 
-.hero__slide-btn.secondary:not(:hover) {
-    background-color: var(--bg-dark-3);
-}
+/* ----------------------------------- */

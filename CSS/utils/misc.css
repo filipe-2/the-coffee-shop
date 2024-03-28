@@ -1,3 +1,7 @@
+.wrapper {
+    width: min(var(--wrapper-width), var(--wrapper-max-width));
+}
+
 .highlight-one {
     font-family: var(--font-2), 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -11,7 +15,7 @@
 }
 
 .highlight-three {
-    color: var(--text-clr, var(--clr-neutral-2));
+    color: var(--text-clr, var(--clr-neutral-3));
 }
 
 .current {
@@ -33,6 +37,9 @@
 
 .section-title-wrapper {
     background-color: var(--bg-dark-3);
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 2;
 }
 
 .section-title {

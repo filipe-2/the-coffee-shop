@@ -16,8 +16,8 @@
 .action-button:focus-visible {
     color: var(--text-clr, var(--clr-neutral-3));
     box-shadow: 0 0 16px var(--shadow-clr, var(--clr-neutral-3));
-    border-top-color: var(--clr-neutral-3);
-    border-bottom-color: var(--clr-neutral-3);
+    border-top-color: var(--border-clr, var(--clr-neutral-3));
+    border-bottom-color: var(--border-clr, var(--clr-neutral-3));
 }
 
 .highlited-btn {
@@ -43,22 +43,13 @@
     --text-clr: var(--clr-neutral-6);
 }
 
-.highlited-btn.primary:hover,
-.highlited-btn.primary:focus-visible {
-    --bg-clr: var(--clr-neutral-3);
-    --border-clr: var(--clr-neutral-3);
-}
-
 .highlited-btn.secondary {
-    --bg-clr: transparent;
+    --bg-clr: var(--bg-dark-3);
 }
 
 .highlited-btn.secondary:hover,
 .highlited-btn.secondary:focus-visible {
     --text-clr: var(--clr-neutral-6);
-    --icon-clr: var(--clr-neutral-6);
-    --bg-clr: var(--clr-neutral-3);
-    --border-clr: var(--clr-neutral-3);
 }
 
 .locked {

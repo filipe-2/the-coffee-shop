@@ -1,13 +1,16 @@
+/* ------ Special drinks styles ------ */
+
 .special-drinks {
     border-top: var(--border-thickness-2) double var(--clr-accent-1);
 }
 
-.special-drinks__slides {
-    /* Fallbacks */
-    min-height: 100vh;
+.special-drinks__title-wrapper {
+    --text-clr: var(--clr-accent-1);
+}
 
-    min-height: 100svh;
-    position: relative;
+.special-drinks__slides {
+    position: absolute;
+    inset: 0;
 }
 
 .special-drinks__slide {
@@ -17,12 +20,13 @@
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-time-2) ease;
-    position: relative;
+    position: absolute;
+    inset: 0;
 }
 
 .special-drinks__slide::before {
-    position: absolute;
     content: '';
+    position: absolute;
     inset: 0;
     background: var(--bg-dark-3);
 }
@@ -33,12 +37,9 @@
     visibility: visible;
 }
 
-.special-drinks__slide:not(.active) {
-    position: absolute;
-}
-
 .special-drinks__slide-img {
     position: absolute;
+    inset: 0;
     z-index: -1;
     width: 100%;
     min-height: 100%;
@@ -54,18 +55,16 @@
 
     display: flex;
     align-items: center;
-    width: min(var(--wrapper-width), var(--wrapper-max-width));
     gap: var(--gap);
-    margin-inline: clamp(0.625rem, -0.11206896551724133rem + 4.3678160919540225vw, 3rem);
-    margin: 0 auto;
-    position: absolute;
-    inset: 0;
+    margin: 1rem auto;
+    margin-top: 6.25rem;
+    position: relative;
     z-index: 5;
 }
 
 .special-drinks__slide-description-wrapper {
     position: relative;
-    width: min(500px, var(--wrapper-max-width));
+    width: min(var(--wrapper-max-width) / 2.28, var(--wrapper-width));
     border-left: var(--border-thickness-2) solid var(--clr-accent-1);
     border-radius: 10px;
     padding: 15px 25px;
@@ -80,9 +79,42 @@
 
 .special-drinks__slide-btns {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 25px;
-    flex-wrap: wrap;
+}
+
+.special-drinks__slide-btn {
+    --bg-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
+}
+
+.special-drinks__slide-btn:hover,
+.special-drinks__slide-btn:focus-visible {
+    --bg-clr: var(--clr-accent-8);
+    --border-clr: var(--clr-accent-8);
+}
+
+.special-drinks__slide-btn.secondary {
+    --text-clr: var(--clr-accent-1);
+}
+
+.special-drinks__slide-btn.secondary:hover,
+.special-drinks__slide-btn.secondary:focus-visible {
+    --text-clr: var(--clr-neutral-6);
+    --bg-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
+}
+
+.special-drinks__change-slide {
+    --border-clr: var(--clr-accent-1);
+}
+
+.special-drinks__change-slide:hover,
+.special-drinks__change-slide:focus-visible {
+    --text-clr: var(--clr-accent-1);
+    --border-clr: var(--clr-accent-1);
+    --shadow-clr: var(--clr-accent-1);
 }
 
 .special-drinks__slide-title {
@@ -165,3 +197,5 @@
     border-color: var(--border-clr);
     background-color: var(--clr-neutral-11);
 }
+
+/* ----------------------------------- */
