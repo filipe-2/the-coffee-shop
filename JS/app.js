@@ -57,3 +57,5 @@ menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on 
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
 menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn))); // Adds a click event to each button of each menu carousel to change carousel cards
+
+

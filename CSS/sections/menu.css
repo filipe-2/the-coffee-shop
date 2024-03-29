@@ -67,9 +67,14 @@
     display: none;
 }
 
-.menu__card-list.dragging {
+.menu__card-list.dragging .menu__card {
     cursor: grab;
     user-select: none;
+}
+
+.menu__card-list.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
 .menu__card-list:has(:hover)>.menu__card:not(:hover) {
