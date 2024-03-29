@@ -349,7 +349,7 @@ function handleMouseUp(carousel) {
 
 // Function to move menu carousel cards on click
 function moveCarouselCards(btn) {
-    const carousel = btn.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
+    const carousel = btn.parentElement.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
     carousel.scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth; // Offsets the carousel based on the 'prev' class
 
     // Checks for the scroll position and classes of buttons, updating the carousel accordingly

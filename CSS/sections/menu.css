@@ -21,30 +21,42 @@
 
 .menu__carousel {
     position: relative;
+    margin-bottom: var(--gap);
 }
 
-.menu__slider-btn {
-    background-color: var(--bg-dark-3);
-    backdrop-filter: blur(10px);
-    color: var(--clr-neutral-1);
-    font-size: 20px;
-    padding: 0 16px;
-    min-width: 50px;
-    border: none;
+.menu__slider-btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     position: absolute;
     z-index: 5;
+    background-color: var(--bg-dark-3);
+    backdrop-filter: blur(10px);
 }
 
-.menu__slider-btn.prev {
+.menu__slider-btns-wrapper:first-child {
     inset: 0 auto 0 0;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 25px 0 25px var(--bg-dark-10);
 }
 
-.menu__slider-btn.next {
+.menu__slider-btns-wrapper:last-child {
     inset: 0 0 0 auto;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    box-shadow: -25px 0 25px var(--bg-dark-10);
+}
+
+.menu__slider-btn {
+    background-color: transparent;
+    color: var(--clr-neutral-3);
+    font-size: 20px;
+    padding: 16px 0;
+    min-width: 50px;
+    border: none;
+    min-height: 50%;
 }
 
 .menu__card-list {
