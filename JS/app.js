@@ -27,6 +27,7 @@ import {
     lockNavbarBtn,
     menuCarousels,
     menuCarouselBtns,
+    clickAudio,
 } from './utils.js';
 
 handleMediaQueryChange(mediaQuery); // Fires the handleMediaQueryChange function from the start
@@ -57,3 +58,4 @@ menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on 
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
 menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn))); // Adds a click event to each button of each menu carousel to change carousel cards
+document.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => clickAudio.play()))

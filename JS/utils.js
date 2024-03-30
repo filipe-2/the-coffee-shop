@@ -17,6 +17,9 @@ const offsetWidth = cardOffset + gapOffset; // Stores the offset plus the gap of
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
+const clickAudio = new Audio()
+
+clickAudio.src = '../assets/audio/click-sound.mp3';
 
 let autoplayInterval, // Variable for the sliding interval
     lastScrollTop = 0, // Stores the last vertical scrolling position; zero by default
@@ -350,7 +353,13 @@ function handleMouseUp(carousel) {
 // Function to move menu carousel cards on click
 function moveCarouselCards(btn) {
     const carousel = btn.parentElement.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
-    carousel.scrollLeft += btn.classList.contains('prev') ? -offsetWidth : offsetWidth; // Offsets the carousel based on the 'prev' class
+    const numCards = parseInt(getComputedStyle(carousel).getPropertyValue('--num-cards'));
+
+    const directionMultiplier = btn.classList.contains('prev') ? -1 : 1;
+    const offsetMultiplier = btn.classList.contains('sliding-multiplier') ? numCards : 1;
+
+    carousel.scrollLeft += directionMultiplier * offsetMultiplier * offsetWidth;
+
 
     // Checks for the scroll position and classes of buttons, updating the carousel accordingly
     if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
@@ -430,4 +439,5 @@ export {
     lockNavbarBtn,
     menuCarousels,
     menuCarouselBtns,
+    clickAudio,
 };
