@@ -17,12 +17,13 @@ const offsetWidth = cardOffset + gapOffset; // Stores the offset plus the gap of
 const main = document.querySelector('main'); // Selects the 'main' element
 const controls = document.querySelector('.controls'); // Selects the 'controls' section
 const footer = document.querySelector('footer'); // Selects the footer
+const heroCarousel = document.querySelector('.hero');
+const specialCarousel = document.querySelector('.special-drinks__carousel');
 const clickAudio = new Audio()
 
 clickAudio.src = '../assets/audio/click-sound.mp3';
 
-let autoplayInterval, // Variable for the sliding interval
-    lastScrollTop = 0, // Stores the last vertical scrolling position; zero by default
+let lastScrollTop = 0, // Stores the last vertical scrolling position; zero by default
     isDragging = false, // Stores whether the menu is being dragged
     startX, // Stores initial mouse position for menu carousel
     initialScrollLeft; // Stores initial scrollLeft value for menu carousel
@@ -66,84 +67,74 @@ function updateSlideClasses(activeSlide, activeSlideIndicator, newSlide, newSlid
 
 
 // Function to switch slides
-function switchSlide() {
+function switchSlide(carousel) {
     // Gets the active and next slides and their indicators
-    const activeSlide = document.querySelector('.hero__slide.active');
-    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.hero__slide:first-child'); // If there's no next slide, loops back to the first
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.hero__slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+    const activeSlide = carousel.querySelector('.active');
+    const activeSlideIndicator = carousel.querySelector('.checked');
+    console.log(carousel.querySelector('.checked'));
+    const nextSlide = activeSlide.nextElementSibling || carousel.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
 
     updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
 }
 
 
 // Function to go to the previous slide
-function prevSlide() {
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to previous slide
-
+function prevSlide(carousel) {
     // Gets the active and previous slides and their indicators
-    const activeSlide = document.querySelector('.hero__slide.active');
-    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
-    const prevSlide = activeSlide.previousElementSibling || document.querySelector('.hero__slide:last-child'); // If there's no previous slide, loops back to the last
-    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || document.querySelector('.hero__slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
+    const activeSlide = carousel.querySelector('.active');
+    const activeSlideIndicator = carousel.querySelector('.checked');
+    const prevSlide = activeSlide.previousElementSibling || carousel.querySelector('.slide:last-child'); // If there's no previous slide, loops back to the last
+    const prevSlideIndicator = activeSlideIndicator.previousElementSibling || carousel.querySelector('.slide-indicator:last-child'); // If there's no previous indicator, loops back to the last
 
     updateSlideClasses(activeSlide, activeSlideIndicator, prevSlide, prevSlideIndicator); // Updates classes to show the previous slide and its indicator; changes aria-current attribute to the previous slide item
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
 }
 
 
 // Function to go to the next slide
-function nextSlide() {
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user goes to next slide
-
+function nextSlide(carousel) {
     // Gets the active next slides and their indicators
-    const activeSlide = document.querySelector('.hero__slide.active');
-    const activeSlideIndicator = document.querySelector('.hero__slide-indicator.checked');
-    const nextSlide = activeSlide.nextElementSibling || document.querySelector('.hero__slide:first-child'); // If there's no next slide, loops back to the first
-    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || document.querySelector('.hero__slide-indicator:first-child'); // If there's no next indicator, loops back to the first
+    const activeSlide = carousel.querySelector('.slide.active');
+    const activeSlideIndicator = carousel.querySelector('.checked');
+    const nextSlide = activeSlide.nextElementSibling || carousel.querySelector('.slide:first-child'); // If there's no next slide, loops back to the first
+    const nextSlideIndicator = activeSlideIndicator.nextElementSibling || carousel.querySelector('.slide-indicator:first-child'); // If there's no next indicator, loops back to the first
 
     updateSlideClasses(activeSlide, activeSlideIndicator, nextSlide, nextSlideIndicator); // Updates classes to show the next slide and its indicator; changes aria-current attribute to the next slide item
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
 }
 
 
 // Function to slide using indicators
-function slideThroughIndicators(event) {
+function slideThroughIndicators(event, carousel) {
     // Gets the target indicator and it's index
     const indicator = event.currentTarget;
     const index = Array.from(indicator.parentElement.children).indexOf(indicator); // Converts the HTML collection into an array and stores the index of the target indicator
 
-    clearInterval(autoplayInterval); // Clears the autoplay interval when the user clicks an indicator
-
     if (!indicator.classList.contains('checked')) {
-        document.querySelector('.hero__slide-indicator.checked').classList.remove('checked'); // Unchecks the currently checked indicator
+        carousel.querySelector('.checked').classList.remove('checked'); // Unchecks the currently checked indicator
         indicator.classList.add('checked'); // Checks the clicked indicator
-        document.querySelector('.hero__slide.active').classList.remove('active'); // Deactivates the currently active slide
-        document.querySelectorAll('.hero__slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
+        carousel.querySelector('.active').classList.remove('active'); // Deactivates the currently active slide
+        carousel.querySelectorAll('.slide')[index].classList.add('active'); // Activates the slide corresponding to the clicked indicator
     }
-
-    startAutoplay(); // Restarts the autoplay after sliding manually
 }
 
 
 // Function to start the autoplay slideshow; sets up an interval to switch slides automatically; switches slides every 5 seconds
-const startAutoplay = () => autoplayInterval = setInterval(() => switchSlide(), 5000);
+const startAutoplay = carousel => setInterval(() => switchSlide(carousel), 5000);
 
 
 // Function to start the slideshow
-function startSlideshow() {
-    startAutoplay(); // Starts autoplay
+function startSlideshow(carousel) {
+    const autoplayInterval = startAutoplay(carousel); // Starts autoplay
 
     // Binds manual sliding functions to slider buttons
-    document.querySelector('.hero .action-button.prev').addEventListener('click', prevSlide);
-    document.querySelector('.hero .action-button.next').addEventListener('click', nextSlide);
-
-    const slideIndicators = document.querySelectorAll('.hero__slide-indicator');
+    carousel.querySelector('.action-button.prev').addEventListener('click', () => prevSlide(carousel));
+    carousel.querySelector('.action-button.next').addEventListener('click', () => nextSlide(carousel));
 
     // Binds manual sliding functions to slider indicators
-    slideIndicators.forEach(indicator => indicator.addEventListener('click', slideThroughIndicators));
+    const slideIndicators = carousel.querySelectorAll('.slide-indicator');
+    slideIndicators.forEach(indicator => indicator.addEventListener('click', e => slideThroughIndicators(e, carousel)));
+
+    return autoplayInterval;
 }
 
 
@@ -440,4 +431,6 @@ export {
     menuCarousels,
     menuCarouselBtns,
     clickAudio,
+    heroCarousel,
+    specialCarousel,
 };

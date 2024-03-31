@@ -143,11 +143,11 @@
     <!--------- Main sections ----------->
     <main>
         <!-------- Hero section --------->
-        <section id="home" class="hero">
+        <section id="hero" class="hero">
             <!-------- Hero slides ---------->
-            <div class="hero__slides">
+            <div class="hero__slides slides">
                 <!------------- Slide --------------->
-                <div class="hero__slide active">
+                <div class="hero__slide slide active">
                     <!---------- Slide image ------------>
                     <img class="hero__slide-img" src="./assets/imgs/cappuccino.png"
                         alt="Slide one image: Delicious creamy Cappuccino.">
@@ -156,7 +156,7 @@
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="hero__slide">
+                <div class="hero__slide slide">
                     <!---------- Slide image ------------>
                     <img class="hero__slide-img" src="./assets/imgs/affogato3.jpg"
                         alt="Slide one image: Delicious Affogato desert.">
@@ -165,7 +165,7 @@
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="hero__slide">
+                <div class="hero__slide slide">
                     <!---------- Slide image ------------>
                     <img class="hero__slide-img" src="./assets/imgs/coffee-machiatto2.png"
                         alt="Slide one image: Delicious Mocha with foam.">
@@ -174,7 +174,7 @@
                 <!----------------------------------->
 
                 <!------------- Slide --------------->
-                <div class="hero__slide">
+                <div class="hero__slide slide">
                     <!---------- Slide image ------------>
                     <img class="hero__slide-img" src="./assets/imgs/americano2.png"
                         alt="Slide four image: Pouring a hot and delicious Doppio coffee into a cup.">
@@ -196,10 +196,11 @@
 
                     <!-------- Slider indicators -------->
                     <div class="hero__slide-indicators">
-                        <button class="hero__slide-indicator checked" aria-label="slide 1" aria-current="step"></button>
-                        <button class="hero__slide-indicator" aria-label="slide 2"></button>
-                        <button class="hero__slide-indicator" aria-label="slide 3"></button>
-                        <button class="hero__slide-indicator" aria-label="slide 4"></button>
+                        <button class="hero__slide-indicator slide-indicator checked" aria-label="slide 1"
+                            aria-current="step"></button>
+                        <button class="hero__slide-indicator slide-indicator" aria-label="slide 2"></button>
+                        <button class="hero__slide-indicator slide-indicator" aria-label="slide 3"></button>
+                        <button class="hero__slide-indicator slide-indicator" aria-label="slide 4"></button>
                     </div>
                     <!----------------------------------->
 
@@ -469,96 +470,111 @@
                 <!----------------------------------->
             </div>
 
-            <!------ Special drinks slides ------>
-            <div class="special-drinks__slides">
-                <!------------- Slide --------------->
-                <div class="special-drinks__slide active">
-                    <!---------- Slide image ------------>
-                    <img class="special-drinks__slide-img" src="./assets/imgs/blueberry-bliss-4.jpg"
-                        alt="Slide one image: Delicious creamy Cappuccino.">
+            <div class="special-drinks__carousel">
+                <!------ Special drinks slides ------>
+                <div class="special-drinks__slides slides">
+                    <!------------- Slide --------------->
+                    <div class="special-drinks__slide slide active">
+                        <!---------- Slide image ------------>
+                        <img class="special-drinks__slide-img" src="./assets/imgs/blueberry-bliss-4.jpg"
+                            alt="Slide one image: Delicious creamy Cappuccino.">
+                        <!----------------------------------->
+                    </div>
+                    <!----------------------------------->
+
+                    <!------------- Slide --------------->
+                    <div class="special-drinks__slide slide">
+                        <!---------- Slide image ------------>
+                        <img class="special-drinks__slide-img" src="./assets/imgs/twilight-elixir-3.jpg"
+                            alt="Slide one image: Delicious Affogato desert.">
+                        <!----------------------------------->
+                    </div>
+                    <!----------------------------------->
+
+                    <!------------- Slide --------------->
+                    <div class="special-drinks__slide slide">
+                        <!---------- Slide image ------------>
+                        <img class="special-drinks__slide-img" src="./assets/imgs/sweet-love.jpg"
+                            alt="Slide one image: Delicious Mocha with foam.">
+                        <!----------------------------------->
+                    </div>
+                    <!----------------------------------->
+
+                    <!------------- Slide --------------->
+                    <div class="special-drinks__slide slide">
+                        <!---------- Slide image ------------>
+                        <img class="special-drinks__slide-img" src="./assets/imgs/sweet-love.jpg"
+                            alt="Slide one image: Delicious Mocha with foam.">
+                        <!----------------------------------->
+                    </div>
                     <!----------------------------------->
                 </div>
                 <!----------------------------------->
 
-                <!------------- Slide --------------->
-                <div class="special-drinks__slide special-slide">
-                    <!---------- Slide image ------------>
-                    <img class="special-drinks__slide-img" src="./assets/imgs/twilight-elixir-3.jpg"
-                        alt="Slide one image: Delicious Affogato desert.">
-                    <!----------------------------------->
-                </div>
-                <!----------------------------------->
+                <!---------- Slide content ---------->
+                <div class="special-drinks__slide-content wrapper">
+                    <!------------- Slider -------------->
+                    <div class="special-drinks__slider">
+                        <!------ Previous slide button ------>
+                        <button class="special-drinks__change-slide action-button prev" aria-label="previous slide">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <!----------------------------------->
 
-                <!------------- Slide --------------->
-                <div class="special-drinks__slide">
-                    <!---------- Slide image ------------>
-                    <img class="special-drinks__slide-img" src="./assets/imgs/sweet-love.jpg"
-                        alt="Slide one image: Delicious Mocha with foam.">
+                        <!-------- Slider indicators -------->
+                        <div class="special-drinks__slide-indicators slide-indicators">
+                            <button class="special-drinks__slide-indicator slide-indicator checked" aria-current="step"
+                                aria-label="slide 1"></button>
+                            <button class="special-drinks__slide-indicator slide-indicator"
+                                aria-label="slide 2"></button>
+                            <button class="special-drinks__slide-indicator slide-indicator"
+                                aria-label="slide 3"></button>
+                            <button class="special-drinks__slide-indicator slide-indicator"
+                                aria-label="slide 4"></button>
+                        </div>
+                        <!----------------------------------->
+
+                        <!-------- Next slide button -------->
+                        <button class="special-drinks__change-slide action-button next" aria-label="next slide">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                        <!----------------------------------->
+                    </div>
                     <!----------------------------------->
+
+                    <div class="special-drinks__slide-description-wrapper">
+                        <!----------- Slide title ----------->
+                        <h3 class="special-drinks__slide-title"><i class="fa-solid fa-mug-hot"></i> Blueberry Bliss
+                        </h3>
+                        <!----------------------------------->
+
+                        <!------------- Ratings ------------->
+                        <div class="special-drinks__ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                        <!-------- Slide description -------->
+                        <p class="special-drinks__slide-description">Crafted with the finest blueberries, this
+                            enchanting
+                            concoction offers a burst of fruity sweetness harmonized with the smooth richness of our
+                            signature coffee blend.
+                        </p>
+                        <!----------------------------------->
+
+                        <!---------- Slide buttons ---------->
+                        <div class="special-drinks__slide-btns">
+                            <button class="special-drinks__slide-btn highlited-btn primary">See drink</button>
+                            <button class="special-drinks__slide-btn highlited-btn secondary">View in app</button>
+                        </div>
+                        <!----------------------------------->
+                    </div>
                 </div>
                 <!----------------------------------->
             </div>
-            <!----------------------------------->
-
-            <!---------- Slide content ---------->
-            <div class="special-drinks__slide-content wrapper">
-                <!------------- Slider -------------->
-                <div class="special-drinks__slider">
-                    <!------ Previous slide button ------>
-                    <button class="special-drinks__change-slide action-button prev" aria-label="previous slide">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                    </button>
-                    <!----------------------------------->
-
-                    <!-------- Slider indicators -------->
-                    <div class="special-drinks__slide-indicators">
-                        <button class="special-drinks__slide-indicator checked" aria-current="step"
-                            aria-label="slide 1"></button>
-                        <button class="special-drinks__slide-indicator" aria-label="slide 2"></button>
-                        <button class="special-drinks__slide-indicator" aria-label="slide 3"></button>
-                        <button class="special-drinks__slide-indicator" aria-label="slide 4"></button>
-                    </div>
-                    <!----------------------------------->
-
-                    <!-------- Next slide button -------->
-                    <button class="special-drinks__change-slide action-button next" aria-label="next slide">
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </button>
-                    <!----------------------------------->
-                </div>
-                <!----------------------------------->
-
-                <div class="special-drinks__slide-description-wrapper">
-                    <!----------- Slide title ----------->
-                    <h3 class="special-drinks__slide-title"><i class="fa-solid fa-mug-hot"></i> Blueberry Bliss
-                    </h3>
-                    <!----------------------------------->
-
-                    <!------------- Ratings ------------->
-                    <div class="special-drinks__ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-
-                    <!-------- Slide description -------->
-                    <p class="special-drinks__slide-description">Crafted with the finest blueberries, this enchanting
-                        concoction offers a burst of fruity sweetness harmonized with the smooth richness of our
-                        signature coffee blend.
-                    </p>
-                    <!----------------------------------->
-
-                    <!---------- Slide buttons ---------->
-                    <div class="special-drinks__slide-btns">
-                        <button class="special-drinks__slide-btn highlited-btn primary">See drink</button>
-                        <button class="special-drinks__slide-btn highlited-btn secondary">View in app</button>
-                    </div>
-                    <!----------------------------------->
-                </div>
-            </div>
-            <!----------------------------------->
         </section>
         <!----------------------------------->
 
