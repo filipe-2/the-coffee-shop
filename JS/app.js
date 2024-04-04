@@ -1,13 +1,4 @@
 // ------------------- Imports --------------------
-import {
-    // Functions
-
-    // Variables
-    expandNavbarBtn,
-    lockNavbarBtn,
-} from './modules/utils.js';
-
-
 // Slides Carousels module
 import {
     // Functions
@@ -57,6 +48,8 @@ import {
     closeHamburgerPressEsc,
     updateCurrentSection,
     updateCurrentSectionOnScroll,
+    expandNavbarBtn,
+    lockNavbarBtn,
 
     // Variables
     mediaQuery,

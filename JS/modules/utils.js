@@ -1,7 +1,5 @@
 const mainNavWrapper = document.querySelector('.main-nav__wrapper'); // Selects the navbar wrapper
 const mainNavList = mainNavWrapper.querySelector('.main-nav__list'); // Selects the nav list of anchors
-const expandNavbarBtn = document.querySelector('#js-expand-navbar'); // Selects the expand navbar button
-const lockNavbarBtn = document.querySelector('#js-lock-navbar'); // Selects the lock navbar button
 
 
 // ------- Function: update 'current' class -------
@@ -24,7 +22,5 @@ export {
 
     // Variables
     mainNavList,
-    expandNavbarBtn,
-    lockNavbarBtn,
 };
 // ------------------------------------------------

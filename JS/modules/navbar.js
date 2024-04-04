@@ -237,5 +237,7 @@ export {
     // Variables
     mediaQuery,
     hamburger,
+    expandNavbarBtn,
+    lockNavbarBtn,
 }
 // ------------------------------------------------
