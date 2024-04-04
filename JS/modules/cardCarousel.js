@@ -1,9 +1,9 @@
 const menuContent = document.querySelector('.menu__content'); // Selects the menu content
 const menuCarousels = document.querySelectorAll('.menu__card-list'); // Selects the menu carousels
 const menuCarouselBtns = document.querySelectorAll('.menu__slider-btn'); // Selects the control buttons of each menu carousel
-const cardOffset = document.querySelector('.menu__card').offsetWidth; // Stores the offset width of menu carousel cards
-const gapOffset = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap')); // Stores the offset gap of each menu carousel card
-const offsetWidth = cardOffset + gapOffset; // Stores the offset plus the gap offset of each menu carousel card
+const cardWidth = document.querySelector('.menu__card').offsetWidth; // Stores the offset width of menu carousel cards
+const gapWidth = parseFloat(getComputedStyle(menuContent).getPropertyValue('--gap')); // Stores the offset gap of each menu carousel card
+const totalCardWidth = cardWidth + gapWidth; // Stores the offset plus the gap offset of each menu carousel card
 
 let isDragging = false, // Stores whether the menu is being dragged
     startX, // Stores initial mouse position for menu carousel
@@ -48,13 +48,13 @@ function moveCarouselCards(btn) {
     const directionMultiplier = btn.classList.contains('prev') ? -1 : 1;
     const offsetMultiplier = btn.classList.contains('sliding-multiplier') ? numCards : 1;
 
-    carousel.scrollLeft += directionMultiplier * offsetMultiplier * offsetWidth;
+    carousel.scrollLeft += directionMultiplier * offsetMultiplier * totalCardWidth;
 
 
     // Checks for the scroll position and classes of buttons, updating the carousel accordingly
     if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
-        carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
-    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth && btn.classList.contains('next')) {
+        carousel.scrollLeft = carousel.scrollWidth - carousel.totalCardWidth;
+    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.totalCardWidth && btn.classList.contains('next')) {
         carousel.scrollLeft = 0;
     }
 }
