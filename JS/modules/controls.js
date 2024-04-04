@@ -5,7 +5,7 @@ import {
 
     // Variables
     mainNavList,
-} from '../utils.js';
+} from './utils.js';
 // ------------------------------------------------
 
 

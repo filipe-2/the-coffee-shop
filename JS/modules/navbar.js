@@ -5,9 +5,8 @@ import {
 
     // Variables
     mainNavList,
-} from '../utils.js';
+} from './utils.js';
 // ------------------------------------------------
-
 
 const mediaQuery = window.matchMedia('(max-width: 50rem)');
 const hamburger = document.querySelector('.main-nav__hamburger-menu'); // Selects the hamburger menu
@@ -237,5 +236,6 @@ export {
 
     // Variables
     mediaQuery,
+    hamburger,
 }
 // ------------------------------------------------

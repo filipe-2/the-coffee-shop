@@ -3,10 +3,9 @@ import {
     // Functions
 
     // Variables
-    hamburger,
     expandNavbarBtn,
     lockNavbarBtn,
-} from './utils.js';
+} from './modules/utils.js';
 
 
 // Slides Carousels module
@@ -61,6 +60,7 @@ import {
 
     // Variables
     mediaQuery,
+    hamburger,
 } from './modules/navbar.js';
 // ------------------------------------------------
 
