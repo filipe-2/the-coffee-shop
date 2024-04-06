@@ -65,18 +65,19 @@ function loopCarousel(btn) {
     const carousel = btn.parentElement.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
     const firstCard = carousel.firstElementChild;
     const lastCard = carousel.lastElementChild;
+    const cardsMinusFirstAndLast = [...carousel.children].slice(1, -1);
     const cardsMinusFirst = [...carousel.children].slice(1);
     const cardsMinusLast = [...carousel.children].slice(0, -1);
     const numCards = carousel.children.length;
     const hiddenContentWidth = carousel.scrollWidth - carousel.offsetWidth;
 
-    lastCard.style.transition = 'transform 500ms';
-    firstCard.style.transition = 'transform 500ms';
-    cardsMinusLast.forEach(card => card.style.transition = '500ms');
+    lastCard.style.transition = 'transform 300ms';
+    firstCard.style.transition = 'transform 300ms';
+    cardsMinusFirstAndLast.forEach(card => card.style.transition = '300ms');
 
     if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
         lastCard.style.transform = `translateX(-${numCards * totalCardWidth}px)`;
-        lastCard.style.opacity = '0'
+        lastCard.style.opacity = '0';
         setTimeout(() => {
             lastCard.style.opacity = '1';
             lastCard.style.transform = `translateX(-${(numCards - 1) * totalCardWidth}px)`;
@@ -92,11 +93,13 @@ function loopCarousel(btn) {
                     card.style.transition = 'none';
                     card.style.transform = `translateX(0)`;
                 })
-            }, 500);
-        }, 500)
+            }, 300);
+        }, 300)
     } else if (carousel.scrollLeft === hiddenContentWidth && btn.classList.contains('next')) {
         firstCard.style.transform = `translateX(${numCards * totalCardWidth}px)`;
+        firstCard.style.opacity = '0';
         setTimeout(() => {
+            firstCard.style.opacity = '1';
             firstCard.style.transform = `translateX(${(numCards - 1) * totalCardWidth}px)`;
             cardsMinusFirst.forEach(card => {
                 card.style.transform = `translateX(-${totalCardWidth}px)`;
@@ -110,8 +113,8 @@ function loopCarousel(btn) {
                     card.style.transition = 'none';
                     card.style.transform = `translateX(0)`;
                 })
-            }, 500);
-        }, 500);
+            }, 300);
+        }, 300);
     }
 }
 // ------------------------------------------------
