@@ -107,6 +107,7 @@
     transition: var(--transition-time-1);
     box-shadow: 10px 10px 10px var(--bg-dark-3);
     scroll-snap-align: center;
+    transition: var(--transition-time-1);
 }
 
 .menu__card-title {
