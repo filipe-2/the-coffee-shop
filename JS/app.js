@@ -28,6 +28,7 @@ import {
     handleMouseMove,
     handleMouseUp,
     moveCarouselCards,
+    loopCarousel,
 
     // Variables
     menuCarousels,
@@ -90,5 +91,9 @@ menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on 
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
 
-menuCarouselBtns.forEach(btn => btn.addEventListener('click', () => moveCarouselCards(btn))); // Adds a click event to each button of each menu carousel to change carousel cards
+menuCarouselBtns.forEach(btn => {
+    // Listens for clicks on each button to change carousel cards
+    btn.addEventListener('click', () => moveCarouselCards(btn));
+    btn.addEventListener('click', () => loopCarousel(btn));
+})
 // ------------------------------------------------
