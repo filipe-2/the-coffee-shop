@@ -50,12 +50,68 @@ function moveCarouselCards(btn) {
 
     carousel.scrollLeft += directionMultiplier * offsetMultiplier * totalCardWidth;
 
-
     // Checks for the scroll position and classes of buttons, updating the carousel accordingly
-    if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
-        carousel.scrollLeft = carousel.scrollWidth - carousel.totalCardWidth;
-    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.totalCardWidth && btn.classList.contains('next')) {
+    /* if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
+        carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
+    } else if (carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth && btn.classList.contains('next')) {
         carousel.scrollLeft = 0;
+    } */
+}
+// ------------------------------------------------
+
+
+// ------- Function: carousel infinite loop -------
+function loopCarousel(btn) {
+    const carousel = btn.parentElement.parentElement.querySelector('.menu__card-list'); // Selects the parent carousel of the button
+    const firstCard = carousel.firstElementChild;
+    const lastCard = carousel.lastElementChild;
+    const cardsMinusFirst = [...carousel.children].slice(1);
+    const cardsMinusLast = [...carousel.children].slice(0, -1);
+    const numCards = carousel.children.length;
+    const hiddenContentWidth = carousel.scrollWidth - carousel.offsetWidth;
+
+    lastCard.style.transition = 'transform 500ms';
+    firstCard.style.transition = 'transform 500ms';
+    cardsMinusLast.forEach(card => card.style.transition = '500ms');
+
+    if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
+        lastCard.style.transform = `translateX(-${numCards * totalCardWidth}px)`;
+        lastCard.style.opacity = '0'
+        setTimeout(() => {
+            lastCard.style.opacity = '1';
+            lastCard.style.transform = `translateX(-${(numCards - 1) * totalCardWidth}px)`;
+            cardsMinusLast.forEach(card => {
+                card.style.transform = `translateX(${totalCardWidth}px)`;
+            })
+            setTimeout(() => {
+                lastCard.style.transition = 'none';
+                lastCard.style.transform = 'translateX(0)';
+                carousel.prepend(lastCard);
+
+                cardsMinusLast.forEach(card => {
+                    card.style.transition = 'none';
+                    card.style.transform = `translateX(0)`;
+                })
+            }, 500);
+        }, 500)
+    } else if (carousel.scrollLeft === hiddenContentWidth && btn.classList.contains('next')) {
+        firstCard.style.transform = `translateX(${numCards * totalCardWidth}px)`;
+        setTimeout(() => {
+            firstCard.style.transform = `translateX(${(numCards - 1) * totalCardWidth}px)`;
+            cardsMinusFirst.forEach(card => {
+                card.style.transform = `translateX(-${totalCardWidth}px)`;
+            })
+            setTimeout(() => {
+                firstCard.style.transition = 'none';
+                firstCard.style.transform = 'translateX(0)';
+                carousel.appendChild(firstCard);
+
+                cardsMinusFirst.forEach(card => {
+                    card.style.transition = 'none';
+                    card.style.transform = `translateX(0)`;
+                })
+            }, 500);
+        }, 500);
     }
 }
 // ------------------------------------------------
@@ -68,6 +124,7 @@ export {
     handleMouseMove,
     handleMouseUp,
     moveCarouselCards,
+    loopCarousel,
 
     // Variables
     menuCarousels,
