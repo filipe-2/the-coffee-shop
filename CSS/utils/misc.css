@@ -31,9 +31,7 @@
     overflow-y: hidden;
 }
 
-.transition-off {
-    transition: none;
-}
+
 
 .section-title-wrapper {
     background-color: var(--bg-dark-3);

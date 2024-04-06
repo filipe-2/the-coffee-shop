@@ -50,8 +50,8 @@
     /* ----------------------------------- */
 
     /* -------------- Misc --------------- */
-    --transition-time-1: 0.3s;
-    --transition-time-2: 0.5s;
+    --transition-time-1: 300ms;
+    --transition-time-2: 500ms;
 
     --border-thickness-1: 5px;
     --border-thickness-2: 3px;
