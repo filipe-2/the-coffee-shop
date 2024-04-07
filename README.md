@@ -10,7 +10,7 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 ## Features
 
-## Header section
+### Header section
 
 - Glass/transparent/blurry effect
 - Button to hide/show the navnar
@@ -20,23 +20,23 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 - Login and cart buttons: user can authenticate and see what they're saving to buy.
 - Hamburger menu: for smaller screens, the navigation anchors and buttons appear once the user clicks the hamburger menu.
 
-## Hero section
+### Hero section
 
 - Hero section with a slider of drink images, including autoplay and manual sliding buttons as well as sliding indicators that are also interactive. It also includes a small description of the drink with title and the rating of clients, as well as a button to see more information about the drink being shown on the slide and another button to open the link on the app of the coffee shop.
 
-## Menu section
+### Menu section
 
 - Menu section with two infinite carousels of cards containing coffee drinks, each carousel having an autoplay effect, a button to skip one card, a button to skip three cards, and a "peeking" effect: cards overflowing the edges are partially visible to indicate the presence of more content to the user). This section also includes a search form with autocomplete, and it opens a modal with the information of the drink the user clicked.
 
-## Special section
+### Special section
 
 - Special section with special drinks for users that acquired a plan. This section resembles the hero section, but each slide has its own color scheme, and the section changes its scheme every time the slide changes. Sticky elements also change color scheme accordingly when they're visible on top of this section.
 
-## Plans section
+### Plans section
  
 - Plans section where the user can see the plans offered by the coffee shop and acquire them. It includes prices, benefits, comparison between each plan, and a lot of interaction, like a dropdown menu to choose options like "pay $X/month" or "pay $Y/year", as well as a lot of animations and visual effects.
 
-## Footer
+### Footer
 
 - Footer with navigation anchors, links to social media, app links on Google play store and iOS app store, as well as a copyright message of the coffee shop.
 <hr>
