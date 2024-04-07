@@ -21,7 +21,13 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 
 ### Hero section
 
-- Hero section with a slider of drink images, including autoplay and manual sliding buttons as well as sliding indicators that are also interactive. It also includes a small description of the drink with title and the rating of clients, as well as a button to see more information about the drink being shown on the slide and another button to open the link on the app of the coffee shop.
+- Fullscreen slider of drink images.
+  - Autoplay effect.
+  - Manual sliding buttons.
+  - Interactive slide indicators.
+  - Description of drinks with titles and ratings of clients.
+  - Button to see more info about the drink being shown.
+  - Button to open the drink on the app of The Coffee Shop (if installed).
 
 ### Menu section
 
