@@ -32,13 +32,13 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 ### Menu section
 
 - Infinite carousels of cards with coffee drinks.
-- Autoplay effect for each carousel.
-- Button to skip one card (left and right).
-- Button to skip three cards (left and right).
-- "Peeking" effect: cards overflowing the edges are partially visible, indicating more content to the user.
-- "Grab to see" functionality for both desktop and mobile.
-- Search form between carousels with autocomplete functionality. Opens modal with drink info.
-- Clicking on a carousel card opens a modal with info about the drink.
+  - Autoplay effect for each carousel.
+  - Button to skip one card (left and right).
+  - Button to skip three cards (left and right).
+  - "Peeking" effect: cards overflowing the edges are partially visible, indicating more content to the user.
+  - "Grab" functionality for both desktop and mobile.
+  - Search form between carousels with autocomplete functionality. Opens modal with drink info.
+  - Clicking on a carousel card opens a modal with info about the drink.
 
 ### Special section
 
