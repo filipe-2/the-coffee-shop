@@ -27,7 +27,13 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 ### Menu section
 
-- Menu section with two infinite carousels of cards containing coffee drinks, each carousel having an autoplay effect, a button to skip one card, a button to skip three cards, and a "peeking" effect: cards overflowing the edges are partially visible to indicate the presence of more content to the user). This section also includes a search form with autocomplete, and it opens a modal with the information of the drink the user clicked.
+- Infinite carousels of cards with coffee drinks.
+- Autoplay effect for each carousel.
+- Button to skip one card (left and right).
+- Button to skip three cards (left and right).
+- "Peeking" effect: cards overflowing the edges are partially visible, indicating more content to the user.
+- Search form between the carousels with autocomplete functionality.
+- Clicking on a carousel card opens a modal with info about the drink.
 
 ### Special section
 
