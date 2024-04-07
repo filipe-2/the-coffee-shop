@@ -40,10 +40,12 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 - Footer with navigation anchors, links to social media, app links on Google play store and iOS app store, as well as a copyright message of the coffee shop.
 <hr>
+
 ## Usage
 
 To access the website, just follow [this link](https://filipe-2.github.io/TheCoffeeShop/).
 <hr>
+
 ## Preview
 
 ![Preview 1](assets/imgs/preview.png)
