@@ -51,7 +51,7 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 ## Website access
 
-To access the website, just [click here](https://filipe-2.github.io/the-coffee-shop/) or type [filipe-2.github.io/the-coffee-shop](https://filipe-2.github.io/the-coffee-shop/) on your browser and hit enter.
+To access the website, just [CLICK HERE](https://filipe-2.github.io/the-coffee-shop/) or type [filipe-2.github.io/the-coffee-shop](https://filipe-2.github.io/the-coffee-shop/) on your browser and hit enter.
 <hr>
 
 ## Preview
