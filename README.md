@@ -50,7 +50,7 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 - Copyright message of The Coffee Shop.
 <hr>
 
-## Website access
+## How to access 🔗
 
 To access The Coffee Shop, just [CLICK HERE](https://filipe-2.github.io/the-coffee-shop/) or type [filipe-2.github.io/the-coffee-shop](https://filipe-2.github.io/the-coffee-shop/) on your browser and hit enter.
 <hr>
