@@ -32,7 +32,8 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 - Button to skip one card (left and right).
 - Button to skip three cards (left and right).
 - "Peeking" effect: cards overflowing the edges are partially visible, indicating more content to the user.
-- Search form between the carousels with autocomplete functionality.
+- "Grab to see" functionality for both desktop and mobile.
+- Search form between carousels with autocomplete functionality. Opens modal with drink info.
 - Clicking on a carousel card opens a modal with info about the drink.
 
 ### Special section
