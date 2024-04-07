@@ -1,15 +1,11 @@
 # The Coffee Shop
 
 Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee shop website, and I aim to make it completely responsive and highly stylish, but also accessible for assistive technologies like screen readers.
-
-<br>
-
+<hr>
 ## Description
 
 This repository consists of the HTML, CSS, JS, and other files used with the project.
-
-<br>
-
+<hr>
 ## Features
 
 ## Header section
@@ -41,15 +37,11 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 ## Footer
 
 - Footer with navigation anchors, links to social media, app links on Google play store and iOS app store, as well as a copyright message of the coffee shop.
-
-<br>
-
+<hr>
 ## Usage
 
 To access the website, just follow [this link](https://filipe-2.github.io/TheCoffeeShop/).
-
-<br> 
-
+<hr>
 ## Preview
 
 ![Preview 1](assets/imgs/preview.png)
