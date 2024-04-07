@@ -16,7 +16,8 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 - Button to hide/show the navnar
 - Button to lock the current state of the navbar (keeps it hidden it the user hides and locks, and visible if the user expands it and lock).
 - Website branding: title and logo.
-- Expanding and rotating effect of the title on hover, navigation anchors with a hover and active effect (the section the user is currently on the page makes the corresponding anchor highlighted).
+- Expanding and rotating effect of the title on hover.
+- Navigation anchors with a hover and active effect (the section the user is currently on makes the corresponding anchor highlighted).
 - Login and cart buttons: user can authenticate and see what they're saving to buy.
 - Hamburger menu: for smaller screens, the navigation anchors and buttons appear once the user clicks the hamburger menu.
 
