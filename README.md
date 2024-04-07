@@ -36,13 +36,17 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 
 ### Special section
 
-- Special section with special drinks for users that acquired a plan. This section resembles the hero section, but each slide has its own color scheme, and the section changes its scheme every time the slide changes. Sticky elements also change color scheme accordingly when they're visible on top of this section.
+- Special drinks for users that acquired a plan.
+- Same layout used for the hero section.
+- Each slide has its own color scheme.
+  - Changing a slide changes the color scheme of the section.
+  - Sticky elements also change color scheme when on top of the section.
 
 ### Plans section
 
 - Cards with plans that the user can acquire.
   - Silver, gold, and diamond plans.
-  - Prices benefits, and comparisons between each plans.
+  - Prices, benefits, and comparisons between each plan.
   - Dropdown for payment customization (e.g., $X/month or $Y/year).
   - Card animations.
 
