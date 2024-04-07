@@ -55,7 +55,7 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 To access The Coffee Shop, just [CLICK HERE](https://filipe-2.github.io/the-coffee-shop/) or type [filipe-2.github.io/the-coffee-shop](https://filipe-2.github.io/the-coffee-shop/) on your browser and hit enter.
 <hr>
 
-## Preview
+## Preview 🔍🧐
 
 ![Preview 1](assets/imgs/preview.png)
 
