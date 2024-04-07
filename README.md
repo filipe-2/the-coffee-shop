@@ -10,7 +10,7 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 ## Features
 
-### Header section
+### Header
 
 - Glass/transparent/blurry effect
 - Button to hide/show the navnar
