@@ -4,15 +4,21 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 
 ## Description
 
-This repository consists of the HTML, CSS, JS, and other files used with the project. It includes a homepage, menu, about page, plans page, and much more.
+This repository consists of the HTML, CSS, JS, and other files used with the project.
 
 ## Features
 
-- Homepage with header, showcase, drinks, special drinks, plans, and footer sections;
-- Menu page;
-- About page;
-- Plans page;
-- Much more.
+- Navbar with a glass effect, a button to hide it, and a button to lock the current state (keeps it hidden it the user hides and locks, and keeps it visible if the user expanda it and lock). It also includes the website branding (title and logo) with an expanding and rotating effect of the title on hover, navigation anchors with a hover and active effect (the section the user is currently on the page makes the corresponding anchor highlighted), and login + cart buttons where the user can authenticate and see what they're saving for buying. For smaller screens, the navigation anchors and buttons appear once the user clicks the hamburger menu that's visible for them.
+
+- Hero section with a slider of drink images, including autoplay and manual sliding buttons as well as sliding indicators that are also interactive. It also includes a small description of the drink with title and the rating of clients, as well as a button to see more information about the drink being shown on the slide and another button to open the link on the app of the coffee shop.
+
+- Menu section with two infinite carousels of cards containing coffee drinks, each carousel having an autoplay effect, a button to skip one card, a button to skip three cards, and a "peeking" effect: cards overflowing the edges are partially visible to indicate the presence of more content to the user). This section also includes a search form with autocomplete, and it opens a modal with the information of the drink the user clicked.
+
+- Special section with special drinks for users that acquired a plan. This section resembles the hero section, but each slide has its own color scheme, and the section changes its scheme every time the slide changes. Sticky elements also change color scheme accordingly when they're visible on top of this section.
+ 
+- Plans section where the user can see the plans offered by the coffee shop and acquire them. It includes prices, benefits, comparison between each plan, and a lot of interaction, like a dropdown menu to choose options like "pay $X/month" or "pay $Y/year", as well as a lot of animations and visual effects.
+
+- Footer with navigation anchors, links to social media, app links on Google play store and iOS app store, as well as a copyright message of the coffee shop.
 
 ## Usage
 
