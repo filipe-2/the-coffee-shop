@@ -4,7 +4,7 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 
 ## Description
 
-This repository consists of the HTML, CSS, JS, and other files used with the project.  
+This repository consists of the HTML, CSS, JS, and other files used with the project.
 
 ## Features
 
