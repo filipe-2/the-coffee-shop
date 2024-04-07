@@ -10,15 +10,14 @@ Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee 
 - Glass/transparent/blurry effect.
 - Button to hide/show the navnar.
 - Button to lock the current state of the navbar.
-
   - Keeps it hidden if the user hides it.
-  - Keeps it visible if the user expands.
-
-- Website branding: title and logo.
-- Expanding and rotating effect of the title on hover.
-- Navigation anchors with a hover and active effect (the section the user is currently on makes the corresponding anchor highlighted).
-- Login and cart buttons: user can authenticate and see what they're saving to buy.
-- Hamburger menu: for smaller screens, the navigation anchors and buttons appear once the user clicks the hamburger menu.
+  - Keeps it visible if the user expands it.
+- Website branding with title and logo.
+  - Expanding and rotating effect of the title on hover.
+- Navigation anchors with a hover and active effect.
+  - The section the user is currently on highlights the corresponding anchor.
+- Login and cart buttons: user can authenticate and see what they're saving to buy later.
+- Hamburger menu: for smaller screens, navbar elements appear when user clicks the hamburger menu.
 
 ### Hero section
 
