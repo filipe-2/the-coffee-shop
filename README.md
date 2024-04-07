@@ -1,4 +1,4 @@
-# The Coffee Shop
+# The Coffee Shop ☕
 
 Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee shop website. It includes a responsive and highly stylish layout, with tons of accessibility features, aiming to be accessible for both sighted and non-aligned users that use assistive technologies like screen readers.
 <hr>
@@ -12,8 +12,8 @@ This repository consists of the HTML, CSS, JS, and other files used with the pro
 
 ### Header
 
-- Glass/transparent/blurry effect
-- Button to hide/show the navnar
+- Glass/transparent/blurry effect.
+- Button to hide/show the navnar.
 - Button to lock the current state of the navbar (keeps it hidden it the user hides and locks, and visible if the user expands it and lock).
 - Website branding: title and logo.
 - Expanding and rotating effect of the title on hover.
