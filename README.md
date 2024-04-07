@@ -3,11 +3,6 @@
 Welcome to The Coffee Shop project! This is an HTML/CSS/JS project for a coffee shop website. It includes a responsive and highly stylish layout, with tons of accessibility features, aiming to be accessible for both sighted and non-aligned users that use assistive technologies like screen readers.
 <hr>
 
-## Description
-
-This repository consists of the HTML, CSS, JS, and other files used with the project.
-<hr>
-
 ## Features
 
 ### Header
