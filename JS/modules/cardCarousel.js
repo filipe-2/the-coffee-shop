@@ -71,16 +71,16 @@ function loopCarousel(btn) {
     const numCards = carousel.children.length;
     const hiddenContentWidth = carousel.scrollWidth - carousel.offsetWidth;
 
-    lastCard.style.transition = 'transform 300ms';
-    firstCard.style.transition = 'transform 300ms';
-    cardsMinusFirstAndLast.forEach(card => card.style.transition = '300ms');
+    lastCard.style.transition = 'transform 250ms';
+    firstCard.style.transition = 'transform 250ms';
+    cardsMinusFirstAndLast.forEach(card => card.style.transition = '250ms');
 
     if (carousel.scrollLeft === 0 && btn.classList.contains('prev')) {
         lastCard.style.transform = `translateX(-${numCards * totalCardWidth}px)`;
         lastCard.style.opacity = '0';
         setTimeout(() => {
             lastCard.style.opacity = '1';
-            lastCard.style.transform = `translateX(-${(numCards - 1) * totalCardWidth}px)`;
+            lastCard.style.transform = `translateX(-${(numCards - 1) * totalCardWidth - 4}px)`;
             cardsMinusLast.forEach(card => {
                 card.style.transform = `translateX(${totalCardWidth}px)`;
             })
@@ -93,14 +93,14 @@ function loopCarousel(btn) {
                     card.style.transition = 'none';
                     card.style.transform = `translateX(0)`;
                 })
-            }, 300);
-        }, 300)
+            }, 250);
+        }, 250);
     } else if (carousel.scrollLeft === hiddenContentWidth && btn.classList.contains('next')) {
         firstCard.style.transform = `translateX(${numCards * totalCardWidth}px)`;
         firstCard.style.opacity = '0';
         setTimeout(() => {
             firstCard.style.opacity = '1';
-            firstCard.style.transform = `translateX(${(numCards - 1) * totalCardWidth}px)`;
+            firstCard.style.transform = `translateX(${(numCards - 1) * totalCardWidth - 5}px)`;
             cardsMinusFirst.forEach(card => {
                 card.style.transform = `translateX(-${totalCardWidth}px)`;
             })
@@ -113,8 +113,8 @@ function loopCarousel(btn) {
                     card.style.transition = 'none';
                     card.style.transform = `translateX(0)`;
                 })
-            }, 300);
-        }, 300);
+            }, 250);
+        }, 250);
     }
 }
 // ------------------------------------------------
@@ -132,5 +132,6 @@ export {
     // Variables
     menuCarousels,
     menuCarouselBtns,
+    totalCardWidth,
 };
 // ------------------------------------------------

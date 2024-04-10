@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page not found</title>
+    <title>404 Error | Page not found</title>
 
     <!------------- Icons --------------->
     <link rel="stylesheet" href="./assets/misc/fontawesome-free-6.5.1-web/css/all.css">
@@ -21,14 +21,21 @@
 
     <link rel="stylesheet" href="./CSS/404/404.css">
 
+    <link rel="stylesheet" href="./CSS/utils/buttons.css">
     <link rel="stylesheet" href="./CSS/utils/misc.css">
     <!----------------------------------->
 </head>
 
 <body>
-    <section>
-        <h1 class="error-page-title">404 Error | <span class="highlight-three">Page Not Found</span></h1>
-        <img class="error-page-bg" src="./assets/imgs/coffee-background.jpg" alt="" aria-hidden="true">
+    <section class="not-found">
+        <h1 class="not-found__title">404 Error | <span class="highlight-three">Page Not Found</span></h1>
+        <img class="not-found__img" src="./assets/imgs/coffee-background.jpg" alt="" aria-hidden="true">
+        <p class="not-found__description">
+            Sorry, we couldn't find the page you tried to navigate to
+        </p>
+        <button class="not-found__btn highlited-btn primary"><a class="not-found__link" href="/"><i class="fa fa-home"
+                    aria-hidden="true"></i>
+                Home</a></button>
     </section>
 
     <!------------- Footer -------------->

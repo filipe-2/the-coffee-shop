@@ -33,6 +33,7 @@ import {
     // Variables
     menuCarousels,
     menuCarouselBtns,
+    totalCardWidth,
 } from './modules/cardCarousel.js'
 
 
@@ -90,6 +91,8 @@ menuCarousels.forEach(carousel => { // Adds event listeners for mouse events on 
     carousel.addEventListener('mouseup', () => handleMouseUp(carousel));
     carousel.addEventListener('mouseleave', () => handleMouseUp(carousel));
 })
+
+window.onload = () => menuCarousels.forEach(carousel => carousel.scrollTo({ left: 3 * totalCardWidth, top: 0, behavior: 'instant', }));
 
 menuCarouselBtns.forEach(btn => {
     // Listens for clicks on each button to change carousel cards

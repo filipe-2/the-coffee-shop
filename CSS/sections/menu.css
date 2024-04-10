@@ -74,6 +74,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    transition: var(--transition-time-1);
 }
 
 .menu__card-list::-webkit-scrollbar {
@@ -92,6 +93,14 @@
 
 .menu__card-list:has(:hover)>.menu__card:not(:hover) {
     opacity: 0.75;
+}
+
+.menu__card::after {
+    
+}
+
+.menu__card:hover {
+
 }
 
 .menu__carousel:has(.menu__card-list.dragging) .menu__slider-btn {
